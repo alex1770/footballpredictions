@@ -2,6 +2,11 @@
 
 import urllib2,csv,sys,datetime,time,re,bs4
 
+def err(s):
+  print >>sys.stderr,datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),s
+
+err("Info: starting getresults.py "+' '.join(sys.argv[1:]))
+
 if len(sys.argv)<=1:
   print >>sys.stderr,"Usage:",sys.argv[0],"<league> [year]"
   print >>sys.stderr,"       league = 0, 1, 2, 3 or 4"
@@ -60,6 +65,8 @@ def getfromsoccernet(year,ln):
           'eng.4/english-league-two',
           'eng.5/english-conference'][ln]
   url='http://soccernet.espn.go.com/results/_/league/'+suffix
+  # The string after eng.x/ appears to be irrelevant
+  # It's possible the site could throw up a popup which messes stuff up
   u=urllib2.urlopen(url)
   soup=bs4.BeautifulSoup(u,"html5lib")
   l=[];dt=None;count=10
@@ -156,8 +163,8 @@ def oldmerge(l1,l2):
     k=x[1:3]
     if k not in d: d[k]=x
     elif d[k]!=x:
-      print >>sys.stderr, "Warning: incompatible results (taking last to be correct)"
-      print >>sys.stderr, "%s  %-19s %-19s %2d %2d\n%s  %-19s %-19s %2d %2d\n"%(d[k]+x)
+      err("Warning: incompatible results (taking last to be correct)")
+      err("Warning: %s  %-19s %-19s %2d %2d\n%s  %-19s %-19s %2d %2d\n"%(d[k]+x))
       d[k]=x
   kk=list(d);kk.sort()
   return [d[x] for x in kk]
@@ -189,9 +196,9 @@ def getgroundtruth(pp):
     for x in cl: f.setdefault(x[1],[]).append(x[0])
     m=0;tr=None
     for x in f:
-      if len(x)>m: m=len(x);tr=x
+      if len(f[x])>m: m=len(f[x]);tr=x
     if tr and m>=av: l.append(tr)
-    #print cl,f
+    #print cl;print f;print tr;print m;print
   l.sort()
   return l
 
@@ -205,12 +212,12 @@ def check(pp,gtr):
     for x in pp[n]: e[x[:3]]=x
     for x in d:
       if x not in e and x[0]>mind:
-        if x[0]<maxd: print >>sys.stderr,"%-20s"%n,"Omission",d[x]
-        else: print >>sys.stderr,"%-20s"%n,"SlowUpdate",d[x]
+        if x[0]<maxd: err("Error: %s"%n+" omission "+str(d[x]))
+        else: err("Warning: %s"%n+" slow update "+str(d[x]))
     for x in e:
-      if x not in d: print >>sys.stderr,"%-20s"%n,"Spurious",e[x]
+      if x not in d: err("Error: %-20s"%n+"Spurious "+str(e[x]))
     for x in e:
-      if x in d and d[x]!=e[x]: print >>sys.stderr,"%-20s"%n,"Wrong",e[x],"cf GTR",d[x]
+      if x in d and d[x]!=e[x]: err("Error: %s"%n+" wrong "+str(e[x])+" cf GTR "+str(d[x]))
 
 # Third parameter is whether the site in question provides past years data
 # Arrange in increasing reliability (order not currently used)
@@ -220,7 +227,11 @@ parsers=[("soccernet",getfromsoccernet,0),# Quite error prone in 2012 (from a sm
          ("scorespro",getfromscorespro,0)]# No known errors, though not tried much
 pp={}
 for (n,g,p) in parsers:
-  if year==now or p: pp[n]=g(year,ln)
+  if year==now or p:
+    try:
+      pp[n]=g(year,ln)
+    except Exception as x:
+      err("Error: parser %s failed with exception %s: %s"%(n,type(x).__name__,str(x)))
 gtr=getgroundtruth(pp)
 for x in gtr: print "%s  %-19s %-19s %2d %2d"%x
 check(pp,gtr)

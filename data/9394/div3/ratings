@@ -1,3 +1,6 @@
+HOMEADV           0.393487
+AWAYDISADV       -0.163226
+BEGINRATINGS
 Shrewsbury       0.0919393      0.370868
 Chester            0.18886      0.200523
 Crewe             0.349796    -0.0917371
@@ -20,5 +23,3 @@ Wigan           -0.0941657     -0.205343
 Hereford         0.0764019     -0.334223
 Darlington       -0.293709     -0.108079
 Northampton      -0.245451     -0.140559
-    0.393487
-   -0.163226

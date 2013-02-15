@@ -1,3 +1,6 @@
+HOMEADV            0.368289
+AWAYDISADV       -0.0165285
+BEGINRATINGS
 Manchester_U       0.404135      0.292095
 Newcastle          0.305194       0.24391
 Liverpool          0.360972      0.324401
@@ -18,5 +21,3 @@ Southampton        -0.34374    -0.0632009
 Manchester_C      -0.367313     -0.171567
 Queen's_PR        -0.226973     -0.159448
 Bolton            -0.185883     -0.380771
-    0.368289
-  -0.0165285

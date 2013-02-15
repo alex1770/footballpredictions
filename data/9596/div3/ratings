@@ -1,3 +1,6 @@
+HOMEADV          0.288578
+AWAYDISADV      0.0361534
+BEGINRATINGS
 Preston          0.341736      0.335263
 Gillingham      -0.137456       1.00003
 Bury             0.182184      0.110588
@@ -22,5 +25,3 @@ Leyton_O        -0.212339     -0.144712
 Cardiff         -0.282295     -0.158159
 Scarborough     -0.329282     -0.217328
 Torquay         -0.579605     -0.421965
-    0.288578
-   0.0361534

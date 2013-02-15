@@ -1,3 +1,6 @@
+HOMEADV           0.255473
+AWAYDISADV        0.034003
+BEGINRATINGS
 Swansea         -0.0643584      0.567342
 Rotherham         0.285685      0.368108
 Northampton        0.15915      0.151805
@@ -22,5 +25,3 @@ Exeter           -0.134194     -0.305431
 Shrewsbury       -0.278261     -0.228478
 Carlisle         -0.222927     -0.343099
 Chester          -0.173058     -0.396796
-    0.255473
-    0.034003

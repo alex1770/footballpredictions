@@ -1,3 +1,6 @@
+HOMEADV             0.319045
+AWAYDISADV         -0.124078
+BEGINRATINGS
 Reading             0.164468      0.242152
 Southampton         0.272031      0.160099
 West_Ham             0.29964      0.169528
@@ -22,5 +25,3 @@ Barnsley           -0.164922     -0.177433
 Portsmouth         -0.123785     0.0352436
 Coventry           -0.278056    -0.0450388
 Doncaster          -0.226457     -0.257635
-    0.319045
-   -0.124078

@@ -1,3 +1,6 @@
+HOMEADV           0.385822
+AWAYDISADV      -0.0146838
+BEGINRATINGS
 Manchester_U      0.477931      0.419824
 Arsenal           0.258498      0.232829
 Liverpool         0.379471      0.198186
@@ -18,5 +21,3 @@ Derby            -0.252774     -0.180614
 Manchester_C     -0.143429     -0.282003
 Coventry         -0.275987     -0.245312
 Bradford         -0.451299     -0.344539
-    0.385822
-  -0.0146838

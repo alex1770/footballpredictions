@@ -1,3 +1,6 @@
+HOMEADV             0.345839
+AWAYDISADV        -0.0763417
+BEGINRATINGS
 West_Brom           0.366574     0.0569304
 Stoke              0.0999519       0.10722
 Hull               0.0212807     0.0685377
@@ -22,5 +25,3 @@ Coventry          -0.0891779     -0.097617
 Leicester          -0.223547      0.126379
 Scunthorpe         -0.181396      -0.16634
 Colchester         0.0612768     -0.260977
-    0.345839
-  -0.0763417

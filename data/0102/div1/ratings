@@ -1,3 +1,6 @@
+HOMEADV            0.393281
+AWAYDISADV       -0.0768624
+BEGINRATINGS
 Manchester_C       0.570975      0.111221
 West_Bromwich    -0.0174522      0.729283
 Wolverhampton      0.212388      0.324502
@@ -22,5 +25,3 @@ Rotherham         -0.151605    -0.0878344
 Crewe             -0.245848     -0.225643
 Barnsley         -0.0108679     -0.358045
 Stockport           -0.3401     -0.516916
-    0.393281
-  -0.0768624

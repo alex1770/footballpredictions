@@ -1,3 +1,6 @@
+HOMEADV                 0.364608
+AWAYDISADV             -0.143079
+BEGINRATINGS
 Swindon                 0.209653      0.432506
 Shrewsbury             0.0711582      0.279395
 Crawley_Town            0.123195      0.043674
@@ -22,5 +25,3 @@ Plymouth              -0.0960252     0.0317621
 Barnet                 -0.126696     -0.241044
 Hereford               -0.177532     -0.112725
 Macclesfield           -0.280963    -0.0855725
-    0.364608
-   -0.143079

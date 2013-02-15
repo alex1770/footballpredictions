@@ -1,3 +1,6 @@
+HOMEADV            0.302824
+AWAYDISADV       -0.0304478
+BEGINRATINGS
 Sunderland         0.149384      0.251783
 Wigan              0.194646      0.396859
 Ipswich            0.391091     -0.091015
@@ -22,5 +25,3 @@ Crewe             0.0947138     -0.324854
 Gillingham        -0.186672     -0.147817
 Nott'm_Forest    -0.0969694    -0.0791039
 Rotherham         -0.260853       -0.1472
-    0.302824
-  -0.0304478

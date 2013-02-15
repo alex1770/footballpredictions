@@ -1,3 +1,6 @@
+HOMEADV            0.37548
+AWAYDISADV      -0.0854054
+BEGINRATINGS
 Carlisle          0.195421      0.556571
 Walsall           0.327596      0.293562
 Chesterfield      0.107959       0.38442
@@ -20,5 +23,3 @@ Darlington       -0.241743    -0.0324362
 Gillingham       -0.168239     -0.151034
 Scarborough     -0.0997829     -0.243419
 Exeter           -0.408745     -0.232326
-     0.37548
-  -0.0854054

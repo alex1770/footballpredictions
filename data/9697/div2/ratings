@@ -1,3 +1,6 @@
+HOMEADV           0.284605
+AWAYDISADV        0.114303
+BEGINRATINGS
 Bury              0.163025        0.3054
 Stockport         0.115805       0.23175
 Luton             0.304598      0.128584
@@ -22,5 +25,3 @@ Peterborough       0.07199     -0.343072
 Shrewsbury      -0.0429937     -0.351684
 Notts_County     -0.451397     -0.111546
 Rotherham        -0.275072     -0.287685
-    0.284605
-    0.114303

@@ -1,3 +1,6 @@
+HOMEADV            0.355128
+AWAYDISADV       0.00975886
+BEGINRATINGS
 Charlton           0.322543      0.217095
 Manchester_C       0.306004      0.335856
 Ipswich            0.213317      0.292244
@@ -22,5 +25,3 @@ West_Bromwich     -0.275508    -0.0440804
 Walsall          -0.0723297     -0.300767
 Port_Vale         -0.158591     -0.187814
 Swindon           -0.386602     -0.290187
-    0.355128
-  0.00975886

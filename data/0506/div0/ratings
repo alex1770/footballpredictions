@@ -1,3 +1,6 @@
+HOMEADV            0.328572
+AWAYDISADV        0.0251414
+BEGINRATINGS
 Chelsea            0.403321      0.626329
 Man_Utd            0.361398      0.353243
 Liverpool          0.165202      0.342097
@@ -18,5 +21,3 @@ Portsmouth        -0.123837     -0.250053
 Birmingham        -0.303879    -0.0338591
 West_Brom         -0.332999     -0.220135
 Sunderland         -0.39566     -0.321793
-    0.328572
-   0.0251414

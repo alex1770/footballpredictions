@@ -1,3 +1,6 @@
+HOMEADV           0.349659
+AWAYDISADV       -0.058735
+BEGINRATINGS
 Birmingham        0.347645      0.441687
 Brentford         0.312671      0.391137
 Crewe              0.32154     -0.165332
@@ -22,5 +25,3 @@ Plymouth         -0.244193     -0.339357
 Cardiff          -0.228735     -0.225093
 Chester          -0.439563      -0.34552
 Leyton_O         -0.656078     -0.226975
-    0.349659
-   -0.058735

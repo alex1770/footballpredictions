@@ -1,3 +1,6 @@
+HOMEADV             0.360425
+AWAYDISADV        -0.0233086
+BEGINRATINGS
 Chelsea             0.356649      0.594041
 Arsenal             0.538935      0.279073
 Man_Utd              0.22793      0.429945
@@ -18,5 +21,3 @@ West_Brom           -0.30577     -0.208926
 Crystal_Palace     -0.188957     -0.290545
 Norwich            -0.144569     -0.370232
 Southampton       -0.0861226     -0.167493
-    0.360425
-  -0.0233086

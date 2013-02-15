@@ -28,7 +28,7 @@ char *getsp(char *p){while(*p&&!isspace(*p))p++;return p;}
 char *col(int n,char *p){p=nonsp(p);while(n>0){p=nonsp(getsp(p));n--;}return p;}
 #define PI (3.1415926535897932384)
 
-#define NUML 5
+#define NUML 5 // Number of leagues
 #define MAXP 11 // 1+Max no. of properties
 #define MAXREL 10 // Maximum number of teams, of which the probability of relegation for all
 // possible subsets is calculated.
@@ -174,16 +174,6 @@ char *(maxdt[NUML])={"2010-05-09","2010-05-02","2010-05-08","2010-05-08","2010-0
 
 double drnd(){return (random()+.5)/(RAND_MAX+1.0);}
 
-#include <sys/times.h>
-double cpu(void){
-  struct tms fred;
-  static double clk_tck;
-  static int first=1;
-  if(first){clk_tck=(double)sysconf(_SC_CLK_TCK);first=0;}
-  times(&fred);
-  return (fred.tms_utime+fred.tms_stime)/clk_tck;
-}
-
 unsigned int secs(char *s){
   // E.g., "2003-11-19" --> seconds since 1970
   unsigned int m,y;
@@ -234,12 +224,11 @@ void initargs(int ac,char **av){
     printf("Help message\n");exit(0);
   }
   for(i=1;i<ac;i++){
-    int nn,rr,ss;
+    int nn,rr;
     char *l0;
-    double x;
-    l=av[i];ss=strlen(l);l0=strchr(l,'=');
+    l=av[i];l0=strchr(l,'=');
     if(l0){
-      l0++;rr=l0-l;nn=atoi(l0);x=atof(l0);
+      l0++;rr=l0-l;nn=atoi(l0);
       if(!strncmp(l,"update=",rr)){update=nn;continue;}
       if(!strncmp(l,"div=",rr)){ln=nn;continue;}// league number 0-4 or -1 for all
       if(!strncmp(l,"eval=",rr)){eval=nn;continue;}// eval mode
@@ -314,7 +303,7 @@ char *eqnormalise(char *s){
   fprintf(stderr,"Team %s not found in equiv name list\n",s);exit(1);
 }
 
-int s2n(char *s,int add){// add = whether to add in new names
+int s2n(char *s,int add){// 'add' = whether to add in new names
   int i,sl;
   char l0[MAXTL],*l1;
   strcpy(l0,s);
@@ -499,7 +488,7 @@ int getpois(double la){
   }
 }
 
-void getsc(int *h,int *a,int i,int j){
+void getsc(int *h,int *a,int i,int j){// Simulate team i vs team j, putting results in *h, *a
   double la,mu;
   la=fn(al[i]-be[j]+hh[0]);
   mu=fn(al[j]-be[i]-hh[1]);
@@ -812,9 +801,9 @@ void doeval(){
 }
 
 void getprior(int cl0){
-  int i,n,t,nf,cl,pln[MAXNT];
+  int i,t,nf,cl,pln[MAXNT];
   double x,y;
-  char l[1000],*l1,rat[MAXNT+3][1000];
+  char l[1000],*l1;
   FILE *fp;
   for(i=0;i<nt;i++){
     pln[i]=-1;
@@ -826,14 +815,19 @@ void getprior(int cl0){
   ppa[2*nt]=0.35;ppaiv[2*nt]=25;
   ppa[2*nt+1]=0;ppaiv[2*nt+1]=25;
   nf=0;
-  for(cl=0;cl<NUML;cl++){
+  for(cl=0;cl<NUML;cl++){// Scan all of last year's leagues to find teams in the current league
     sprintf(l,"data/%02d%02d/div%d/ratings",(year-1)%100,year%100,cl);
     fp=fopen(l,"r");if(!fp){fprintf(stderr,"Warning: Couldn't open prev ratings file %s\n",l);continue;}
-    for(n=0;fgets(rat[n],1000,fp);n++);
-    for(i=0;i<n-2;i++){
-      l1=getsp(rat[i]);assert(l1[0]==' ');
+    while(fgets(l,1000,fp)){
+      l1=getsp(l);
+      if(cl==cl0&&l1-l==7&&strncmp(l,"HOMEADV",l1-l)==0)ppa[2*nt]=atof(l1);
+      if(cl==cl0&&l1-l==10&&strncmp(l,"AWAYDISADV",l1-l)==0)ppa[2*nt+1]=atof(l1);
+      if(l1-l==12&&strncmp(l,"BEGINRATINGS",l1-l)==0)break;
+    }
+    while(fgets(l,1000,fp)){
+      l1=getsp(l);assert(l1[0]==' ');
       l1[0]=0;
-      t=s2n(rat[i],0);if(t==-1)continue;
+      t=s2n(l,0);if(t==-1)continue;
       assert(t<nt);
       sscanf(l1+1,"%lf %lf",&x,&y);
       ppa[t]=x+poff[cl]-poff[cl0];
@@ -843,7 +837,6 @@ void getprior(int cl0){
       if(cl!=cl0){ppaiv[t]*=.7;ppaiv[nt+t]*=.7;}
       nf++;
     }
-    if(cl==cl0)for(i=0;i<2;i++)ppa[2*nt+i]=atof(rat[n-2+i]);
   }
   for(t=0,x=y=0;t<nt;t++){x+=ppa[t];y+=ppa[nt+t];}
   for(t=0;t<nt;t++){ppa[t]-=x/nt;ppa[nt+t]-=y/nt;}
@@ -918,9 +911,9 @@ int main(int ac,char **av){
         addresult(aa->r[i].dt,aa->r[i].t0,aa->r[i].t1,aa->r[i].s0,aa->r[i].s1);
       sprintf(l,"%s/results",datadir);fp=fopen(l,"w");assert(fp);
       for(i=0;i<nr;i++){
-	timestr(l,res[i][4]);
-	fprintf(fp,"%s  %-*s  %-*s  %2d %2d\n",
-		l,maxtl,tm[res[i][0]],maxtl,tm[res[i][1]],res[i][2],res[i][3]);
+        timestr(l,res[i][4]);
+        fprintf(fp,"%s  %-*s  %-*s  %2d %2d\n",
+                l,maxtl,tm[res[i][0]],maxtl,tm[res[i][1]],res[i][2],res[i][3]);
       }
       fclose(fp);
     }else{// no update (download of results) - just get previously saved results
@@ -1087,8 +1080,8 @@ int main(int ac,char **av){
       n=0;
       while(fgets(l1,MAXP*11+1000,fp)){
 	l1[strlen(l1)-1]=0;doamp(l1);
-	if(n==1||n==2)fprintf(fph,"<b>%s</b>\n",l1);
-	if(n>2)fprintf(fph,"%s\n",l1);
+	if(n>0)fprintf(fph,"%s\n",l1);
+	if(n==2)fprintf(fph,"\n");
 	n++;
       }
       fclose(fp);

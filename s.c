@@ -195,8 +195,9 @@ void timestr(char *st,unsigned int sec){
   sprintf(st,"%4d-%02d-%02d",y,m+1,d+1);
 }
 
-int update,ln,cl,maxit,steps,year,useres,rel,sprind,puthtml,eval,prl;
+int update,ln,maxit,steps,year,useres,rel,sprind,puthtml,eval,prl;
 char datadir[1000],divname[1000],*date;
+struct tm now;// Program start time in GMT
 double acc,rej;
 
 void getnames(int year,int div,char *dir,char *divname){
@@ -265,8 +266,8 @@ void initargs(int ac,char **av){
 #define MAXS 100 // 1+Maximum number of goals scored
 int nr,nt,np,res[MAXNM][5],maxtl,stat[MAXP][MAXNT],rels[1<<MAXREL];
 double odds[MAXNM][3];// NCU
-char tm[MAXNT][MAXTL],lmp[NUML][2][MAXTL];
-int lmt[NUML];
+char tm[MAXNT][MAXTL];
+int last;
 double lfac[MAXS];
 double phg[MAXS],pag[MAXS];
 int rell[MAXNT]; // List of teams in the relegation set
@@ -610,7 +611,7 @@ void checkres(void){
     }else ind[t0][t1]=r;
   }
 }
-void sim(int midyear){
+void sim(int cl,int midyear){
   int a,c,h,i,j,k,n,p,r,t,fl,pl[nt][nt],ord[nt],sc1[nt],gd1[nt],gs1[nt];
   char l[100];
   double x,y;
@@ -629,15 +630,25 @@ void sim(int midyear){
   for(it=0;it<=maxit;it++){
     if(it%(MAX(maxit/10,1))==0||it==maxit){//print
       for(k=0;k<1+(it==maxit);k++){
+        char tbuf[1000];
 	if(k==0){printf("\n");fpo=stdout;} else {
 	  if(midyear)sprintf(l,"%s/table.%s",datadir,date); else sprintf(l,"%s/table",datadir);
 	  fpo=fopen(l,"w");assert(fpo);
 	}
-	fprintf(fpo,"Iteration %d\n",it);
+        strftime(tbuf,1000,"%Y-%m-%dT%H:%M:%S+0000",&now);
+        fprintf(fpo,"UPDATED      %s\n",tbuf);
+        if(last>=0){
+          time_t t0;
+          struct tm tt0;
+          t0=res[last][4];assert(gmtime_r(&t0,&tt0));strftime(tbuf,1000,"%Y-%m-%d",&tt0);
+          fprintf(fpo,"LASTPLAYED   %s %s %s %d %d\n",tbuf,tm[res[last][0]],tm[res[last][1]],res[last][2],res[last][3]);
+        }else fprintf(fpo,"LASTPLAYED   none played so far\n");
+	fprintf(fpo,"ITERATIONS   %d\n",it);
 	if(k==0)fprintf(fpo,"acc %.1f%%     rej %.1f%%\n",100*acc/(acc+rej),100*rej/(acc+rej));
 	//for(i=0;i<nt;i++)pt[i]=stat[0][i]+stat[2][i]/1000;
 	//for(i=0;i<nt;i++)pt[i]=sc[i]*1e5+gd[i];
 	qsort(ord,nt,sizeof(int),cmps);
+	fprintf(fpo,"BEGINTABLE\n");
 	fprintf(fpo,"%-*s  -- Current --     ------- Expected -------     ",maxtl,"");
 	for(i=0;i<MAXP&&prop[cl][i];i++);
 	j=9*(i-2)-33;
@@ -741,17 +752,13 @@ double poisent(double la){
   return x;
 }
 
-void addresult(char *dt,char *t0,char *t1,int s0,int s1){
+void addresult(int cl,char *dt,char *t0,char *t1,int s0,int s1){
   assert(nr<MAXNM);
   res[nr][0]=s2n(t0,1);if(res[nr][0]==-1)return;
   res[nr][1]=s2n(t1,1);if(res[nr][1]==-1)return;
   res[nr][2]=s0;res[nr][3]=s1;
   res[nr][4]=secs(dt);
-  if(res[nr][4]>lmt[cl]){
-    lmt[cl]=res[nr][4];
-    strcpy(lmp[cl][0],tm[res[nr][0]]);
-    strcpy(lmp[cl][1],tm[res[nr][1]]);
-  }
+  if(last==-1||res[nr][4]>res[last][4])last=nr;// record the last match played
   if(prl>=2)printf("Adding result %s vs %s   %d - %d     %d\n",
 		  tm[res[nr][0]],tm[res[nr][1]],res[nr][2],res[nr][3],res[nr][4]);
   nr++;
@@ -827,7 +834,7 @@ void getprior(int cl0){
     while(fgets(l,1000,fp)){
       l1=getsp(l);assert(l1[0]==' ');
       l1[0]=0;
-      t=s2n(l,0);if(t==-1)continue;
+      t=s2n(l,0);if(t==-1)continue;// look up team 'l' to find its team number in the current league
       assert(t<nt);
       sscanf(l1+1,"%lf %lf",&x,&y);
       ppa[t]=x+poff[cl]-poff[cl0];
@@ -859,19 +866,18 @@ int cmpr(const void*x,const void*y){
   return (z>0)-(z<0);
 }
 int main(int ac,char **av){
-  int a,b,c,d,i,j,n,r,t,m0,m1,s0,s1,ts,no,nr0,midyear,anymidyear,ss[MAXS][MAXS],rs[MAXS],cs[MAXS],ord[MAXNT];
+  int a,b,c,d,i,j,n,r,t,cl,m0,m1,s0,s1,ts,no,nr0,midyear,anymidyear,ss[MAXS][MAXS],rs[MAXS],cs[MAXS],ord[MAXNT];
   double x,y,ex,ob,la,mu,chi,der;
   char l[1000],*l2,*l3,now0[1000],now1[1000];
   time_t t0;
-  struct tm gmt;
   FILE *fp;
   initargs(ac,av);
   //historical=(strcmp(date,"9999-12-31")<0);
   //if(historical&&update){fprintf(stderr,"historical+update would lead to incomplete results file\n");exit(1);}
-  t0=time(0);assert(gmtime_r(&t0,&gmt));
-  //strftime(l,1000,"%Y-%m-%d",&gmt);if(strcmp(l,date)<0)strcpy(date,l);
-  strftime(now0,1000,"%Y%m%d-%H%M%S",&gmt);
-  strftime(now1,1000,"%A %e %B %Y at %T GMT",&gmt);
+  t0=time(0);assert(gmtime_r(&t0,&now));
+  //strftime(l,1000,"%Y-%m-%d",&now);if(strcmp(l,date)<0)strcpy(date,l);
+  strftime(now0,1000,"%Y%m%d-%H%M%S",&now);
+  strftime(now1,1000,"%A %e %B %Y at %T GMT",&now);
   printf("Analysis at %s\n",now1);
   loadequivnames();
   for(i=1,lfac[0]=0;i<MAXS;i++)lfac[i]=lfac[i-1]+log(i);
@@ -888,10 +894,10 @@ int main(int ac,char **av){
     // would currently mess up later things that use the files "table" and "ratings" and so they
     // would need to be changed as well.
     acc=rej=0;
-    maxtl=0;
+    maxtl=10;// maxtl>=10 to line up "AWAYDISADV"
     getnames(year,cl,datadir,divname);
     sprintf(l,"mkdir -p %s",datadir);assert(system(l)==0);
-    lmt[cl]=-1;
+    last=-1;
     if(update){// fetch results
       sprintf(l,"/usr/bin/python getresults.py %d %d",cl,year);
       nt=0;nr=0;
@@ -904,11 +910,11 @@ int main(int ac,char **av){
         l4=getsp(l3);*l4=0;l4=nonsp(l4+1);
         l5=getsp(l4);*l5=0;l5=nonsp(l5+1);
         l6=getsp(l5);*l6=0;
-        addresult(l,l2,l3,atoi(l4),atoi(l5));
+        addresult(cl,l,l2,l3,atoi(l4),atoi(l5));
       }
       pclose(fp);
-      if(aa->r)for(i=0;aa->r[i].t0;i++)if(aa->r[i].d==cl)
-        addresult(aa->r[i].dt,aa->r[i].t0,aa->r[i].t1,aa->r[i].s0,aa->r[i].s1);
+      if(aa->r)for(i=0;aa->r[i].t0;i++)if(aa->r[i].d==cl)// Adjustment results
+        addresult(cl,aa->r[i].dt,aa->r[i].t0,aa->r[i].t1,aa->r[i].s0,aa->r[i].s1);
       sprintf(l,"%s/results",datadir);fp=fopen(l,"w");assert(fp);
       for(i=0;i<nr;i++){
         timestr(l,res[i][4]);
@@ -929,11 +935,7 @@ int main(int ac,char **av){
 	n=sscanf(l3+1,"%d %d %lf %lf %lf",&res[nr][2],&res[nr][3],&odds[nr][0],&odds[nr][1],&odds[nr][2]);
 	assert(n==2||n==5);
 	no+=(n==5);
-	if(res[nr][4]>lmt[cl]){// record the last match played
-	  lmt[cl]=res[nr][4];
-	  strcpy(lmp[cl][0],tm[res[nr][0]]);
-	  strcpy(lmp[cl][1],tm[res[nr][1]]);
-	}
+	if(last==-1||res[nr][4]>res[last][4])last=nr;// record the last match played
 	nr++;
       }
       fclose(fp);
@@ -1033,9 +1035,10 @@ int main(int ac,char **av){
     if(midyear)sprintf(l,"%s/ratings.%s",datadir,date); else sprintf(l,"%s/ratings",datadir);
     fp=fopen(l,"w");assert(fp);
     for(i=0;i<nt;i++)ord[i]=i;
+    fprintf(fp,"%-*s  %12g\n%-*s  %12g\n",maxtl,"HOMEADV",hh[0],maxtl,"AWAYDISADV",hh[1]);
+    fprintf(fp,"BEGINRATINGS\n");
     qsort(ord,nt,sizeof(int),cmps);
     for(i=0;i<nt;i++){t=ord[i];fprintf(fp,"%-*s  %12g  %12g\n",maxtl,tm[t],al[t],be[t]);}
-    fprintf(fp,"%12g\n%12g\n",hh[0],hh[1]);
     fclose(fp);
     for(r=0,x=y=0;r<nr;r++){
       a=res[r][0];b=res[r][1];c=res[r][2];d=res[r][3];
@@ -1048,13 +1051,13 @@ int main(int ac,char **av){
     printf("Self bits/match (away score): %g\n",y/nr/log(2));
     printf("Self bits/match (both): %g\n",(x+y)/nr/log(2));
 
-    sim(midyear);
+    sim(cl,midyear);
 
   }//cl
 
   if(ln==-1&&!anymidyear){
-    int n;
-    char l1[MAXP*11+1000],last[1000],scr[10000];
+    int n,g0,g1;
+    char l1[MAXP*11+1000],scr[10000],tbuf[1000],team0[1000],team1[1000];
     struct tm tt0;
     FILE *fph;
     sprintf(l,"predictions/pred%s.html",now0);
@@ -1065,24 +1068,29 @@ int main(int ac,char **av){
     for(cl=0;cl<5;cl++){
       getnames(year,cl,datadir,divname);
       sprintf(l,"%s/table",datadir);fp=fopen(l,"r");assert(fp);
-      fprintf(fph,"<b>%s</b>",divname);
-      t0=lmt[cl];assert(gmtime_r(&t0,&tt0));strftime(last,1000,"%A %e %B %Y",&tt0);
-      if(nr>0){
-	sprintf(l1,"(Latest match accounted for: %s, %s vs %s;",last,lmp[cl][0],lmp[cl][1]);
-	doamp(l1);
-	fprintf(fph,"&nbsp;&nbsp;&nbsp;%s <a href=\"http://news.bbc.co.uk/sport1/hi/football/eng_",l1);
-	if(cl==0)fprintf(fph,"prem/");
-	if(cl>=1&&cl<=3)fprintf(fph,"div_%d/",cl);
-	if(cl==4)fprintf(fph,"conf/conference_");
-	fprintf(fph,"table/default.stm\">Check up-to-date</a>)\n");
+      while(fgets(l1,MAXP*11+1000,fp)){
+        if(strncmp(l1,"BEGINTABLE",10)==0)break;
+        if(strncmp(l1,"UPDATED",7)==0);
+        if(strncmp(l1,"LASTPLAYED",10)==0)sscanf(l1+10,"%s %s %s %d %d",tbuf,team0,team1,&g0,&g1);
       }
+      fprintf(fph,"<b>%s</b>&nbsp;&nbsp;&nbsp; (",divname);
+      if(isdigit(tbuf[0])){// If there have been any matches played, show the last one
+        strptime(tbuf,"%Y-%m-%d",&tt0);strftime(tbuf,1000,"%A %e %B %Y",&tt0);
+	sprintf(l1,"Latest match accounted for: %s, %s %d %d %s;",tbuf,team0,g0,g1,team1);
+	doamp(l1);fprintf(fph,"%s",l1);
+      }
+      fprintf(fph," <a href=\"http://news.bbc.co.uk/sport1/hi/football/eng_");
+      if(cl==0)fprintf(fph,"prem/");
+      if(cl>=1&&cl<=3)fprintf(fph,"div_%d/",cl);
+      if(cl==4)fprintf(fph,"conf/conference_");
+      fprintf(fph,"table/default.stm\">Check up-to-date</a>)\n");
       fprintf(fph,"\n<pre>\n");
       n=0;
       while(fgets(l1,MAXP*11+1000,fp)){
 	l1[strlen(l1)-1]=0;doamp(l1);
-	if(n>0)fprintf(fph,"%s\n",l1);
-	if(n==2)fprintf(fph,"\n");
+	fprintf(fph,"%s\n",l1);
 	n++;
+	if(n==2)fprintf(fph,"\n");
       }
       fclose(fp);
       fprintf(fph,"\n\n</pre>\n\n");

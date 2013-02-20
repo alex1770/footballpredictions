@@ -739,24 +739,6 @@ double poisent(double la){
   return x;
 }
 
-void addresult(FILE *fp,int cl,char *dt,char *t0,char *t1,int s0,int s1){
-  assert(nr<MAXNM);
-  res[nr][0]=s2n(t0,1);if(res[nr][0]==-1)return;
-  res[nr][1]=s2n(t1,1);if(res[nr][1]==-1)return;
-  res[nr][2]=s0;res[nr][3]=s1;
-  res[nr][4]=secs(dt);
-  if(prl>=2)printf("Adding result %s vs %s   %d - %d     %d\n",
-		  tm[res[nr][0]],tm[res[nr][1]],res[nr][2],res[nr][3],res[nr][4]);
-  nr++;
-      /*
-      for(i=0;i<nr;i++){
-        t0=res[i][4];assert(gmtime_r(&t0,&tt0));strftime(l,1000,"%Y-%m-%d",&tt0);// Future expansion: include times
-        fprintf(fp,"%s  %-*s  %-*s  %2d %2d\n",
-                l,maxtl,tm[res[i][0]],maxtl,tm[res[i][1]],res[i][2],res[i][3]);
-      }
-      */
-}
-
 void doeval(){
   int a,b,c,d,i,nr0;
   double x,la,mu,pr,tp,del,L,L1[np];

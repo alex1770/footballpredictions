@@ -53,15 +53,15 @@ int sprind1[NUMSPR]={60,40,30,20,10,5};
 
 // Special adjustments
 
-typedef struct {int d;char *t;int a;char *dt;} adjsdat; // Score adjustments
-typedef struct {int d;char *t0,*t1;int s0,s1;char *dt;} adjrdat; // Result adjustments (insert a match)
-typedef struct {char *t,*dt;} adjedat; // Excluded teams
+typedef struct {int d;char *t;int a;char *dt;} adjsdat; // Score adjustments (point deduction - relatively common)
+typedef struct {int d;char *t0,*t1;int s0,s1;char *dt;} adjrdat; // Extra results    \ Very rare - used to make 2009-10
+typedef struct {char *t,*dt;} adjedat;                           // Excluded teams   / work mid-season
 
 typedef struct {
   int y;// year
-  adjsdat *s;
-  adjrdat *r;
-  adjedat *e;
+  adjsdat *s;// See above
+  adjrdat *r;// for
+  adjedat *e;// description
   char *(mdt[NUML]); // Last match date for each league
   // Note that r,e and mdt are only ever likely to be used to overcome
   // deficiencies in the current year's results-scrape-site and probably
@@ -175,6 +175,7 @@ char *(maxdt[NUML])={"2010-05-09","2010-05-02","2010-05-08","2010-05-08","2010-0
 double drnd(){return (random()+.5)/(RAND_MAX+1.0);}
 
 unsigned int secs(char *s){
+  // This does what strptime should do, but strptime doesn't properly exist
   // E.g., "2003-11-19" --> seconds since 1970
   unsigned int m,y;
   unsigned int mm[12]={0,31,59,90,120,151,181,212,243,273,304,334};
@@ -182,21 +183,9 @@ unsigned int secs(char *s){
   m=atoi(s+5)-1;
   return ((y-1970)*365+(y-1969)/4+mm[m]+(m>=2&&(y&3)==0)+atoi(s+8)-1)*24*60*60;
 }
-void timestr(char *st,unsigned int sec){
-  // E.g., 1069230176 --> "2003-11-19" 
-  int d,m,n,y;
-  int mm[12]={0,31,59,90,120,151,181,212,243,273,304,334};
-  n=sec;
-  n/=24*60*60;
-  y=((n+365*2+1)*4)/(365*4+1)+1968;
-  n-=(y-1970)*365+(y-1969)/4;
-  for(m=0;m<11&&mm[m+1]+(m>=1&&(y&3)==0)<=n;m++);
-  d=n-(mm[m]+(m>=2&&(y&3)==0));
-  sprintf(st,"%4d-%02d-%02d",y,m+1,d+1);
-}
 
 int update,ln,maxit,steps,year,useres,rel,sprind,puthtml,eval,prl;
-char datadir[1000],divname[1000],*date;
+char datadir[1000],divname[1000],cutofftime[100];
 struct tm now;// Program start time in GMT
 double acc,rej;
 
@@ -212,7 +201,7 @@ void getnames(int year,int div,char *dir,char *divname){
 
 void initargs(int ac,char **av){
   int i,seed;
-  char *l;
+  char *l,*date;
   time_t t0;
   struct tm tm;
   FILE *fp;
@@ -253,10 +242,13 @@ void initargs(int ac,char **av){
   fprintf(fp,"  seed=%d pid=%d : ",seed,getpid());
   for(i=0;i<ac;i++)fprintf(fp,"%s ",av[i]);fprintf(fp,"\n");fclose(fp);
   localtime_r(&t0,&tm);
-  if(date==0){year=tm.tm_year+1900-(tm.tm_mon<7);date="9999-12-31";}
-  else if(strlen(date)==4){year=atoi(date);date="9999-12-31";}
-  else year=atoi(date)-(atoi(date+5)<7);
-  printf("Season %d-%d, taking matches up to %s\n",year,year+1,date);
+  strcpy(cutofftime,"9999-12-31");
+  if(date==0)year=tm.tm_year+1900-(tm.tm_mon<7);                   // Date not specified
+  else if(strlen(date)==4)year=atoi(date);                         // E.g., "2006" for 2006-07 season
+  else {year=atoi(date)-(atoi(date+5)<7);strcpy(cutofftime,date);} // E.g., "2007-01-23" for 2006-07 season up to 2007-01-23T23:59:59
+                                                                   // or    "2007-01-23T12:34:56" for 2006-07 season up to 2007-01-23T12:34:56
+  if(strlen(cutofftime)==10)strcat(cutofftime,"T23:59:59");
+  printf("Season %d-%d, taking matches up to %s\n",year,year+1,cutofftime);
   srandom(seed);srand48(seed);
 }
 
@@ -317,7 +309,7 @@ int s2n(char *s,int add){// 'add' = whether to add in new names
     l1[0]='_';
   }
   l1=eqnormalise(l0);
-  if(aa->e)for(i=0;aa->e[i].t;i++)if(strcmp(date,aa->e[i].dt)>=0&&strcmp(l1,aa->e[i].t)==0)return -1;
+  if(aa->e)for(i=0;aa->e[i].t;i++)if(strcmp(cutofftime,aa->e[i].dt)>=0&&strcmp(l1,aa->e[i].t)==0)return -1;
   // ^ check excluded list: reject if excluded by the specified date
   for(i=0;i<nt;i++)if(strcmp(l1,tm[i])==0)return i;
   if(!add)return -1;
@@ -611,32 +603,27 @@ void checkres(void){
     }else ind[t0][t1]=r;
   }
 }
-void sim(int cl,int midyear){
+void sim(int cl,int complete){
   int a,c,h,i,j,k,n,p,r,t,fl,pl[nt][nt],ord[nt],sc1[nt],gd1[nt],gs1[nt];
   char l[100];
   double x,y;
   FILE *fpo;
   for(i=0;i<nt;i++)for(j=0;j<nt;j++)pl[i][j]=0;
   for(r=0;r<nr;r++)pl[res[r][0]][res[r][1]]++;
-  /*
-    for(i=0;i<nt;i++){
-    for(j=0;j<nt;j++)printf("%d",pl[i][j]);
-    printf("\n");
-    }
-  */
   for(i=0;i<MAXP;i++)for(j=0;j<nt;j++)stat[i][j]=0;
   for(i=0;i<(1<<rel);i++)rels[i]=0;
   for(i=0;i<nt;i++)ord[i]=i;
   for(it=0;it<=maxit;it++){
     if(it%(MAX(maxit/10,1))==0||it==maxit){//print
-      for(k=0;k<1+(it==maxit);k++){
-        char tbuf[1000];
+      for(k=0;k<1+(it==maxit)+(it==maxit&&complete);k++){
+        char tbuf[100];
 	if(k==0){printf("\n");fpo=stdout;} else {
-	  if(midyear)sprintf(l,"%s/table.%s",datadir,date); else sprintf(l,"%s/table",datadir);
+          if(k==1)sprintf(l,"%s/table",datadir); else sprintf(l,"%s/finaltable",datadir);
 	  fpo=fopen(l,"w");assert(fpo);
 	}
-        strftime(tbuf,1000,"%Y-%m-%dT%H:%M:%S+0000",&now);
-        fprintf(fpo,"UPDATED      %s\n",tbuf);
+        strftime(tbuf,1000,"%Y-%m-%dT%H:%M:%S",&now);
+        fprintf(fpo,"ASOF         %s+0000\n",cutofftime);
+        fprintf(fpo,"UPDATED      %s+0000\n",tbuf);
         if(last>=0){
           time_t t0;
           struct tm tt0;
@@ -691,7 +678,7 @@ void sim(int cl,int midyear){
 	    fprintf(fpo,"    %6.2f%%   %6.2f%%\n",rels[n]*100/(double)it,x*100);
 	  }
 	}
-	if(k==1)fclose(fpo);
+	if(k>0)fclose(fpo);
       }//k
     }// if print
     getnewparams();
@@ -752,16 +739,22 @@ double poisent(double la){
   return x;
 }
 
-void addresult(int cl,char *dt,char *t0,char *t1,int s0,int s1){
+void addresult(FILE *fp,int cl,char *dt,char *t0,char *t1,int s0,int s1){
   assert(nr<MAXNM);
   res[nr][0]=s2n(t0,1);if(res[nr][0]==-1)return;
   res[nr][1]=s2n(t1,1);if(res[nr][1]==-1)return;
   res[nr][2]=s0;res[nr][3]=s1;
   res[nr][4]=secs(dt);
-  if(last==-1||res[nr][4]>res[last][4])last=nr;// record the last match played
   if(prl>=2)printf("Adding result %s vs %s   %d - %d     %d\n",
 		  tm[res[nr][0]],tm[res[nr][1]],res[nr][2],res[nr][3],res[nr][4]);
   nr++;
+      /*
+      for(i=0;i<nr;i++){
+        t0=res[i][4];assert(gmtime_r(&t0,&tt0));strftime(l,1000,"%Y-%m-%d",&tt0);// Future expansion: include times
+        fprintf(fp,"%s  %-*s  %-*s  %2d %2d\n",
+                l,maxtl,tm[res[i][0]],maxtl,tm[res[i][1]],res[i][2],res[i][3]);
+      }
+      */
 }
 
 void doeval(){
@@ -866,82 +859,59 @@ int cmpr(const void*x,const void*y){
   return (z>0)-(z<0);
 }
 int main(int ac,char **av){
-  int a,b,c,d,i,j,n,r,t,cl,m0,m1,s0,s1,ts,no,nr0,midyear,anymidyear,ss[MAXS][MAXS],rs[MAXS],cs[MAXS],ord[MAXNT];
+  int a,b,c,d,i,j,k,n,r,t,cl,m0,m1,s0,s1,ts,no,nr0,complete,ss[MAXS][MAXS],rs[MAXS],cs[MAXS],ord[MAXNT];
   double x,y,ex,ob,la,mu,chi,der;
-  char l[1000],*l2,*l3,now0[1000],now1[1000];
+  char l[1000],*l2,*l3,l4[100],now0[1000],now1[1000];
   time_t t0;
-  FILE *fp;
+  FILE *fp,*fpi,*fpo;
   initargs(ac,av);
-  //historical=(strcmp(date,"9999-12-31")<0);
-  //if(historical&&update){fprintf(stderr,"historical+update would lead to incomplete results file\n");exit(1);}
   t0=time(0);assert(gmtime_r(&t0,&now));
-  //strftime(l,1000,"%Y-%m-%d",&now);if(strcmp(l,date)<0)strcpy(date,l);
   strftime(now0,1000,"%Y%m%d-%H%M%S",&now);
   strftime(now1,1000,"%A %e %B %Y at %T GMT",&now);
+  strftime(l,1000,"%Y-%m-%dT%H:%M:%S",&now);if(strcmp(l,cutofftime)<0)strcpy(cutofftime,l);
   printf("Analysis at %s\n",now1);
   loadequivnames();
   for(i=1,lfac[0]=0;i<MAXS;i++)lfac[i]=lfac[i-1]+log(i);
   for(i=0;adjall[i].y&&adjall[i].y!=year;i++);
   aa=&adjall[i];if(aa->y==0)printf("Warning - no adjustments found for year %d\n",year);
-  anymidyear=0;
   for(cl=0;cl<5;cl++){
     if(ln>=0&&cl!=ln)continue;
-    midyear=(strcmp(date,aa->mdt[cl])<0);anymidyear|=midyear;
-    if(midyear)aa->mdt[cl]=date;
-    // Currently midyear means "year artificially restricted". It doesn't apply to the (natural)
-    // restriction of doing a run with current data where you don't have the rest of the year's
-    // results, so it is a slight misnomer. In the end it should really mean midyear, but this
-    // would currently mess up later things that use the files "table" and "ratings" and so they
-    // would need to be changed as well.
+    complete=(strncmp(cutofftime,aa->mdt[cl],10)>0);// In case of delayed results, insist on extra day for completeness
+    if(!complete)aa->mdt[cl]=cutofftime;
     acc=rej=0;
     maxtl=10;// maxtl>=10 to line up "AWAYDISADV"
     getnames(year,cl,datadir,divname);
     sprintf(l,"mkdir -p %s",datadir);assert(system(l)==0);
     last=-1;
     if(update){// fetch results
-      sprintf(l,"/usr/bin/python getresults.py %d %d",cl,year);
-      nt=0;nr=0;
-      fp=popen(l,"r");
-      while(fgets(l,1000,fp)){
-        char *l1,*l4,*l5,*l6;
-        l1=nonsp(l);
-        l2=getsp(l1);*l2=0;l2=nonsp(l2+1);
-        l3=getsp(l2);*l3=0;l3=nonsp(l3+1);
-        l4=getsp(l3);*l4=0;l4=nonsp(l4+1);
-        l5=getsp(l4);*l5=0;l5=nonsp(l5+1);
-        l6=getsp(l5);*l6=0;
-        addresult(cl,l,l2,l3,atoi(l4),atoi(l5));
+      sprintf(l,"/usr/bin/python getresults.py %d %d",cl,year);fpi=popen(l,"r");
+      sprintf(l,"%s/results",datadir);fpo=fopen(l,"w");assert(fpo);
+      while(fgets(l,1000,fpi))fprintf(fpo,"%s",l);
+      pclose(fpi);
+      if(aa->r)for(i=0;aa->r[i].t0;i++)if(aa->r[i].d==cl){// Adjustment results (extra matches)
+        fprintf(fpo,"%s %s %s %d %d",aa->r[i].dt,aa->r[i].t0,aa->r[i].t1,aa->r[i].s0,aa->r[i].s1);
       }
-      pclose(fp);
-      if(aa->r)for(i=0;aa->r[i].t0;i++)if(aa->r[i].d==cl)// Adjustment results
-        addresult(cl,aa->r[i].dt,aa->r[i].t0,aa->r[i].t1,aa->r[i].s0,aa->r[i].s1);
-      sprintf(l,"%s/results",datadir);fp=fopen(l,"w");assert(fp);
-      for(i=0;i<nr;i++){
-        timestr(l,res[i][4]);
-        fprintf(fp,"%s  %-*s  %-*s  %2d %2d\n",
-                l,maxtl,tm[res[i][0]],maxtl,tm[res[i][1]],res[i][2],res[i][3]);
-      }
-      fclose(fp);
-    }else{// no update (download of results) - just get previously saved results
-      sprintf(l,"%s/results",datadir);fp=fopen(l,"r");assert(fp);
-      nt=0;nr=0;no=0;
-      while(fgets(l,1000,fp)){
-	assert(nr<MAXNM);
-	l2=l;l3=getsp(l2);*l3=0;
-	if(strcmp(l2,aa->mdt[cl])>0)continue;
-	res[nr][4]=secs(l2);
-	l2=nonsp(l3+1);l3=getsp(l2);*l3=0;res[nr][0]=s2n(l2,1);
-	l2=nonsp(l3+1);l3=getsp(l2);*l3=0;res[nr][1]=s2n(l2,1);
-	n=sscanf(l3+1,"%d %d %lf %lf %lf",&res[nr][2],&res[nr][3],&odds[nr][0],&odds[nr][1],&odds[nr][2]);
-	assert(n==2||n==5);
-	no+=(n==5);
-	if(last==-1||res[nr][4]>res[last][4])last=nr;// record the last match played
-	nr++;
-      }
-      fclose(fp);
-      assert(no==0||no==nr);
-      //printf("no=%d\n",no);
+      fclose(fpo);
     }
+    sprintf(l,"%s/results",datadir);fp=fopen(l,"r");assert(fp);
+    nt=0;nr=0;no=0;
+    while(fgets(l,1000,fp)){
+      assert(nr<MAXNM);
+      l2=l;l3=getsp(l2);*l3=0;
+      strcpy(l4,l2);if(strlen(l4)==10)strcat(l4,"T14:00:00");// Give matches with unknown times a nominal 2pm kickoff
+      if(strcmp(l4,aa->mdt[cl])>0)continue;
+      res[nr][4]=secs(l2);
+      l2=nonsp(l3+1);l3=getsp(l2);*l3=0;res[nr][0]=s2n(l2,1);
+      l2=nonsp(l3+1);l3=getsp(l2);*l3=0;res[nr][1]=s2n(l2,1);
+      n=sscanf(l3+1,"%d %d %lf %lf %lf",&res[nr][2],&res[nr][3],&odds[nr][0],&odds[nr][1],&odds[nr][2]);
+      assert(n==2||n==5);
+      no+=(n==5);
+      if(last==-1||res[nr][4]>res[last][4])last=nr;// record the last match played
+      nr++;
+    }
+    fclose(fp);
+    assert(no==0||no==nr);
+    //printf("no=%d\n",no);
     getprior(cl);
     qsort(res,nr,5*sizeof(int),cmpres);
     checkres();
@@ -1032,14 +1002,16 @@ int main(int ac,char **av){
     if(eval){doeval();continue;}
 
     opt();
-    if(midyear)sprintf(l,"%s/ratings.%s",datadir,date); else sprintf(l,"%s/ratings",datadir);
-    fp=fopen(l,"w");assert(fp);
     for(i=0;i<nt;i++)ord[i]=i;
-    fprintf(fp,"%-*s  %12g\n%-*s  %12g\n",maxtl,"HOMEADV",hh[0],maxtl,"AWAYDISADV",hh[1]);
-    fprintf(fp,"BEGINRATINGS\n");
     qsort(ord,nt,sizeof(int),cmps);
-    for(i=0;i<nt;i++){t=ord[i];fprintf(fp,"%-*s  %12g  %12g\n",maxtl,tm[t],al[t],be[t]);}
-    fclose(fp);
+    for(k=0;k<1+complete;k++){
+      if(k==0)sprintf(l,"%s/ratings",datadir); else sprintf(l,"%s/finalratings",datadir);
+      fp=fopen(l,"w");assert(fp);
+      fprintf(fp,"%-*s  %12g\n%-*s  %12g\n",maxtl,"HOMEADV",hh[0],maxtl,"AWAYDISADV",hh[1]);
+      fprintf(fp,"BEGINRATINGS\n");
+      for(i=0;i<nt;i++){t=ord[i];fprintf(fp,"%-*s  %12g  %12g\n",maxtl,tm[t],al[t],be[t]);}
+      fclose(fp);
+    }
     for(r=0,x=y=0;r<nr;r++){
       a=res[r][0];b=res[r][1];c=res[r][2];d=res[r][3];
       la=fn(al[a]-be[b]+hh[0]);
@@ -1051,11 +1023,11 @@ int main(int ac,char **av){
     printf("Self bits/match (away score): %g\n",y/nr/log(2));
     printf("Self bits/match (both): %g\n",(x+y)/nr/log(2));
 
-    sim(cl,midyear);
+    sim(cl,complete);
 
   }//cl
 
-  if(ln==-1&&!anymidyear){
+  if(ln==-1){
     int n,g0,g1;
     char l1[MAXP*11+1000],scr[10000],tbuf[1000],team0[1000],team1[1000];
     struct tm tt0;

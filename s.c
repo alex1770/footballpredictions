@@ -63,9 +63,10 @@ typedef struct {
   adjrdat *r;// for
   adjedat *e;// description
   char *(mdt[NUML]); // Last match date for each league
-  // Note that r,e and mdt are only ever likely to be used to overcome
+  // Note that r,e are only likely to be used to overcome
   // deficiencies in the current year's results-scrape-site and probably
   // will not be needed in (cleaned) past years' results.
+  // Initial value of mdt[] is not used any more, since we now trust the results more.
 } adjalldat;
 
 adjalldat adjall[]={
@@ -603,7 +604,7 @@ void checkres(void){
     }else ind[t0][t1]=r;
   }
 }
-void sim(int cl,int complete){
+void sim(int cl){
   int a,c,h,i,j,k,n,p,r,t,fl,pl[nt][nt],ord[nt],sc1[nt],gd1[nt],gs1[nt];
   char l[100];
   double x,y;
@@ -615,7 +616,7 @@ void sim(int cl,int complete){
   for(i=0;i<nt;i++)ord[i]=i;
   for(it=0;it<=maxit;it++){
     if(it%(MAX(maxit/10,1))==0||it==maxit){//print
-      for(k=0;k<1+(it==maxit)+(it==maxit&&complete);k++){
+      for(k=0;k<1+(it==maxit)+(it==maxit&&nr==nt*(nt-1));k++){
         char tbuf[100];
 	if(k==0){printf("\n");fpo=stdout;} else {
           if(k==1)sprintf(l,"%s/table",datadir); else sprintf(l,"%s/finaltable",datadir);
@@ -798,8 +799,8 @@ void getprior(int cl0){
   ppa[2*nt+1]=0;ppaiv[2*nt+1]=25;
   nf=0;
   for(cl=0;cl<NUML;cl++){// Scan all of last year's leagues to find teams in the current league
-    sprintf(l,"data/%02d%02d/div%d/ratings",(year-1)%100,year%100,cl);
-    fp=fopen(l,"r");if(!fp){fprintf(stderr,"Warning: Couldn't open prev ratings file %s\n",l);continue;}
+    sprintf(l,"data/%02d%02d/div%d/finalratings",(year-1)%100,year%100,cl);
+    fp=fopen(l,"r");if(!fp){fprintf(stderr,"Warning: Couldn't open prev finalratings file %s\n",l);continue;}
     while(fgets(l,1000,fp)){
       l1=getsp(l);
       if(cl==cl0&&l1-l==7&&strncmp(l,"HOMEADV",l1-l)==0)ppa[2*nt]=atof(l1);
@@ -841,7 +842,7 @@ int cmpr(const void*x,const void*y){
   return (z>0)-(z<0);
 }
 int main(int ac,char **av){
-  int a,b,c,d,i,j,k,n,r,t,cl,m0,m1,s0,s1,ts,no,nr0,complete,ss[MAXS][MAXS],rs[MAXS],cs[MAXS],ord[MAXNT];
+  int a,b,c,d,i,j,k,n,r,t,cl,m0,m1,s0,s1,ts,no,nr0,ss[MAXS][MAXS],rs[MAXS],cs[MAXS],ord[MAXNT];
   double x,y,ex,ob,la,mu,chi,der;
   char l[1000],*l2,*l3,l4[100],now0[1000],now1[1000];
   time_t t0;
@@ -858,8 +859,7 @@ int main(int ac,char **av){
   aa=&adjall[i];if(aa->y==0)printf("Warning - no adjustments found for year %d\n",year);
   for(cl=0;cl<5;cl++){
     if(ln>=0&&cl!=ln)continue;
-    complete=(strncmp(cutofftime,aa->mdt[cl],10)>0);// In case of delayed results, insist on extra day for completeness
-    if(!complete)aa->mdt[cl]=cutofftime;
+    aa->mdt[cl]=cutofftime;
     acc=rej=0;
     maxtl=10;// maxtl>=10 to line up "AWAYDISADV"
     getnames(year,cl,datadir,divname);
@@ -986,7 +986,7 @@ int main(int ac,char **av){
     opt();
     for(i=0;i<nt;i++)ord[i]=i;
     qsort(ord,nt,sizeof(int),cmps);
-    for(k=0;k<1+complete;k++){
+    for(k=0;k<1+(nr==nt*(nt-1));k++){
       if(k==0)sprintf(l,"%s/ratings",datadir); else sprintf(l,"%s/finalratings",datadir);
       fp=fopen(l,"w");assert(fp);
       fprintf(fp,"%-*s  %12g\n%-*s  %12g\n",maxtl,"HOMEADV",hh[0],maxtl,"AWAYDISADV",hh[1]);
@@ -1005,7 +1005,7 @@ int main(int ac,char **av){
     printf("Self bits/match (away score): %g\n",y/nr/log(2));
     printf("Self bits/match (both): %g\n",(x+y)/nr/log(2));
 
-    sim(cl,complete);
+    sim(cl);
 
   }//cl
 

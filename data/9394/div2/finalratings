@@ -1,27 +1,27 @@
-HOMEADV           0.422995
-AWAYDISADV      -0.0965181
+HOMEADV             0.428802
+AWAYDISADV         -0.100589
 BEGINRATINGS
-Reading           0.258979      0.322358
-Port_Vale         0.235321      0.279216
-Plymouth          0.350417      0.075814
-Stockport         0.168448      0.327198
-York              0.020324      0.429499
-Burnley           0.243679     0.0469552
-Bradford        -0.0188433      0.149761
-Hull           -0.00186917      0.130352
-Bristol_R       -0.0805735   -0.00457657
-Cambridge         0.254238     -0.183647
-Huddersfield    -0.0638428      0.011021
-Wrexham          0.0767829     -0.227964
-Swansea          -0.101058      0.062911
-Brighton        -0.0257255     -0.084352
-Rotherham        0.0183019     0.0241223
-Brentford       -0.0853932      0.115413
-Bournemouth      -0.194035     0.0492251
-Leyton_O        -0.0743395     -0.140368
-Cardiff          0.0781901     -0.253672
-Blackpool        0.0287474     -0.199479
-Fulham            -0.21112    -0.0157808
-Exeter           -0.157972     -0.293361
-Hartlepool        -0.39331     -0.332856
-Barnet           -0.325347      -0.28779
+Reading             0.207895      0.229905
+Port_Vale           0.187809      0.201761
+Plymouth            0.283217      0.061809
+Stockport           0.133317      0.232611
+York               0.0172088      0.295943
+Burnley             0.192635     0.0398427
+Bradford          -0.0143938      0.112082
+Hull             -0.00173825     0.0984424
+Bristol_Rovers    -0.0611941   -0.00121561
+Cambridge_Utd       0.198979      -0.13847
+Huddersfield      -0.0488318     0.0106781
+Wrexham            0.0555927     -0.176579
+Swansea           -0.0756083     0.0489903
+Brighton          -0.0213097    -0.0621665
+Rotherham          0.0127657     0.0211186
+Brentford         -0.0638847      0.087227
+Bournemouth        -0.141469     0.0382602
+Leyton_Orient     -0.0576372     -0.106889
+Cardiff            0.0564379     -0.197852
+Blackpool           0.018843     -0.153696
+Fulham             -0.153602    -0.0106883
+Exeter             -0.118535     -0.233508
+Hartlepool         -0.273769     -0.269221
+Barnet             -0.230803     -0.230311

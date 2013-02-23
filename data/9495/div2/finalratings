@@ -1,27 +1,27 @@
-HOMEADV           0.349659
-AWAYDISADV       -0.058735
+HOMEADV             0.379263
+AWAYDISADV        -0.0873735
 BEGINRATINGS
-Birmingham        0.347645      0.441687
-Brentford         0.312671      0.391137
-Crewe              0.32154     -0.165332
-Bristol_R         0.167214      0.373744
-Huddersfield      0.294914      0.163913
-Wycombe          0.0171612      0.240982
-Oxford             0.11696      0.113847
-Hull              0.178827     0.0366826
-York              0.131299      0.132575
-Swansea         -0.0349204      0.265145
-Stockport        0.0761698    -0.0273438
-Blackpool        0.0992734     -0.182566
-Wrexham          0.0948723    -0.0927478
-Bradford        -0.0211976    -0.0876399
-Peterboro       -0.0717293     -0.160826
-Brighton        -0.0833169      0.103441
-Rotherham        -0.023378    -0.0395405
-Shrewsbury      -0.0768168    -0.0536541
-Bournemouth      -0.169075     -0.157189
-Cambridge        -0.109543     -0.159369
-Plymouth         -0.244193     -0.339357
-Cardiff          -0.228735     -0.225093
-Chester          -0.439563      -0.34552
-Leyton_O         -0.656078     -0.226975
+Birmingham          0.297421      0.350356
+Brentford           0.170902      0.258218
+Crewe                0.21629     -0.206349
+Bristol_Rovers     0.0707305      0.208576
+Huddersfield        0.161582      0.111804
+Wycombe           -0.0549551     0.0773533
+Oxford_Utd          0.135128      0.128471
+Hull                0.096437     0.0764302
+York               0.0718223      0.218638
+Swansea           -0.0643352      0.178156
+Stockport          0.0808685     0.0913263
+Blackpool          0.0530904     -0.158789
+Wrexham            0.0660032     -0.112025
+Bradford          -0.0349862    0.00304753
+Peterborough      -0.0159692    -0.0682183
+Brighton          -0.0700114     0.0449506
+Rotherham         -0.0236897    -0.0036499
+Shrewsbury         -0.143771     -0.038555
+Bournemouth         -0.17307    -0.0718549
+Cambridge_Utd     0.00498108      -0.14268
+Plymouth          -0.0303896      -0.19595
+Cardiff            -0.115333     -0.206048
+Chester             -0.33614     -0.287397
+Leyton_Orient      -0.353496     -0.177435

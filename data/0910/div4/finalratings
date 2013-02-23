@@ -1,26 +1,26 @@
-HOMEADV               0.331192
-AWAYDISADV          -0.0570013
+HOMEADV               0.331201
+AWAYDISADV          -0.0570108
 BEGINRATINGS
-Stevenage             0.302993      0.371794
-Luton                 0.425736      0.320144
-Oxford_Utd            0.125529      0.378508
-Rushden_&_D'mnds      0.206736       0.22757
-York                 0.0301233      0.240747
-Kettering            -0.130699      0.259269
-Crawley_Town         0.0253234    -0.0215548
-AFC_Wimbledon        0.0188869     0.0477228
-Mansfield             0.165036    -0.0149923
-Cambridge_Utd         0.123991      0.140261
-Wrexham             -0.0780976      0.270779
-Salisbury            0.0161632     -0.116796
-Kidderminster        0.0582419     0.0850418
-Altrincham          -0.0899222     -0.032988
-Barrow               -0.120354     -0.176945
-Tamworth             -0.253449    -0.0117159
-Hayes_&_Yeading     0.00984994     -0.394326
-Histon              -0.0246919     -0.107311
-Eastbourne_Boro      -0.164637     -0.243919
-Gateshead            -0.183875     -0.219887
-Forest_Green         0.0181098     -0.282284
-Ebbsfleet_United    -0.0852096     -0.277667
-Grays_Athletic       -0.293467     -0.337937
+Stevenage             0.302996      0.371753
+Luton                 0.425724      0.320122
+Oxford_Utd            0.125615      0.378034
+Rushden_&_D'mnds      0.206738      0.227544
+York                 0.0301547      0.240601
+Kettering            -0.130687      0.259287
+Crawley_Town           0.02533     -0.021533
+AFC_Wimbledon        0.0188876     0.0477383
+Mansfield              0.16497    -0.0148803
+Cambridge_Utd         0.123996      0.140405
+Wrexham               -0.07811      0.270762
+Salisbury            0.0161778     -0.116783
+Kidderminster        0.0581098      0.085249
+Altrincham          -0.0899102    -0.0329653
+Barrow               -0.120342     -0.176929
+Tamworth             -0.253448    -0.0117007
+Hayes_&_Yeading     0.00985066     -0.394313
+Histon              -0.0246788     -0.107298
+Eastbourne_Boro      -0.164625     -0.243903
+Gateshead            -0.183874     -0.219873
+Forest_Green         0.0180888     -0.282251
+Ebbsfleet_United    -0.0851936     -0.277654
+Grays_Athletic       -0.293455     -0.337916

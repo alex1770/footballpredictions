@@ -1,27 +1,27 @@
-HOMEADV            0.370607
-AWAYDISADV       -0.0419061
+HOMEADV             0.393084
+AWAYDISADV        -0.0626131
 BEGINRATINGS
-Sunderland         0.405549       0.71686
-Bradford           0.314919      0.204549
-Ipswich            0.131311       0.59884
-Birmingham        0.0903496      0.455614
-Watford           0.0886232     0.0412611
-Bolton             0.273506    -0.0204428
-Wolverhampton     0.0637979      0.306556
-Sheffield_U        0.184343     -0.127739
-Norwich           0.0448775    -0.0422665
-Huddersfield      0.0521074     -0.194396
-Grimsby            -0.40041      0.133251
-Barnsley         -0.0083992      0.045565
-West_Bromwich      0.162999     -0.267729
-Crystal_P        -0.0147328     -0.191497
-Tranmere          0.0609094    -0.0429869
-Stockport         -0.191556    -0.0163979
-Swindon          0.00966868     -0.324301
-Crewe            -0.0812772     -0.282834
-Queen's_PR        -0.131327    -0.0350932
-Portsmouth       -0.0307145     -0.218613
-Bury              -0.528449   -0.00647918
-Port_Vale         -0.266122      -0.23704
-Oxford            -0.204343     -0.184291
-Bristol_C        -0.0256318      -0.31039
+Sunderland          0.374668       0.44676
+Bradford            0.129658     0.0892741
+Ipswich             0.173178      0.387143
+Birmingham         0.0503279      0.390923
+Watford           0.00262102     0.0318941
+Bolton               0.27248     0.0562005
+Wolverhampton      0.0504489      0.215506
+Sheff_Utd           0.175524     -0.031654
+Norwich            0.0149839    -0.0567234
+Huddersfield      -0.0257305     -0.160775
+Grimsby            -0.328723     0.0853733
+Barnsley           0.0340857     0.0241934
+West_Brom          0.0794711     -0.172349
+Crystal_Palace     0.0294538     -0.089917
+Tranmere           0.0289114   -0.00210998
+Stockport         -0.0680517    -0.0627462
+Swindon           -0.0867374     -0.259822
+Crewe             -0.0657427     -0.231183
+QPR               -0.0799746    -0.0156701
+Portsmouth        -0.0529557     -0.140323
+Bury               -0.398824    -0.0114741
+Port_Vale          -0.158848     -0.169703
+Oxford_Utd         -0.100726     -0.142894
+Bristol_City      -0.0566534     -0.245784

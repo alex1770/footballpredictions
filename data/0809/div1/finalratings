@@ -1,27 +1,27 @@
-HOMEADV             0.317599
-AWAYDISADV        -0.0437745
+HOMEADV             0.317624
+AWAYDISADV        -0.0437999
 BEGINRATINGS
-Wolverhampton       0.217198      0.092948
-Birmingham         0.0580048       0.32193
-Sheff_Utd          0.0835565      0.249305
-Reading             0.274096      0.264419
-Burnley             0.149971     -0.066798
-Preston             0.085182     0.0513229
-Cardiff            0.0952753     0.0462412
-Swansea            0.0897422     0.0144658
-Ipswich              0.10971      0.019823
-Bristol_City      -0.0673851     0.0329518
-QPR                -0.151871     0.0704299
-Sheff_Wed         -0.0648595    -0.0254531
-Watford             0.151794     -0.146548
-Doncaster          -0.261679     0.0131058
-Crystal_Palace    -0.0289073      0.105599
-Blackpool             -0.104    -0.0786794
-Coventry           -0.131893     -0.060858
-Derby             -0.0635593     -0.167449
-Nott'm_Forest      -0.125149    -0.0784957
-Barnsley           -0.165072    -0.0957909
-Plymouth           -0.124623     0.0207872
-Norwich           -0.0158984     -0.171153
-Charlton           0.0162896     -0.162488
-Southampton       -0.0736669     -0.168663
+Wolverhampton       0.217185     0.0929455
+Birmingham         0.0577845      0.321777
+Sheff_Utd          0.0833693      0.249321
+Reading             0.274093      0.263621
+Burnley             0.149702    -0.0662484
+Preston            0.0851208     0.0517119
+Cardiff            0.0953121     0.0458688
+Swansea              0.08992     0.0144355
+Ipswich             0.109662     0.0202685
+Bristol_City      -0.0675968     0.0329778
+QPR                 -0.15203     0.0704384
+Sheff_Wed         -0.0649407    -0.0254041
+Watford             0.152195     -0.146386
+Doncaster          -0.261778     0.0129179
+Crystal_Palace    -0.0287363      0.105174
+Blackpool          -0.103919    -0.0786464
+Coventry           -0.131214    -0.0606653
+Derby             -0.0634448     -0.167283
+Nott'm_Forest      -0.125493    -0.0784994
+Barnsley           -0.164554    -0.0956307
+Plymouth            -0.12493     0.0207902
+Norwich           -0.0160107     -0.171203
+Charlton           0.0161906      -0.16214
+Southampton        -0.073479     -0.168872

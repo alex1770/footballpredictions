@@ -1,23 +1,23 @@
-HOMEADV            0.315108
-AWAYDISADV       -0.0883677
+HOMEADV            0.341861
+AWAYDISADV        -0.108028
 BEGINRATINGS
-Arsenal            0.492045      0.279954
-Liverpool          0.320468      0.475521
-Manchester_U       0.598655     0.0472499
-Newcastle          0.443715    -0.0837889
-Leeds             0.0928873      0.280009
-Chelsea            0.313841      0.239597
-West_Ham          0.0145967     -0.147976
-Aston_Villa      -0.0386272     0.0475589
-Tottenham         0.0310359    -0.0760597
-Blackburn          0.144777    -0.0438433
-Southampton      -0.0312646    -0.0916328
-Middlesbrough      -0.31248     0.0590093
-Fulham             -0.28736      0.124047
-Charlton          -0.228012     0.0141461
-Everton          -0.0501335     -0.144795
-Bolton           -0.0673683     -0.228067
-Sunderland        -0.496712    -0.0166062
-Ipswich           -0.136073     -0.256723
-Derby             -0.354759     -0.232483
-Leicester          -0.44923     -0.245118
+Arsenal            0.395598      0.287394
+Liverpool          0.290505      0.335172
+Man_Utd            0.549346      0.158589
+Newcastle          0.263544     -0.060903
+Leeds_United       0.127174      0.202227
+Chelsea            0.269119      0.202275
+West_Ham         -0.0291737     -0.108645
+Aston_Villa      -0.0670596     0.0991052
+Tottenham        0.00101563    -0.0752135
+Blackburn         0.0107188    -0.0687802
+Southampton       -0.108604    -0.0896528
+Middlesbrough     -0.212961     0.0351633
+Fulham            -0.240673      0.061121
+Charlton          -0.138418     -0.074816
+Everton          -0.0550981     -0.136214
+Bolton            -0.112286     -0.233073
+Sunderland        -0.246046    0.00899473
+Ipswich           -0.078068     -0.136296
+Derby             -0.288218     -0.200775
+Leicester         -0.285724     -0.172419

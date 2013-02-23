@@ -1,27 +1,27 @@
-HOMEADV            0.393281
-AWAYDISADV       -0.0768624
+HOMEADV             0.405388
+AWAYDISADV        -0.0895075
 BEGINRATINGS
-Manchester_C       0.570975      0.111221
-West_Bromwich    -0.0174522      0.729283
-Wolverhampton      0.212388      0.324502
-Millwall           0.119111      0.219233
-Birmingham         0.134225      0.197878
-Norwich          -0.0187701      0.164808
-Burnley            0.143397    -0.0378882
-Preston            0.155487     0.0111062
-Wimbledon         0.0343005     0.0513012
-Crystal_P          0.143397    -0.0378882
-Coventry         -0.0342064      0.126982
-Gillingham        0.0571354     -0.111361
-Sheffield_U       -0.140911      0.112445
-Watford           0.0175703     0.0697335
-Bradford           0.138952     -0.241267
-Nottingham        -0.201338       0.17176
-Portsmouth       -0.0039983     -0.180655
-Walsall           -0.167544     -0.160284
-Grimsby           -0.186678     -0.173591
-Sheffield_W       -0.207619     -0.158878
-Rotherham         -0.151605    -0.0878344
-Crewe             -0.245848     -0.225643
-Barnsley         -0.0108679     -0.358045
-Stockport           -0.3401     -0.516916
+Man_City            0.494856      0.145604
+West_Brom         -0.0119397      0.360804
+Wolverhampton       0.103182      0.272264
+Millwall             0.08727      0.145401
+Birmingham          0.103334      0.229594
+Norwich           -0.0811607      0.113654
+Burnley            0.0355636    -0.0279644
+Preston              0.12063     0.0363928
+AFC_Wimbledon       0.110261     0.0887822
+Crystal_Palace     0.0955996    -0.0796973
+Coventry           0.0354333      0.175091
+Gillingham         0.0514101     -0.111035
+Sheff_Utd         -0.0863666     0.0843101
+Watford            0.0983896    0.00429825
+Bradford            0.105202     -0.139579
+Nott'm_Forest      -0.119891      0.136704
+Portsmouth         -0.053776     -0.129543
+Walsall            -0.132682     -0.151451
+Grimsby            -0.241448     -0.122563
+Sheff_Wed          -0.106938      -0.12716
+Rotherham          -0.136317     -0.132958
+Crewe              -0.211789     -0.177586
+Barnsley          0.00848677     -0.260192
+Stockport          -0.188083     -0.395232

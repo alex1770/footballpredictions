@@ -1,25 +1,25 @@
-HOMEADV           0.393487
-AWAYDISADV       -0.163226
+HOMEADV           0.394064
+AWAYDISADV       -0.158276
 BEGINRATINGS
-Shrewsbury       0.0919393      0.370868
-Chester            0.18886      0.200523
-Crewe             0.349796    -0.0917371
-Wycombe           0.165201      0.060208
-Preston           0.336324    -0.0743009
-Torquay            0.12178    0.00751366
-Carlisle       -0.00584921      0.301555
-Chesterfield    -0.0367096      0.169437
-Rochdale          0.101837       0.10209
-Walsall          -0.168977     0.0759163
-Scunthorpe         0.12178    0.00751366
-Mansfield        -0.062267    -0.0853592
-Bury            -0.0301166     0.0149882
-Scarborough     -0.0259716    -0.0707225
-Doncaster        -0.252857    0.00631229
-Gillingham       -0.257762      0.117714
-Colchester     0.000443543      -0.22375
-Lincoln         -0.0805281     -0.100566
-Wigan           -0.0941657     -0.205343
-Hereford         0.0764019     -0.334223
-Darlington       -0.293709     -0.108079
-Northampton      -0.245451     -0.140559
+Shrewsbury       0.0731555      0.250393
+Chester           0.148051      0.141994
+Crewe             0.277555    -0.0663835
+Wycombe           0.127736     0.0444758
+Preston           0.266392     -0.053233
+Torquay          0.0930091    0.00574954
+Carlisle       -0.00145655      0.206714
+Chesterfield    -0.0251703      0.119395
+Rochdale         0.0784499     0.0737227
+Walsall          -0.119279     0.0529892
+Scunthorpe       0.0930091    0.00574954
+Mansfield       -0.0457773    -0.0659568
+Bury            -0.0216351    0.00986729
+Scarborough     -0.0193654    -0.0543831
+Doncaster        -0.175741    0.00161656
+Gillingham       -0.178285      0.082025
+Colchester     -0.00144133     -0.174758
+Lincoln_City    -0.0589573    -0.0778707
+Wigan           -0.0695134     -0.160896
+Hereford         0.0542573     -0.265314
+Darlington       -0.202743    -0.0856547
+Northampton       -0.17181     -0.110682

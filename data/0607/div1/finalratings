@@ -1,27 +1,27 @@
-HOMEADV             0.372177
-AWAYDISADV        -0.0713858
+HOMEADV              0.37228
+AWAYDISADV        -0.0714909
 BEGINRATINGS
-Sunderland          0.188932      0.161289
-Birmingham          0.118748      0.341049
-Derby              0.0510019     0.0618982
-West_Brom           0.256888     0.0939277
-Wolverhampton      0.0248357     0.0815054
-Southampton         0.189866      0.116539
-Preston            0.0962495      0.157478
-Stoke             -0.0202992      0.190867
-Sheff_Wed          0.0101732    -0.0867221
-Colchester         0.0287294     0.0201174
-Plymouth          -0.0335954    -0.0102969
-Crystal_Palace     0.0854753      0.130685
-Cardiff          -0.00910716     0.0503133
-Ipswich             0.116424    -0.0648994
-Burnley            -0.140889      0.119938
-Norwich            0.0249495     -0.160502
-Coventry          -0.0722637     -0.095276
-QPR               -0.0666709     -0.132776
-Leicester          -0.110942    -0.0322687
-Barnsley           -0.135518     -0.312365
-Hull               -0.122487     -0.103553
-Southend           -0.206024     -0.275442
-Luton             0.00762492     -0.278635
-Leeds_United       -0.110602     -0.043866
+Sunderland          0.193503      0.162445
+Birmingham          0.116913      0.339621
+Derby              0.0517119     0.0639107
+West_Brom           0.256074     0.0951071
+Wolverhampton      0.0242225     0.0808979
+Southampton         0.190335      0.114486
+Preston            0.0954585      0.158959
+Stoke             -0.0196266      0.191364
+Sheff_Wed         0.00921005    -0.0870871
+Colchester         0.0292449     0.0177993
+Plymouth          -0.0358169    -0.0109699
+Crystal_Palace     0.0858461      0.128091
+Cardiff          -0.00952333     0.0476474
+Ipswich             0.115701     -0.062962
+Burnley            -0.142922      0.122625
+Norwich            0.0237894     -0.161551
+Coventry           -0.069231    -0.0944964
+QPR                -0.068056     -0.133428
+Leicester          -0.110462    -0.0340895
+Barnsley           -0.133412     -0.311781
+Hull                -0.12389     -0.103234
+Southend           -0.205278     -0.275011
+Luton             0.00685182      -0.27924
+Leeds_United       -0.111548    -0.0400444

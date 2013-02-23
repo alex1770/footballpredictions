@@ -1,27 +1,27 @@
-HOMEADV             0.377242
-AWAYDISADV        -0.0460792
+HOMEADV              0.37725
+AWAYDISADV        -0.0460871
 BEGINRATINGS
-Newcastle           0.390493      0.352876
-West_Brom           0.377419      0.122266
-Nott'm_Forest      0.0111029      0.158348
-Cardiff             0.174593     0.0564681
-Leicester         0.00316729      0.212397
-Blackpool           0.112104     -0.033912
-Swansea             -0.16398      0.238304
-Sheff_Utd          0.0645533      0.136155
-Reading              0.19419     0.0530067
-Bristol_City      -0.0525358     -0.054575
-Middlesbrough      0.0374136      0.181175
-Doncaster          -0.104944     0.0086341
-QPR               -0.0674711    -0.0394502
-Derby             -0.0811498     -0.111802
-Ipswich           -0.0420844    -0.0204094
-Watford            0.0891057     -0.155322
-Preston            0.0325079     -0.126532
-Barnsley           -0.124318     -0.140125
-Coventry           -0.177919     -0.078413
-Scunthorpe         0.0331587     -0.343673
-Crystal_Palace     -0.103687     0.0994573
-Sheff_Wed           -0.12495     -0.113779
-Plymouth            -0.22007    -0.0845666
-Peterborough       -0.193009      -0.29443
+Newcastle           0.390529      0.352829
+West_Brom           0.377396      0.122314
+Nott'm_Forest      0.0109625      0.158366
+Cardiff             0.174609     0.0563271
+Leicester          0.0031945      0.212312
+Blackpool           0.112133    -0.0338837
+Swansea            -0.163902      0.238306
+Sheff_Utd          0.0644783      0.136181
+Reading             0.194196     0.0526871
+Bristol_City       -0.052627    -0.0545467
+Middlesbrough      0.0371293      0.181185
+Doncaster          -0.104987    0.00857472
+QPR               -0.0675405    -0.0394293
+Derby             -0.0811046     -0.111724
+Ipswich            -0.042111    -0.0202144
+Watford            0.0892573     -0.155251
+Preston            0.0324772      -0.12637
+Barnsley           -0.124095     -0.140056
+Coventry           -0.177617    -0.0783296
+Scunthorpe          0.033165     -0.343669
+Crystal_Palace     -0.103611     0.0992899
+Sheff_Wed          -0.124988     -0.113744
+Plymouth           -0.220214    -0.0845468
+Peterborough        -0.19297     -0.294448

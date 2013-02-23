@@ -1,27 +1,27 @@
-HOMEADV            0.384983
-AWAYDISADV        -0.148437
+HOMEADV             0.401467
+AWAYDISADV         -0.162081
 BEGINRATINGS
-Portsmouth         0.439845      0.291743
-Leicester          0.151642      0.426351
-Sheffield_U        0.146084      0.164263
-Reading          -0.0240816      0.294606
-Wolverhampton      0.258544      0.325389
-Nottingham         0.274995      0.196628
-Ipswich            0.260024     -0.049387
-Norwich          -0.0385847      0.232025
-Millwall         -0.0416564     -0.110135
-Wimbledon          0.214922     -0.178497
-Gillingham        -0.096703    -0.0482327
-Preston            0.101312     -0.130816
-Watford           -0.129684     -0.121091
-Crystal_P        -0.0533639      0.173202
-Rotherham        0.00319023   -0.00503687
-Burnley           0.0694252     -0.369471
-Walsall          -0.0762086      -0.10875
-Derby             -0.108531     -0.177457
-Bradford          -0.184872     -0.161057
-Coventry           -0.29577    0.00595306
-Stoke              -0.31299     -0.100484
-Sheffield_W      -0.0911711     -0.164519
-Brighton          -0.229077    -0.0737708
-Grimsby           -0.237292     -0.311455
+Portsmouth          0.290116       0.10373
+Leicester           0.140033      0.342664
+Sheff_Utd          0.0601667      0.126997
+Reading           -0.0578665      0.150927
+Wolverhampton       0.204875      0.295372
+Nott'm_Forest       0.138507      0.168743
+Ipswich             0.269717     0.0464778
+Norwich           -0.0556028      0.174531
+Millwall          0.00587602    -0.0188786
+AFC_Wimbledon       0.173609    -0.0833952
+Gillingham        -0.0363573    -0.0772398
+Preston             0.105158    -0.0727919
+Watford           -0.0374684    -0.0808138
+Crystal_Palace    0.00708808     0.0603878
+Rotherham          -0.052101    -0.0569098
+Burnley            0.0512439     -0.261631
+Walsall           -0.0999562     -0.127158
+Derby             -0.0416534    -0.0733073
+Bradford          -0.0627691     -0.159595
+Coventry           -0.149985     0.0660589
+Stoke              -0.267071    -0.0736078
+Sheff_Wed         -0.0988601     -0.154274
+Brighton           -0.254408    -0.0807003
+Grimsby            -0.241278     -0.252197

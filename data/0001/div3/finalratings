@@ -1,27 +1,27 @@
-HOMEADV            0.381754
-AWAYDISADV        0.0380486
+HOMEADV            0.389666
+AWAYDISADV        0.0259968
 BEGINRATINGS
-Brighton            0.23296       0.48004
-Chesterfield       0.317307      0.292939
-Cardiff            0.514378    -0.0428188
-Hartlepool         0.219351     0.0471359
-Leyton_O          0.0316081      0.113394
-Hull              -0.204926      0.390854
-Blackpool          0.263856    -0.0267564
-Rochdale          0.0293769      0.174116
-Cheltenham         0.032353      0.093943
-Scunthorpe        0.0820367     0.0917046
-Southend         -0.0372231     0.0778407
-Plymouth         -0.0496394    -0.0622377
-Mansfield          0.128933      -0.23594
-Macclesfield      -0.106154    -0.0762863
-Shrewsbury        -0.143989     -0.122129
-Kidderminster     -0.188713    -0.0570189
-York              -0.299876    -0.0856164
-Lincoln           0.0257145     -0.144178
-Exeter             -0.35243   -0.00133365
-Darlington        -0.258472     0.0308511
-Torquay          -0.0754268     -0.294144
-Carlisle          -0.298392     -0.116915
-Halifax          -0.0443908     -0.171084
-Barnet             0.181758     -0.356361
+Brighton           0.160387       0.25032
+Chesterfield       0.215931       0.31943
+Cardiff            0.391581     0.0397009
+Hartlepool         0.150006     0.0415805
+Leyton_Orient    0.00351925     0.0741712
+Hull              -0.203894      0.230772
+Blackpool          0.238158     0.0213004
+Rochdale         -0.0104489     0.0996247
+Cheltenham      -0.00402525      0.124446
+Scunthorpe        0.0593476     0.0780724
+Southend         -0.0203028     0.0117464
+Plymouth         -0.0110384    -0.0187162
+Mansfield         0.0638819     -0.191571
+Macclesfield      0.0066142    -0.0636066
+Shrewsbury           -0.151     -0.139242
+Kidderminster     -0.134753    -0.0438163
+York              -0.196231    -0.0501163
+Lincoln_City       0.085776     -0.160681
+Exeter            -0.243211    -0.0733616
+Darlington       -0.0692296     0.0754745
+Torquay          -0.0317524     -0.192475
+Carlisle          -0.233824     -0.144908
+Halifax          -0.0720544     -0.122514
+Barnet             0.121195     -0.245119

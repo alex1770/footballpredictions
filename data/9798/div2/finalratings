@@ -1,27 +1,27 @@
-HOMEADV           0.317676
-AWAYDISADV       0.0282919
+HOMEADV              0.33022
+AWAYDISADV         0.0181751
 BEGINRATINGS
-Watford           0.181869      0.274864
-Bristol_C         0.209772      0.323398
-Grimsby         -0.0188682      0.386956
-Northampton     -0.0750231      0.389261
-Fulham           0.0728989      0.232604
-Bristol_R         0.243902      -0.17379
-Gillingham      -0.0673177      0.149723
-Wrexham        -0.00803567      0.065588
-Bournemouth      0.0285242     0.0445773
-Chesterfield     -0.192395      0.220393
-Wigan             0.155635      -0.19987
-Blackpool        0.0748742      -0.21098
-Oldham            0.114335    0.00285101
-Wycombe         -0.0821135     0.0301684
-Preston          0.0139169    -0.0288871
-York            -0.0587668    -0.0609177
-Luton            0.0893488      -0.16585
-Millwall         -0.252221     0.0176459
-Walsall          -0.253764     0.0554374
-Burnley         0.00292615     -0.177445
-Brentford       -0.0878667     -0.261993
-Plymouth        0.00687307     -0.251724
-Carlisle         0.0450593     -0.295379
-Southend         -0.143563     -0.366632
+Watford             0.115358      0.265318
+Bristol_City        0.191739      0.180972
+Grimsby            0.0753301      0.259241
+Northampton        -0.139359      0.185829
+Fulham            0.00472398      0.109874
+Bristol_Rovers       0.12633    -0.0844346
+Gillingham        -0.0668944     0.0605242
+Wrexham            0.0385493     0.0359746
+Bournemouth       -0.0600444     0.0316355
+Chesterfield       -0.186436        0.1978
+Wigan              0.0976751     -0.211555
+Blackpool          0.0868555    -0.0918943
+Oldham              0.133068      0.104372
+Wycombe           -0.0499925   -0.00599967
+Preston           -0.0184265    -0.0376521
+York              -0.0532757     -0.112895
+Luton               0.142678    -0.0363908
+Millwall           -0.131045     0.0301033
+Walsall            -0.136371     0.0433687
+Burnley             0.081721     -0.143072
+Brentford         -0.0597939    -0.0914245
+Plymouth          -0.0400923     -0.203795
+Carlisle          -0.0166894     -0.228167
+Southend          -0.0729555     -0.252662

@@ -1,27 +1,27 @@
-HOMEADV            0.34628
-AWAYDISADV      -0.0447581
+HOMEADV            0.366344
+AWAYDISADV       -0.0610654
 BEGINRATINGS
-Brentford          0.32401     0.0123658
-Cambridge         0.305174      0.167635
-Cardiff          0.0356489       0.38907
-Scunthorpe        0.189858    -0.0152235
-Rotherham         0.327824    -0.0733856
-Leyton_O          0.175982    -0.0316009
-Swansea         -0.0267736      0.184107
-Mansfield        0.0436423    -0.0140468
-Peterborough      0.231003     0.0176788
-Halifax          0.0143365     0.0282134
-Darlington        0.189858    -0.0152235
-Exeter           -0.200739       0.14989
-Plymouth         0.0128414     0.0646458
-Chester         0.00441984     -0.135662
-Shrewsbury       -0.089823    -0.0852941
-Barnet          -0.0459925     -0.206582
-Brighton         -0.147109     -0.129653
-Southend        -0.0872778    0.00392284
-Rochdale         -0.309669     0.0581484
-Torquay          -0.194816    0.00126375
-Hull             -0.257901    -0.0632989
-Hartlepool      -0.0883243     -0.116605
-Carlisle         -0.287585     0.0944982
-Scarborough      -0.118589     -0.284863
+Brentford          0.281369     0.0782034
+Cambridge_Utd      0.195479     0.0896698
+Cardiff          -0.0568617      0.235318
+Scunthorpe        0.0971069     0.0070605
+Rotherham           0.23543    -0.0422664
+Leyton_Orient     0.0719839     0.0306212
+Swansea          -0.0659396     0.0951025
+Peterborough       0.175682     0.0523687
+Halifax         -0.00708222     0.0206947
+Darlington        0.0955173    -0.0814201
+Mansfield        0.00341629     0.0148231
+Exeter            -0.122842     0.0372358
+Plymouth          0.0716263     0.0712684
+Southend           0.006007     0.0207266
+Chester          -0.0123599    -0.0662837
+Shrewsbury        -0.034313    -0.0677373
+Barnet           -0.0600494    -0.0823081
+Brighton          -0.208162     -0.117332
+Rochdale          -0.202904     0.0396954
+Torquay           -0.133254    -0.0262582
+Hull              -0.199275     -0.109877
+Hartlepool       -0.0855734     -0.072869
+Carlisle         -0.0965463     0.0798841
+Scarborough      -0.0573528     -0.210971

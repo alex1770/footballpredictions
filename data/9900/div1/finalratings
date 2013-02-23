@@ -1,27 +1,27 @@
-HOMEADV            0.355128
-AWAYDISADV       0.00975886
+HOMEADV             0.371296
+AWAYDISADV       -0.00813244
 BEGINRATINGS
-Charlton           0.322543      0.217095
-Manchester_C       0.306004      0.335856
-Ipswich            0.213317      0.292244
-Barnsley           0.447602     -0.188917
-Birmingham         0.126378      0.250141
-Bolton             0.190708      0.119078
-Wolverhampton      0.113843      0.163734
-Huddersfield      0.0827891      0.144579
-Fulham             -0.15879      0.332728
-Queen's_PR        0.0857904     0.0659676
-Blackburn        -0.0357122      0.109741
-Norwich           -0.237404      0.136999
-Tranmere          0.0128553     -0.179982
-Nottingham       -0.0698257     0.0356067
-Crystal_P         0.0120978     -0.165134
-Sheffield_U       0.0496995     -0.224773
-Stockport        -0.0236968     -0.163621
-Portsmouth       -0.0244524     -0.148552
-Crewe              -0.20273     -0.156844
-Grimsby           -0.317987       -0.1531
-West_Bromwich     -0.275508    -0.0440804
-Walsall          -0.0723297     -0.300767
-Port_Vale         -0.158591     -0.187814
-Swindon           -0.386602     -0.290187
+Charlton            0.286008      0.202425
+Man_City            0.191989      0.258295
+Ipswich             0.185901      0.335017
+Barnsley            0.297699     -0.103771
+Birmingham          0.083741      0.314782
+Bolton              0.209209     0.0874646
+Wolverhampton      0.0766855      0.184524
+Huddersfield       0.0306445     0.0109518
+Fulham             -0.138532      0.205714
+QPR                0.0081382     0.0303166
+Blackburn          0.0691878      0.194487
+Norwich            -0.132699     0.0478718
+Tranmere          0.00536939     -0.114571
+Nott'm_Forest     0.00854818     0.0543829
+Crystal_Palace    0.00628295     -0.138535
+Sheff_Utd          0.0855283     -0.156481
+Stockport         -0.0557687     -0.126614
+Portsmouth        -0.0487803     -0.146675
+Crewe              -0.151572     -0.187117
+Grimsby             -0.33801    -0.0632377
+West_Brom          -0.122656    -0.0999279
+Walsall            -0.160143     -0.267714
+Port_Vale          -0.171215     -0.182464
+Swindon            -0.251078     -0.283495

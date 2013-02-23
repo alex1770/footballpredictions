@@ -1,25 +1,25 @@
-HOMEADV                 0.424131
-AWAYDISADV              -0.23698
+HOMEADV                  0.42733
+AWAYDISADV             -0.239907
 BEGINRATINGS
-Chester                 0.206568      0.619015
-Hereford                0.393944      0.231523
-Shrewsbury              0.211254      0.196957
-Barnet                 0.0328452     0.0935056
-Aldershot               0.192926     -0.133415
-Exeter                  0.186998      0.139567
-Morecambe               0.186857     0.0747327
-Stevenage             -0.0172477       0.12288
-Woking                0.00120875    -0.0337763
-Accrington_Stanley      0.052201    -0.0577378
-Gravesend               0.109409      -0.13351
-Telford                -0.156981     0.0439386
-Dag_&_Red              0.0584095    -0.0343704
-Burton_Albion         -0.0810937    -0.0794175
-Scarborough           -0.0759585      0.110197
-Margate               -0.0355962    -0.0717998
-Tamworth                -0.19717     -0.130595
-Forest_Green         -0.00571211     -0.196879
-Halifax                -0.265714     0.0284614
-Farnborough           -0.0907726     -0.101696
-Leigh                  -0.271364     -0.371544
-Northwich              -0.272346     -0.243205
+Chester                 0.210752        0.4899
+Hereford                0.387836      0.212588
+Shrewsbury              0.197389      0.253073
+Barnet                 0.0206745      0.107802
+Aldershot               0.191279     -0.132099
+Exeter                  0.178799      0.130676
+Morecambe               0.162404     0.0343857
+Stevenage             -0.0214643      0.114283
+Woking                0.00961705   -0.00985447
+Accrington_Stanley       0.05045    -0.0564725
+Gravesend               0.100911     -0.115856
+AFC_Telford            -0.150251     0.0570922
+Dag_&_Red              0.0407639    -0.0329508
+Burton_Albion         -0.0715167     -0.059414
+Scarborough           -0.0833092     0.0998679
+Margate               -0.0402571    -0.0619493
+Tamworth               -0.199129      -0.12927
+Forest_Green            -0.01125     -0.192537
+Halifax                -0.183972     0.0459711
+Farnborough           -0.0880942      -0.10775
+Leigh                  -0.234195     -0.361041
+Northwich              -0.289071     -0.227085

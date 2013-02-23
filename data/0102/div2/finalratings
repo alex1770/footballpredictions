@@ -1,27 +1,27 @@
-HOMEADV           0.416742
-AWAYDISADV      -0.0485066
+HOMEADV            0.436037
+AWAYDISADV       -0.0701334
 BEGINRATINGS
-Brighton          0.071441      0.348609
-Reading            0.13107      0.322229
-Brentford          0.22653      0.317278
-Cardiff            0.20514      0.167608
-Stoke            0.0850942      0.396762
-Huddersfield     0.0596708      0.236673
-Bristol_C          0.10911      0.114207
-Queens_PR       -0.0190824      0.198459
-Oldham            0.242268    -0.0967746
-Wigan            0.0777879      0.154158
-Wycombe          -0.042437    -0.0676314
-Tranmere         0.0375681   -0.00652447
-Swindon          -0.280236     0.0745666
-Port_Vale        -0.172691    -0.0308724
-Colchester       0.0803466     -0.244869
-Blackpool        0.0906157     -0.148725
-Peterborough     0.0526355     0.0096037
-Chesterfield     -0.132041    -0.0796169
-Notts_County    -0.0203199     -0.172348
-Northampton       -0.10334     -0.275769
-Bournemouth      -0.072614     -0.170206
-Bury             -0.334401     -0.215876
-Wrexham         -0.0596868     -0.396682
-Cambridge         -0.23243     -0.434256
+Brighton         0.00536309      0.205086
+Reading            0.166551      0.202523
+Brentford          0.111497      0.125718
+Cardiff            0.173005     0.0299157
+Stoke              0.114501      0.299765
+Huddersfield       0.101517      0.266982
+Bristol_City       0.111205     0.0963658
+QPR                0.038871      0.180777
+Oldham              0.11076    -0.0611912
+Wigan             0.0448683       0.22411
+Wycombe           -0.101913    0.00798816
+Tranmere          0.0790743     0.0223576
+Swindon            -0.22053     0.0329142
+Port_Vale         -0.115665     0.0591018
+Colchester        0.0206907     -0.184667
+Blackpool         0.0406652     -0.175363
+Peterborough      0.0165258    -0.0437104
+Chesterfield      -0.121621    -0.0416794
+Notts_County    -0.00934067     -0.118999
+Northampton       -0.167509      -0.16864
+Bournemouth        0.024571    -0.0769812
+Bury              -0.258881     -0.120674
+Wrexham          -0.0402521     -0.298519
+Cambridge_Utd     -0.123064     -0.357699

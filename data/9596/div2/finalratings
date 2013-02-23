@@ -1,27 +1,27 @@
-HOMEADV           0.378862
-AWAYDISADV      0.00484391
+HOMEADV             0.404915
+AWAYDISADV        -0.0247023
 BEGINRATINGS
-Swindon            0.18527      0.515491
-Oxford            0.257097      0.374416
-Blackpool           0.1316      0.355681
-Notts_County     0.0699562       0.35861
-Crewe             0.285837    -0.0580009
-Bradford          0.211266     -0.193623
-Chesterfield    -0.0399413       0.12044
-Wrexham           0.268984     0.0299747
-Stockport        0.0427772      0.198575
-Bristol_R        -0.015583    -0.0430906
-Walsall          0.0247567      0.242858
-Wycombe          0.0839551    -0.0306964
-Bristol_C       -0.0513665    -0.0416128
-Brentford        -0.305897      0.169979
-Bournemouth      -0.119616     -0.193093
-Rotherham       -0.0682717    -0.0737234
-Burnley         -0.0273853      -0.16776
-Shrewsbury      0.00927221     -0.198301
-Peterboro        0.0234236     -0.140076
-York             0.0107656     -0.226536
-Carlisle       -0.00666623     -0.225789
-Swansea          -0.283891     -0.308342
-Brighton          -0.22373     -0.174978
-Hull             -0.462612     -0.290403
+Swindon             0.227013       0.32341
+Oxford_Utd          0.203608      0.241364
+Blackpool          0.0933568       0.10403
+Notts_County       0.0954545      0.275001
+Crewe               0.250645     -0.122638
+Bradford             0.10407     -0.123811
+Chesterfield       -0.123955     0.0618517
+Wrexham             0.185658    -0.0350753
+Stockport           0.045087      0.138048
+Bristol_Rovers    0.00315943      0.050005
+Walsall           -0.0385989      0.108728
+Wycombe             0.014082    0.00588999
+Bristol_City      -0.0362246     0.0672361
+Brentford          -0.104254      0.193652
+Bournemouth        -0.159039     -0.154101
+Rotherham           -0.06426    -0.0544918
+Burnley            0.0186328     -0.106465
+Shrewsbury        -0.0702978     -0.143941
+Peterborough     -0.00728408     -0.119256
+York               0.0167497    -0.0674028
+Carlisle          -0.0827283     -0.137969
+Swansea            -0.200565     -0.143938
+Brighton           -0.170319     -0.100813
+Hull               -0.206307     -0.171936

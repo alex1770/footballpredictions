@@ -1,27 +1,27 @@
-HOMEADV            0.307262
-AWAYDISADV       -0.0301938
+HOMEADV             0.322946
+AWAYDISADV        -0.0428629
 BEGINRATINGS
-Fulham             0.455702      0.537268
-Blackburn          0.291685      0.349803
-Bolton             0.296271      0.206436
-Preston            0.129433     0.0707452
-Birmingham        0.0449022      0.154731
-West_Bromwich     0.0647743     0.0737928
-Burnley           -0.116335     0.0435707
-Wimbledon          0.231909      0.104692
-Watford            0.313288     -0.192591
-Sheffield_U      -0.0808294       0.13937
-Nottingham       -0.0216288     0.0585084
-Wolverhampton     -0.226353      0.165276
-Gillingham        0.0920541     -0.165879
-Crewe             -0.172253    -0.0925302
-Norwich           -0.196822    -0.0249752
-Barnsley          -0.130509    -0.0940489
-Sheffield_W      -0.0640951      -0.23215
-Grimsby           -0.261342    -0.0895004
-Stockport         0.0407383     -0.148269
-Portsmouth        -0.174526    -0.0428524
-Crystal_P         0.0271515     -0.221778
-Huddersfield      -0.154953   -0.00906854
-Queens_PR          -0.20591     -0.281706
-Tranmere          -0.182353     -0.308844
+Fulham                0.2558      0.372812
+Blackburn           0.206817      0.281397
+Bolton              0.259539      0.158725
+Preston            0.0609508     0.0376139
+Birmingham         0.0513824      0.235149
+West_Brom         -0.0177686    0.00834105
+Burnley            -0.143497    -0.0544871
+AFC_Wimbledon       0.236427      0.113493
+Watford             0.223681     -0.118484
+Sheff_Utd         -0.0145331     0.0159582
+Nott'm_Forest     -0.0164884      0.062999
+Wolverhampton     -0.0966426      0.177896
+Gillingham         0.0413995     -0.146145
+Crewe              -0.169326     -0.122838
+Norwich            -0.175435      0.011004
+Barnsley           0.0448189    -0.0958161
+Sheff_Wed          0.0237939      -0.10109
+Grimsby            -0.306377    -0.0718523
+Stockport        -0.00695647     -0.132317
+Portsmouth         -0.124056    -0.0789746
+Crystal_Palace    0.00999231     -0.184338
+Huddersfield      -0.0801994    0.00396303
+QPR                -0.118654     -0.164734
+Tranmere           -0.106669     -0.236288

@@ -1,27 +1,27 @@
-HOMEADV           0.291581
-AWAYDISADV      -0.0972393
+HOMEADV             0.306513
+AWAYDISADV           -0.1093
 BEGINRATINGS
-Preston           0.240603      0.426112
-Burnley            0.17796      0.190204
-Gillingham        0.314315      0.161629
-Wigan             0.213904      0.400887
-Millwall           0.27702      0.122973
-Stoke             0.159622      0.303614
-Bristol_R         0.176472      0.233766
-Notts_County     0.0604602     0.0386893
-Bristol_C        0.0285514    0.00439452
-Reading         -0.0015249    -0.0943901
-Wrexham         -0.0949946     -0.058343
-Wycombe         -0.0266962     0.0795088
-Luton            0.0679393     -0.128705
-Oldham           -0.138723     0.0468466
-Bury             0.0671887     -0.113167
-Bournemouth      0.0322834    -0.0798526
-Brentford        -0.196258    -0.0546353
-Colchester       0.0473653     -0.360107
-Cambridge         0.116059     -0.130961
-Oxford           -0.276445     -0.231548
-Cardiff          -0.235366     -0.147123
-Blackpool        -0.142582     -0.289484
-Scunthorpe       -0.348143     -0.242945
-Chesterfield     -0.519009    -0.0773623
+Preston             0.230832      0.249768
+Burnley             0.122165     0.0240989
+Gillingham           0.25929      0.172888
+Wigan               0.219727       0.21345
+Millwall            0.142383     0.0790558
+Stoke               0.127763      0.163585
+Bristol_Rovers       0.16514      0.123139
+Notts_County       0.0123901     0.0154493
+Bristol_City       0.0916852     0.0318484
+Reading         -0.000396895    -0.0659689
+Wrexham            -0.106583    -0.0401321
+Wycombe           -0.0408124     0.0495557
+Luton              0.0431588    -0.0881628
+Oldham            -0.0881868     0.0142171
+Bury              0.00638755      0.029169
+Bournemouth        0.0335087     0.0368324
+Brentford          -0.132934    -0.0957411
+Colchester        -0.0127519      -0.30722
+Cambridge_Utd      0.0442202     -0.140437
+Oxford_Utd         -0.105865     -0.111549
+Cardiff            -0.286083     -0.109394
+Blackpool          -0.121753     -0.181653
+Scunthorpe         -0.291509     -0.246532
+Chesterfield       -0.352133     0.0545348

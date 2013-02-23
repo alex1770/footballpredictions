@@ -1,27 +1,27 @@
-HOMEADV           0.284605
-AWAYDISADV        0.114303
+HOMEADV              0.31148
+AWAYDISADV         0.0851267
 BEGINRATINGS
-Bury              0.163025        0.3054
-Stockport         0.115805       0.23175
-Luton             0.304598      0.128584
-Brentford        0.0651727      0.186501
-Bristol_C         0.280953    0.00479499
-Crewe            0.0684521     0.0974029
-Blackpool         0.137572     0.0941118
-Wrexham           0.052867     0.0362372
-Burnley           0.312945    -0.0725806
-Chesterfield     -0.226135      0.295636
-Watford          -0.157874       0.31922
-Gillingham        0.147517     -0.133771
-Walsall          0.0369536    -0.0213189
-Millwall        -0.0385066    -0.0551364
-Preston         -0.0587465     -0.054314
-Bournemouth      -0.197729       0.15156
-Bristol_R        -0.104587     0.0427961
-Wycombe         -0.0170183    -0.0917468
-Plymouth        -0.0980282     -0.105876
-York            -0.0897638     -0.265261
-Peterborough       0.07199     -0.343072
-Shrewsbury      -0.0429937     -0.351684
-Notts_County     -0.451397     -0.111546
-Rotherham        -0.275072     -0.287685
+Bury               0.0609684      0.133095
+Stockport          0.0814892      0.182513
+Luton               0.234098      0.161366
+Brentford         -0.0129782      0.187401
+Bristol_City        0.152644     0.0334942
+Crewe               0.138564   -0.00528867
+Blackpool           0.113151     0.0958979
+Wrexham             0.102255    0.00114644
+Burnley             0.196632    -0.0845484
+Chesterfield       -0.180088      0.175735
+Watford            0.0069281      0.255802
+Gillingham        -0.0706686    -0.0479821
+Walsall          -0.00285324     0.0338257
+Millwall          0.00824969     0.0531396
+Preston            -0.063583    -0.0522572
+Bournemouth        -0.181464     0.0104366
+Bristol_Rovers     -0.061459      0.042358
+Wycombe           -0.0103601    -0.0528807
+Plymouth          -0.0999416     -0.128339
+York              -0.0493304     -0.191458
+Peterborough       0.0295079     -0.260135
+Shrewsbury        -0.0633364     -0.275848
+Notts_County       -0.180087     0.0448884
+Rotherham          -0.178613     -0.202568

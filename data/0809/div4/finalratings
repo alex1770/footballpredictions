@@ -1,27 +1,27 @@
-HOMEADV               0.342081
-AWAYDISADV          -0.0947853
+HOMEADV               0.342091
+AWAYDISADV          -0.0947948
 BEGINRATINGS
-Burton_Albion         0.253021      0.102181
-Cambridge_Utd        0.0799987      0.296601
-Histon                0.224579      0.054614
-Torquay               0.217542        0.1794
-Stevenage             0.231992      0.058064
-Kidderminster         0.111032      0.144877
-Oxford_Utd            0.121758      0.236783
-Kettering             -0.17283      0.236873
-Crawley_Town          0.199067      0.019447
-Wrexham              0.0963554      0.212808
-Rushden_&_D'mnds      0.003801      0.138005
-Mansfield            0.0763441      0.119756
-Eastbourne_Boro     -0.0488253     -0.191282
-Ebbsfleet_United    -0.0762601    -0.0299994
-Altrincham             -0.1458     -0.165195
-Salisbury           -0.0293494    -0.0666738
-York                -0.0744388     0.0557822
-Forest_Green          0.162694     -0.184924
-Grays_Athletic       -0.148197    0.00672226
-Barrow               -0.147688     -0.132045
-Woking               -0.276717   -0.00221287
-Northwich           -0.0839959     -0.234329
-Weymouth             -0.185672     -0.316658
-Lewes                -0.512012     -0.372743
+Burton_Albion         0.253111      0.102421
+Cambridge_Utd        0.0800157      0.296873
+Histon                0.224605     0.0546024
+Torquay               0.217356      0.179499
+Stevenage             0.231993     0.0579439
+Kidderminster         0.110713      0.145293
+Oxford_Utd            0.121953      0.235828
+Kettering            -0.172807      0.236868
+Crawley_Town          0.199079     0.0194544
+Wrexham               0.096321      0.212729
+Rushden_&_D'mnds    0.00380039       0.13791
+Mansfield            0.0761758      0.119973
+Eastbourne_Boro      -0.048804     -0.191285
+Ebbsfleet_United    -0.0762289     -0.030011
+Altrincham           -0.145777     -0.165185
+Salisbury           -0.0293189    -0.0666852
+York                -0.0743746     0.0554392
+Forest_Green          0.162641     -0.184881
+Grays_Athletic       -0.148177    0.00673698
+Barrow               -0.147665     -0.132049
+Woking               -0.276627   -0.00190426
+Northwich            -0.083979     -0.234324
+Weymouth             -0.185653     -0.316654
+Lewes                 -0.51198     -0.372745

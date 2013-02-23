@@ -1,27 +1,27 @@
-HOMEADV           0.379069
-AWAYDISADV       -0.079439
+HOMEADV             0.393215
+AWAYDISADV        -0.0966685
 BEGINRATINGS
-Millwall           0.38267       0.43372
-Rotherham          0.27545     0.0704195
-Reading            0.35838      0.121588
-Walsall           0.271856      0.165933
-Stoke             0.205631      0.189754
-Wigan            -0.133564      0.358962
-Bournemouth        0.27545     0.0704195
-Notts_County     0.0405112     -0.100085
-Bristol_C         0.154958     0.0588248
-Wrexham          0.0914662     -0.175432
-Port_Vale       -0.0915682      0.203222
-Peterborough     0.0242168    -0.0993686
-Wycombe          -0.267676      0.130973
-Brentford        -0.058615     -0.154748
-Oldham           -0.117345    -0.0783613
-Bury             -0.285468     0.0242958
-Colchester      -0.0845034     0.0172312
-Northampton       -0.26346     0.0235918
-Cambridge        0.0321311     -0.253866
-Swindon          -0.237686    -0.0741031
-Bristol_R        -0.123019     0.0531876
-Luton            -0.125703     -0.285687
-Swansea          -0.232004     -0.190365
-Oxford          -0.0921072     -0.510107
+Millwall            0.304868      0.273839
+Rotherham           0.188465     0.0166937
+Reading             0.237129     0.0572256
+Walsall             0.232944      0.130705
+Stoke               0.173694       0.19044
+Wigan             0.00894968      0.297975
+Bournemouth         0.187534     0.0703592
+Notts_County        0.023762    -0.0443982
+Bristol_City        0.127486     0.0596477
+Wrexham           0.00825254     -0.112652
+Port_Vale         -0.0231743      0.181353
+Peterborough      -0.0306197     -0.143386
+Wycombe            -0.168519      0.105712
+Brentford         -0.0948003     -0.121343
+Oldham             -0.110055    -0.0317944
+Bury               -0.157201     0.0348972
+Colchester         -0.055578    -0.0986856
+Northampton        -0.232065    0.00774788
+Cambridge_Utd      0.0311824     -0.203826
+Swindon            -0.139716    -0.0385663
+Bristol_Rovers   -0.00836552     0.0909465
+Luton             -0.0602366     -0.209281
+Swansea            -0.289519     -0.120846
+Oxford_Utd         -0.106935     -0.380571

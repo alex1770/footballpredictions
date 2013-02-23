@@ -1,27 +1,27 @@
-HOMEADV             0.405437
-AWAYDISADV        -0.0818499
+HOMEADV             0.405435
+AWAYDISADV        -0.0818484
 BEGINRATINGS
-Norwich             0.367297      0.193446
-Leeds_United        0.238817      0.284818
-Millwall            0.144651      0.202044
-Charlton            0.209597      0.189467
-Swindon             0.157944   -0.00723118
-Huddersfield        0.213412    0.00705634
-Southampton         0.317392      0.196293
-Colchester         0.0690273       0.10719
-Brentford          -0.136458     0.0681115
-Walsall          -0.00986559    -0.0200186
-Bristol_Rovers     0.0241164    -0.0958685
-MK_Dons            0.0890849    -0.0170791
-Brighton          -0.0631174    -0.0140299
-Carlisle           0.0266274    -0.0682781
-Yeovil             -0.175632    0.00750625
-Hartlepool         0.0274075     -0.141858
-Oldham             -0.186393     0.0475985
-Leyton_Orient      -0.148991    -0.0312396
-Exeter             -0.230419    -0.0831782
-Tranmere           -0.156277    -0.0364742
-Gillingham         -0.219467     -0.110852
-Wycombe            -0.159743     -0.134553
-Southend          -0.0657794     -0.106703
-Stockport            -0.2906     -0.314048
+Norwich             0.367269      0.193411
+Leeds_United        0.238767      0.285135
+Millwall            0.144684      0.202183
+Charlton            0.209565      0.189576
+Swindon             0.157832   -0.00714326
+Huddersfield        0.213528    0.00714301
+Southampton          0.31744      0.196197
+Colchester         0.0690611      0.107076
+Brentford          -0.136324     0.0681226
+Walsall          -0.00991422    -0.0200283
+Bristol_Rovers     0.0241796    -0.0958302
+MK_Dons            0.0890632    -0.0170603
+Brighton          -0.0631379    -0.0140842
+Carlisle           0.0265776    -0.0682043
+Yeovil             -0.175716    0.00735766
+Hartlepool         0.0274052     -0.141874
+Oldham             -0.186384     0.0471161
+Leyton_Orient      -0.148874    -0.0312927
+Exeter             -0.230439     -0.083228
+Tranmere           -0.156379    -0.0364402
+Gillingham         -0.219397     -0.110903
+Wycombe            -0.159825     -0.134405
+Southend          -0.0657475     -0.106705
+Stockport           -0.29064     -0.314026

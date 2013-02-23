@@ -1,27 +1,27 @@
-HOMEADV           0.400542
-AWAYDISADV     0.000266748
+HOMEADV            0.419381
+AWAYDISADV       -0.0204876
 BEGINRATINGS
-Notts_County      0.325489      0.289077
-Macclesfield     0.0621952      0.279906
-Lincoln          0.0184082      0.134221
-Colchester        0.207681    -0.0374092
-Torquay           0.149656    -0.0176145
-Scarborough       0.134074   0.000251706
-Barnet           0.0349644      0.133494
-Leyton_O         0.0483456      0.214575
-Scunthorpe      -0.0499672      0.117675
-Peterborough     0.0672792      0.132038
-Rotherham         0.136281    -0.0502877
-Mansfield        0.0859748     0.0556658
-Shrewsbury       0.0429984    -0.0621724
-Chester          0.0257031    -0.0451464
-Cambridge        0.0716596     0.0206114
-Exeter            0.152605    -0.0833592
-Hartlepool       0.0364199     0.0949629
-Rochdale          -0.04779     0.0614971
-Darlington       -0.035354     -0.208344
-Cardiff          -0.204335      0.123456
-Swansea          -0.176451    -0.0534116
-Hull            -0.0272167     -0.350855
-Brighton         -0.428156     -0.108053
-Doncaster        -0.630465     -0.640777
+Notts_County        0.26279      0.321611
+Macclesfield      0.0404127      0.204154
+Lincoln_City      0.0559318    0.00643154
+Colchester         0.147323      0.013224
+Torquay         -0.00968433    -0.0545245
+Scarborough       0.0786615    -0.0619479
+Barnet           -0.0188836      0.132829
+Leyton_Orient    -0.0374095      0.122062
+Scunthorpe      0.000733658     0.0418471
+Peterborough       0.137989      0.105887
+Rotherham          0.121717    0.00585834
+Mansfield         0.0148602     0.0795907
+Shrewsbury        0.0931995    -0.0281665
+Chester           0.0211912     0.0519755
+Cambridge_Utd     0.0450014   -0.00557864
+Exeter            0.0174684    -0.0985795
+Hartlepool       -0.0280368    0.00546947
+Rochdale         -0.0361004     0.0282263
+Darlington      -0.00972021     -0.179114
+Cardiff           -0.143877     0.0793046
+Swansea          -0.0723972   -0.00897428
+Hull             -0.0861264     -0.172332
+Brighton          -0.230876      -0.09248
+Doncaster          -0.36072     -0.478804

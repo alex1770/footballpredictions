@@ -1,27 +1,27 @@
-HOMEADV                 0.364608
-AWAYDISADV             -0.143079
+HOMEADV                 0.364607
+AWAYDISADV             -0.143078
 BEGINRATINGS
-Swindon                 0.209653      0.432506
-Shrewsbury             0.0711582      0.279395
-Crawley_Town            0.123195      0.043674
-Southend                0.171502      0.172189
-Torquay                0.0581349      0.132325
-Cheltenham             0.0223813     0.0226416
-Crewe                   0.167079    -0.0341838
-Gillingham              0.195832     0.0169154
-Oxford_Utd            -0.0791263      0.129928
-Rotherham               0.100821   -0.00634784
-Aldershot             -0.0941141      0.098963
-Port_Vale               0.030325     0.0618437
-Bristol_Rovers         0.0478974    -0.0869741
-Accrington_Stanley    -0.0342759    -0.0646335
-Morecambe             0.00525289    -0.0228406
-AFC_Wimbledon         -0.0468477     -0.251453
-Burton_Albion         -0.0728751     -0.252156
-Bradford               -0.147094      -0.01171
-Dag_&_Red             -0.0785957    -0.0900296
-Northampton           -0.0244169     -0.189953
-Plymouth              -0.0960252     0.0317621
-Barnet                 -0.126696     -0.241044
-Hereford               -0.177532     -0.112725
-Macclesfield           -0.280963    -0.0855725
+Swindon                 0.209643      0.432518
+Shrewsbury             0.0711508      0.279455
+Crawley_Town            0.123198     0.0436719
+Southend                0.171508      0.172189
+Torquay                0.0581304      0.132329
+Cheltenham             0.0223754     0.0226427
+Crewe                   0.167079    -0.0341895
+Gillingham              0.195842     0.0169079
+Oxford_Utd             -0.079108      0.129863
+Rotherham               0.100809   -0.00635412
+Aldershot             -0.0941108     0.0989605
+Port_Vale              0.0303097     0.0618634
+Bristol_Rovers         0.0479092    -0.0869721
+Accrington_Stanley    -0.0342723     -0.064635
+Morecambe             0.00524858    -0.0228668
+AFC_Wimbledon         -0.0468445     -0.251455
+Burton_Albion         -0.0728667      -0.25215
+Bradford               -0.147074    -0.0117139
+Dag_&_Red             -0.0785975    -0.0900311
+Northampton            -0.024401     -0.189944
+Plymouth              -0.0960375      0.031763
+Barnet                 -0.126699     -0.241041
+Hereford               -0.177528     -0.112734
+Macclesfield           -0.280992    -0.0855609

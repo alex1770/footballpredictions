@@ -1,27 +1,27 @@
-HOMEADV            0.426498
-AWAYDISADV       -0.0382451
+HOMEADV              0.42802
+AWAYDISADV        -0.0403064
 BEGINRATINGS
-Crystal_P          0.187709      0.251037
-Nottingham         0.203502      0.187023
-Millwall          -0.040523      0.198506
-Leicester          0.183292    0.00237255
-Tranmere           0.136299      0.112012
-Derby              0.203687     -0.140674
-Wolverhampton   -0.00799923      0.238812
-Notts_County      0.0880535     -0.149464
-Middlesbrough     0.0924847     0.0954483
-Stoke            -0.0507843     0.0132109
-Charlton          0.0164399     0.0274592
-Sunderland        -0.106375     0.0499048
-Bristol_C         -0.250382      0.186094
-Grimsby            -0.15129      0.244501
-Bolton            0.0530979    -0.0726191
-Southend          0.0552742     -0.118528
-Portsmouth        -0.143458     0.0339165
-Barnsley         -0.0808077     -0.112736
-Watford            0.111414     -0.298502
-Luton            -0.0677962     -0.002907
-West_Bromwich    0.00782875     -0.145828
-Birmingham         -0.13556     -0.140041
-Oxford           -0.0934048     -0.225036
-Peterboro         -0.210701     -0.233963
+Crystal_Palace        0.1488      0.179881
+Nott'm_Forest        0.16109      0.136937
+Millwall          -0.0286282      0.143272
+Leicester           0.142951    0.00475211
+Tranmere            0.106312      0.084215
+Derby               0.158002      -0.10509
+Wolverhampton    -0.00414244      0.170668
+Notts_County       0.0659748     -0.113255
+Middlesbrough      0.0716532      0.072084
+Stoke             -0.0375207     0.0109068
+Charlton           0.0126533     0.0220094
+Sunderland        -0.0775254     0.0376229
+Bristol_City       -0.176248      0.133564
+Grimsby            -0.108114      0.173698
+Bolton             0.0397078    -0.0533417
+Southend           0.0409614    -0.0890983
+Portsmouth         -0.103916     0.0255834
+Barnsley          -0.0603236    -0.0857871
+Watford            0.0826754     -0.234921
+Luton             -0.0500693   -0.00128023
+West_Brom         0.00470327     -0.111145
+Birmingham        -0.0995405      -0.10785
+Oxford_Utd        -0.0702461     -0.176112
+Peterborough       -0.151979     -0.184545

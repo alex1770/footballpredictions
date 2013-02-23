@@ -1,27 +1,27 @@
-HOMEADV            0.351786
-AWAYDISADV       -0.0747324
+HOMEADV            0.351751
+AWAYDISADV       -0.0747047
 BEGINRATINGS
-Southend          0.0747724      0.101317
-Colchester       -0.0328787       0.27357
-Brentford         0.0942555     0.0665005
-Huddersfield       0.166548    -0.0385663
-Barnsley          0.0507063       0.14522
-Swansea            0.145275    -0.0363544
-Nott'm_Forest      0.165478      0.140449
-Doncaster        -0.0326237     0.0776147
-Bristol_City       0.136661      0.038795
-Oldham            0.0146739    -0.0291552
-Bradford         -0.0635187      0.123297
-Scunthorpe        0.0930603     -0.226005
-Port_Vale         -0.129792     0.0485659
-Gillingham       -0.0484649    -0.0220435
-Yeovil          -0.00887247     -0.169816
-Chesterfield    -0.00833223     -0.163694
-Bournemouth      -0.0545641     0.0646576
-Tranmere         -0.0334324      0.107995
-Blackpool        -0.0535158    -0.0521611
-Rotherham        -0.0500744    0.00131463
-Hartlepool       -0.0650329    -0.0291086
-MK_Dons           -0.178877     -0.093922
-Swindon          -0.0775116    -0.0868696
-Walsall          -0.0785508     -0.116559
+Southend          0.0780528      0.103809
+Colchester       -0.0301836      0.267323
+Brentford          0.102174      0.069294
+Huddersfield       0.172419    -0.0324578
+Barnsley          0.0579352      0.148503
+Swansea            0.148562     -0.036337
+Nott'm_Forest      0.157899      0.140352
+Doncaster        -0.0351114      0.075134
+Bristol_City       0.131912     0.0379447
+Oldham            0.0135476    -0.0427671
+Bradford         -0.0587394       0.12387
+Scunthorpe        0.0937163     -0.227346
+Port_Vale          -0.13409     0.0559331
+Gillingham       -0.0455533    -0.0227514
+Yeovil           -0.0111286     -0.173826
+Chesterfield    -0.00443301     -0.159699
+Bournemouth      -0.0510556     0.0651147
+Tranmere         -0.0363957      0.110074
+Blackpool        -0.0532346    -0.0527351
+Rotherham         -0.055051  -5.90992e-05
+Hartlepool       -0.0660684    -0.0290196
+MK_Dons           -0.179911    -0.0934789
+Swindon           -0.085575    -0.0821744
+Walsall          -0.0823382     -0.116328

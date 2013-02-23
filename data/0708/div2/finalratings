@@ -1,27 +1,27 @@
-HOMEADV             0.300948
-AWAYDISADV        -0.0159393
+HOMEADV             0.300942
+AWAYDISADV        -0.0159336
 BEGINRATINGS
-Swansea             0.321324      0.146663
-Nott'm_Forest        0.14056      0.378339
-Doncaster          0.0718708       0.22214
-Carlisle           0.0683267     0.0889503
-Leeds_United         0.24044      0.313538
-Southend            0.200506   0.000663314
-Brighton          -0.0126405     0.0693254
-Oldham             0.0803582      0.139389
-Northampton       -0.0283836     0.0292487
-Huddersfield      -0.0042992     -0.123854
-Tranmere          -0.0343657      0.129742
-Walsall           -0.0860986      0.134482
-Swindon            0.0232664   -0.00921381
-Leyton_Orient     -0.0598616     -0.195495
-Hartlepool         0.0531966     -0.127745
-Bristol_Rovers     -0.268948    -0.0352541
-Millwall          -0.0911004    -0.0307549
-Yeovil             -0.198357     0.0161347
-Cheltenham         -0.219903     -0.134488
-Crewe              0.0144582     -0.179176
-Bournemouth        0.0407189     -0.184678
-Gillingham          -0.12119     -0.248619
-Port_Vale         -0.0668628     -0.271295
-Luton             -0.0359386     -0.086756
+Swansea             0.321786      0.146411
+Nott'm_Forest       0.139511      0.378114
+Doncaster          0.0715093      0.221391
+Carlisle           0.0681265     0.0894902
+Leeds_United        0.240208      0.315023
+Southend            0.200794   0.000714701
+Brighton          -0.0126898      0.069008
+Oldham             0.0803529      0.136457
+Northampton       -0.0276175     0.0297882
+Huddersfield     -0.00333667     -0.123173
+Tranmere          -0.0348573      0.129953
+Walsall           -0.0863131      0.134452
+Swindon            0.0225728   -0.00860824
+Leyton_Orient     -0.0591857     -0.195767
+Hartlepool         0.0532644     -0.127804
+Bristol_Rovers     -0.268421    -0.0349187
+Millwall          -0.0907464    -0.0299432
+Yeovil             -0.198711     0.0151883
+Cheltenham          -0.22027     -0.134377
+Crewe              0.0141566     -0.179539
+Bournemouth        0.0413926     -0.184821
+Gillingham         -0.120577     -0.248904
+Port_Vale         -0.0676522     -0.270379
+Luton             -0.0361136     -0.087023

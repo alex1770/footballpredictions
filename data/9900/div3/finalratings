@@ -1,27 +1,27 @@
-HOMEADV           0.255473
-AWAYDISADV        0.034003
+HOMEADV            0.288431
+AWAYDISADV      0.000882765
 BEGINRATINGS
-Swansea         -0.0643584      0.567342
-Rotherham         0.285685      0.368108
-Northampton        0.15915      0.151805
-Darlington        0.198535      0.372916
-Peterborough      0.166413    -0.0308849
-Barnet           0.0998674   -0.00891954
-Hartlepool        0.111878      0.110651
-Cheltenham      -0.0747156      0.231282
-Torquay           0.148759    0.00774612
-Brighton          0.175733      0.128981
-Plymouth         0.0279198     0.0328383
-Rochdale         0.0303301    -0.0244265
-Macclesfield      0.218743     -0.155515
-Hull             -0.224934      0.213257
-Lincoln           0.240392     -0.279925
-Southend        -0.0011421     -0.144949
-Mansfield       -0.0563008     -0.206172
-Halifax          -0.190001    -0.0871906
-Leyton_O         -0.128729      0.019787
-York             -0.314785    0.00707228
-Exeter           -0.134194     -0.305431
-Shrewsbury       -0.278261     -0.228478
-Carlisle         -0.222927     -0.343099
-Chester          -0.173058     -0.396796
+Swansea          -0.0665223      0.314352
+Rotherham          0.264967      0.166254
+Northampton        0.131198       0.24336
+Darlington         0.157292      0.151035
+Peterborough       0.162736    0.00938136
+Barnet            0.0290607    -0.0334588
+Hartlepool        0.0271359      0.034591
+Cheltenham       -0.0596742      0.167169
+Torquay           0.0289376   0.000780953
+Brighton          0.0178706     0.0263802
+Plymouth          0.0400801     0.0535646
+Rochdale         -0.0766027     0.0101519
+Macclesfield       0.154998    -0.0323191
+Hull              -0.214234     0.0675128
+Lincoln_City       0.170079     -0.179235
+Southend        -0.00537187    -0.0726482
+Mansfield        -0.0376887     -0.114527
+Halifax           -0.110881     -0.039238
+Leyton_Orient    -0.0440962     0.0269977
+York              -0.085493     0.0147455
+Exeter             -0.13744     -0.171729
+Shrewsbury        -0.166205     -0.163378
+Carlisle          -0.171389      -0.18331
+Chester           -0.106687     -0.275861

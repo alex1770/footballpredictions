@@ -1,25 +1,25 @@
-HOMEADV            0.37548
-AWAYDISADV      -0.0854054
+HOMEADV           0.401551
+AWAYDISADV       -0.116129
 BEGINRATINGS
-Carlisle          0.195421      0.556571
-Walsall           0.327596      0.293562
-Chesterfield      0.107959       0.38442
-Bury              0.272427      0.348382
-Preston          0.0518667      0.290117
-Mansfield         0.431354     -0.102319
-Fulham           0.0895325    0.00730575
-Scunthorpe        0.222798     -0.154165
-Doncaster        0.0462157      0.237256
-Colchester       0.0289388      -0.15959
-Lincoln         -0.0143613    -0.0240256
-Barnet           0.0280795       -0.1438
-Torquay         -0.0135093    -0.0417643
-Wigan           -0.0296844     -0.092321
-Rochdale          -0.21023     -0.195238
-Hereford         -0.196621     -0.125225
-Northampton      -0.187708      -0.19609
-Hartlepool       -0.231564     -0.223862
-Darlington       -0.241743    -0.0324362
-Gillingham       -0.168239     -0.151034
-Scarborough     -0.0997829     -0.243419
-Exeter           -0.408745     -0.232326
+Carlisle          0.114712      0.376352
+Walsall           0.159643      0.188778
+Chesterfield     0.0486149      0.259341
+Bury              0.158677      0.192037
+Mansfield         0.258118    -0.0739037
+Preston           0.108257      0.107181
+Fulham           0.0936106      0.114125
+Scunthorpe        0.162317    -0.0819637
+Doncaster        -0.052722       0.13624
+Colchester      0.00788598     -0.157786
+Lincoln_City     -0.041083    -0.0386744
+Barnet           0.0289081    -0.0689546
+Torquay          0.0220511    -0.0161563
+Wigan           -0.0542406     -0.111858
+Hereford         -0.064374     -0.152111
+Rochdale        -0.0885199      -0.08735
+Northampton      -0.188408     -0.156704
+Hartlepool       -0.144862     -0.142887
+Darlington       -0.229446    -0.0474737
+Gillingham       -0.182757     -0.051511
+Scarborough     -0.0742149      -0.16675
+Exeter           -0.180183     -0.141903

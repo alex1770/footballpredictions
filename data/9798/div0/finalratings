@@ -1,23 +1,23 @@
-HOMEADV           0.387265
-AWAYDISADV      -0.0605425
+HOMEADV             0.400718
+AWAYDISADV        -0.0742205
 BEGINRATINGS
-Arsenal           0.297404      0.386592
-Manchester_U      0.361272      0.620358
-Liverpool         0.306777      0.144768
-Chelsea           0.351139      0.118012
-Leeds             0.133968     0.0649982
-Blackburn         0.140224    -0.0579747
-Aston_Villa      -0.015594     0.0306084
-West_Ham          0.127708     -0.149043
-Derby            0.0450189    0.00683253
-Leicester         0.017303      0.186549
-Coventry        -0.0830294      0.120903
-Southampton      0.0119202     -0.106932
-Newcastle        -0.356823      0.132095
-Tottenham        -0.115233     -0.118771
-Wimbledon        -0.383833      0.088585
-Sheffield_W      0.0638744     -0.307064
-Everton          -0.186029      -0.11567
-Bolton           -0.180856     -0.201411
-Barnsley         -0.261825     -0.493962
-Crystal_P        -0.273386     -0.349475
+Arsenal             0.232895      0.382727
+Man_Utd             0.383133      0.392293
+Liverpool           0.282492       0.20795
+Chelsea             0.250582     0.0495471
+Leeds_United      -0.0457596      0.115613
+Blackburn          0.0929995     0.0354105
+Aston_Villa       -0.0223057      0.143077
+West_Ham         -0.00672283    -0.0725875
+Derby             -0.0304244    -0.0830109
+Leicester         -0.0417987      0.010891
+Coventry           -0.134355     0.0224022
+Southampton       -0.0133555     -0.106249
+Newcastle        -0.00828389      0.157544
+Tottenham         -0.0721583     -0.057438
+AFC_Wimbledon      -0.166095    0.00946432
+Sheff_Wed          0.0464404     -0.218113
+Everton            -0.100777    -0.0931241
+Bolton             -0.111963     -0.227232
+Barnsley           -0.271047     -0.455409
+Crystal_Palace     -0.261238      -0.28402

@@ -1,27 +1,27 @@
-HOMEADV            0.351744
-AWAYDISADV       -0.0817543
+HOMEADV             0.358526
+AWAYDISADV        -0.0828835
 BEGINRATINGS
-Sunderland      -0.00991403      0.567917
-Derby               0.18867      0.123191
-Crystal_P          0.127624      0.207972
-Stoke             0.0185634      0.171372
-Charlton         -0.0357289      0.258848
-Leicester          0.122169    -0.0359569
-Ipswich            0.309182     -0.185833
-Huddersfield      0.0251839    0.00245765
-Sheffield_U      -0.0291451     0.0762519
-Barnsley          0.0311093     -0.127017
-Port_Vale         0.0142658     -0.126274
-West_Bromwich     0.0325966     -0.156936
-Tranmere          0.0913316     -0.034472
-Southend          -0.115964    -0.0421699
-Birmingham        0.0461888    -0.0969214
-Norwich          0.00613486     0.0564014
-Oldham           -0.0862243      0.155528
-Reading           -0.076684    -0.0759611
-Grimsby          -0.0538604     -0.167851
-Wolverhampton    -0.0409864    -0.0614068
-Portsmouth        0.0499088     -0.172313
-Millwall          -0.304841    -0.0678826
-Watford            0.066954     -0.187482
-Luton             -0.376533    -0.0814614
+Sunderland         -0.109238      0.338802
+Derby               0.159933     0.0657143
+Crystal_Palace     0.0918787      0.267241
+Stoke             -0.0429565      0.106966
+Charlton          -0.0286673     0.0935899
+Leicester           0.140505    -0.0318811
+Ipswich             0.239128     -0.132036
+Huddersfield      -0.0361629    -0.0652909
+Sheff_Utd          0.0653907     0.0838742
+Barnsley            0.013936    -0.0819191
+Port_Vale         -0.0185039     -0.128272
+West_Brom         -0.0241796     -0.122523
+Tranmere            0.092675    -0.0227291
+Southend          -0.0871762      -0.10993
+Birmingham         0.0195718    -0.0593958
+Norwich            0.0844399      0.147542
+Oldham            -0.0212547     0.0896121
+Reading           -0.0742176   -0.00171716
+Grimsby           -0.0503032    -0.0828429
+Wolverhampton      0.0352641    -0.0398291
+Portsmouth         -0.023915     -0.133697
+Millwall           -0.175711     -0.043098
+Watford            0.0133077     -0.119518
+Luton              -0.206688    -0.0907941

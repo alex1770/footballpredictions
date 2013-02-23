@@ -1,23 +1,23 @@
-HOMEADV            0.457458
-AWAYDISADV       -0.0559217
+HOMEADV            0.458156
+AWAYDISADV       -0.0596729
 BEGINRATINGS
-Manchester_U        0.62626     0.0899071
-Arsenal            0.338863      0.160093
-Leeds              0.108203      0.175089
-Liverpool        -0.0334111      0.542638
-Chelsea          0.00900981      0.415331
-Aston_Villa       -0.131896      0.393112
-Sunderland          0.10374    -0.0888073
-Leicester         0.0669068    -0.0687261
-West_Ham         0.00865857    -0.0285819
-Tottenham         0.0967323     0.0451227
-Newcastle          0.202142    -0.0583618
-Middlesbrough     -0.115245   -0.00353228
-Everton            0.131316     0.0431263
-Coventry         -0.0917072    -0.0423536
-Southampton       -0.127348     -0.178877
-Derby             -0.154854    -0.0935798
-Bradford          -0.290891     -0.264516
-Wimbledon        -0.0932367     -0.357364
-Sheffield_W       -0.288896     -0.293579
-Watford           -0.364348     -0.386142
+Man_Utd            0.580148      0.194664
+Arsenal            0.292007      0.381066
+Leeds_United        0.12344      0.190223
+Liverpool           0.12952      0.278877
+Chelsea           0.0984782      0.311264
+Aston_Villa      -0.0504585      0.228482
+Sunderland        0.0641545    -0.0398541
+Leicester       -0.00451769    -0.0299002
+West_Ham         0.00348318    -0.0590314
+Tottenham         0.0469571  -0.000137445
+Newcastle           0.12695    -0.0350189
+Middlesbrough    -0.0689394    -0.0571887
+Everton           0.0364649    0.00869715
+Coventry          -0.120499    -0.0374709
+Southampton       -0.119742     -0.197411
+Derby             -0.125438    -0.0612612
+Bradford          -0.275571     -0.276954
+AFC_Wimbledon     -0.123875     -0.288365
+Sheff_Wed         -0.168826     -0.202504
+Watford           -0.372964     -0.379805

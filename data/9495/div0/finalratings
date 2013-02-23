@@ -1,25 +1,25 @@
-HOMEADV             0.352272
-AWAYDISADV        -0.0160871
+HOMEADV             0.375109
+AWAYDISADV        -0.0434402
 BEGINRATINGS
-Blackburn           0.402189      0.276478
-Manchester_U        0.354185      0.611152
-Nottingham          0.300119      0.185695
-Liverpool           0.192346      0.342453
-Leeds              0.0961973      0.320971
-Newcastle           0.231509      0.100955
-Tottenham           0.226209     -0.109028
-Queen's_PR          0.148088     -0.121714
-Wimbledon         -0.0868962     -0.207292
-Southampton         0.151655     -0.187505
-Chelsea           -0.0547849    -0.0416195
-Arsenal           -0.0207365     0.0723768
-Sheffield_W       -0.0732758    -0.0765362
-West_Ham           -0.188954     0.0999917
-Everton            -0.186351     0.0392679
-Coventry           -0.176746     -0.156409
-Manchester_C       0.0115614     -0.196175
-Aston_Villa       -0.0340617    -0.0605546
-Crystal_Palace      -0.44628     0.0879691
-Norwich            -0.357298    -0.0119128
-Leicester          -0.138274     -0.412814
-Ipswich              -0.3504      -0.55575
+Blackburn           0.304749      0.278894
+Man_Utd             0.344631      0.398732
+Nott'm_Forest       0.144386     0.0362209
+Liverpool            0.15228      0.171569
+Leeds_United         0.11764      0.272245
+Newcastle           0.270236      0.140541
+Tottenham           0.138307    -0.0807939
+QPR                 0.136693     -0.103118
+AFC_Wimbledon     -0.0325827     -0.114785
+Southampton        0.0689072     -0.162702
+Chelsea           -0.0559843   -0.00993222
+Arsenal           -0.0201857      0.234311
+Sheff_Wed          0.0791572    -0.0458925
+West_Ham            -0.13747     0.0446322
+Everton            -0.169538     -0.018763
+Coventry           -0.165766    -0.0318177
+Man_City          -0.0958142    -0.0772616
+Aston_Villa       -0.0649795   -0.00202197
+Crystal_Palace     -0.355959   -0.00913203
+Norwich            -0.104364     -0.045766
+Leicester          -0.183885     -0.392846
+Ipswich            -0.312921     -0.384512

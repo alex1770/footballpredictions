@@ -1,23 +1,23 @@
-HOMEADV            0.437691
-AWAYDISADV        0.0124454
+HOMEADV            0.437643
+AWAYDISADV        0.0124945
 BEGINRATINGS
-Chelsea            0.601347      0.532664
-Man_Utd            0.490269       0.56694
-Arsenal            0.463655      0.225349
-Tottenham          0.224862     0.0681371
-Man_City           0.270271     0.0234724
-Aston_Villa        0.103109       0.10761
-Liverpool          0.275733      0.421471
-Everton            0.160471      0.112859
-Birmingham        -0.298787     0.0274641
-Blackburn         -0.114223     -0.116381
-Stoke             -0.295111    -0.0557224
-Fulham            -0.198597     0.0737926
-Sunderland        -0.138361     -0.127877
-Bolton            -0.135991     -0.213631
-Wolverhampton     -0.316925     -0.158197
-Wigan             -0.270198     -0.292196
-West_Ham          -0.072937     -0.177443
-Burnley           -0.181515     -0.471724
-Hull              -0.293434     -0.360932
-Portsmouth        -0.230861     -0.193657
+Chelsea             0.60133      0.532903
+Man_Utd            0.490387      0.565284
+Arsenal            0.463521      0.226815
+Tottenham          0.224757     0.0684166
+Man_City           0.270541     0.0232486
+Aston_Villa        0.103267      0.107698
+Liverpool          0.275697      0.423067
+Everton            0.160472      0.112622
+Birmingham        -0.298882     0.0273823
+Blackburn         -0.114207     -0.116662
+Stoke             -0.295033     -0.055751
+Fulham            -0.198797     0.0739071
+Sunderland        -0.137883     -0.127934
+Bolton            -0.135711     -0.213913
+Wolverhampton     -0.316932     -0.158228
+Wigan             -0.270169     -0.292941
+West_Ham         -0.0729189     -0.177466
+Burnley           -0.181633     -0.471611
+Hull              -0.293543     -0.360963
+Portsmouth        -0.231394     -0.193966

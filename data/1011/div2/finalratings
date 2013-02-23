@@ -1,27 +1,27 @@
-HOMEADV             0.388305
-AWAYDISADV         -0.170304
+HOMEADV             0.388302
+AWAYDISADV         -0.170301
 BEGINRATINGS
-Brighton            0.186876      0.223631
-Southampton         0.319068      0.340159
-Huddersfield        0.215104      0.144433
-Peterborough        0.452081     -0.149392
-MK_Dons            0.0847489     0.0148097
-Bournemouth        0.0671709     0.0685709
-Leyton_Orient      0.0330364   -0.00894049
-Exeter            -0.0451836     -0.129323
-Rochdale          0.00567497     0.0267265
-Colchester        -0.0198106     0.0371864
-Brentford           -0.12448     0.0340645
-Carlisle         -0.00536375    -0.0222748
-Charlton            0.082481     0.0373912
-Yeovil             -0.128935    -0.0285519
-Sheff_Wed           0.109121    0.00333554
-Hartlepool         -0.137065    -0.0753157
-Oldham             -0.167554     0.0467906
-Tranmere           -0.153754     0.0131351
-Notts_County       -0.205757     0.0251331
-Walsall           -0.0573109      -0.12426
-Dag_&_Red          -0.161837     -0.162055
-Bristol_Rovers     -0.123922     -0.210657
-Plymouth           -0.095937    -0.0577341
-Swindon           -0.0509688    -0.0923718
+Brighton            0.186873      0.223611
+Southampton         0.319088      0.340118
+Huddersfield        0.215146      0.144473
+Peterborough        0.452093     -0.149395
+MK_Dons            0.0847441      0.014821
+Bournemouth        0.0672017     0.0685545
+Leyton_Orient      0.0330856    -0.0089588
+Exeter            -0.0451876     -0.129338
+Rochdale          0.00566923     0.0268118
+Colchester        -0.0197925     0.0371442
+Brentford           -0.12442     0.0340713
+Carlisle         -0.00538063    -0.0222422
+Charlton           0.0824713      0.037439
+Yeovil             -0.128966    -0.0286045
+Sheff_Wed           0.109113    0.00334963
+Hartlepool         -0.137062    -0.0753183
+Oldham             -0.167542     0.0466009
+Tranmere           -0.153794     0.0131531
+Notts_County       -0.205777     0.0251626
+Walsall           -0.0573271      -0.12426
+Dag_&_Red          -0.161851     -0.162052
+Bristol_Rovers     -0.123892     -0.210641
+Plymouth           -0.095982    -0.0577243
+Swindon           -0.0510117    -0.0923348

@@ -1,27 +1,27 @@
-HOMEADV            0.312118
-AWAYDISADV       -0.0956016
+HOMEADV            0.312179
+AWAYDISADV       -0.0956614
 BEGINRATINGS
-Scunthorpe         0.184732      0.145539
-Bristol_City       0.105722       0.22326
-Blackpool          0.160199      0.068779
-Nott'm_Forest      0.135171      0.246821
-Yeovil           -0.0304844      0.131561
-Oldham             0.119164      0.101625
-Swansea            0.169954     0.0326355
-Carlisle         -0.0636842    -0.0112208
-Tranmere        -0.00885926     0.0993103
-Millwall          0.0272989      0.049829
-Doncaster        -0.0726259      0.153672
-Port_Vale         0.0168471     -0.051328
-Crewe              0.212868     -0.194307
-Northampton       -0.200185      0.071186
-Huddersfield      0.0971343     -0.126708
-Gillingham       -0.0282032     -0.191821
-Cheltenham        -0.183741     -0.117069
-Brighton          -0.110925     0.0396798
-Bournemouth      -0.0993781    -0.0319634
-Leyton_Orient    -0.0118771     -0.292923
-Chesterfield      -0.134491     -0.012265
-Bradford          -0.136668     -0.017508
-Rotherham        -0.0088092      -0.16527
-Brentford         -0.140196     -0.174862
+Scunthorpe         0.184852       0.14468
+Bristol_City        0.10377       0.22265
+Blackpool          0.160175     0.0682906
+Nott'm_Forest       0.13218      0.246587
+Yeovil           -0.0315305      0.129559
+Oldham             0.118741      0.095442
+Swansea            0.171036      0.032373
+Carlisle         -0.0643954   -0.00976242
+Tranmere         -0.0102445      0.100005
+Millwall          0.0278966     0.0520696
+Doncaster        -0.0738113      0.152334
+Port_Vale          0.014874    -0.0485563
+Crewe              0.211876     -0.195035
+Northampton       -0.198607     0.0727431
+Huddersfield      0.0992105     -0.124648
+Gillingham       -0.0271155     -0.192316
+Cheltenham        -0.184752     -0.116548
+Brighton          -0.111305     0.0392046
+Bournemouth      -0.0980016    -0.0320383
+Leyton_Orient    -0.0105963      -0.29335
+Chesterfield      -0.132949    -0.0109006
+Bradford          -0.134698    -0.0175478
+Rotherham        -0.0110038     -0.165933
+Brentford         -0.136834      -0.17412

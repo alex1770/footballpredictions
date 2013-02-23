@@ -1,27 +1,27 @@
-HOMEADV             0.380119
-AWAYDISADV           0.04567
+HOMEADV               0.401058
+AWAYDISADV           0.0244632
 BEGINRATINGS
-Plymouth            0.201265      0.701551
-Luton               0.518508      0.142813
-Mansfield           0.239224    -0.0626171
-Cheltenham           0.14374      0.144858
-Rochdale            0.130691      0.086073
-Rushden&Dmonds      0.191279     0.0639834
-Hartlepool          0.257618      0.159514
-Scunthorpe          0.263657    0.00502697
-Shrewsbury          0.115906     0.0677381
-Kidderminster     -0.0223178      0.194043
-Hull             -0.00162141      0.111498
-Southend           -0.110791      0.058709
-Macclesfield       -0.330811      0.103886
-York              -0.0438212     -0.159621
-Darlington         0.0647947     -0.222267
-Exeter              -0.15733     -0.241049
-Carlisle           -0.149373     0.0237707
-Leyton_O          -0.0224194     -0.218485
-Torquay            -0.207447    -0.0919657
-Swansea           -0.0550081     -0.298283
-Oxford            -0.0662996    -0.0811623
-Lincoln            -0.252711    -0.0744534
-Bristol_R          -0.349637    -0.0386538
-Halifax            -0.357094     -0.374907
+Plymouth              0.125704       0.31789
+Luton                 0.447706      0.131025
+Mansfield             0.173368     -0.107639
+Cheltenham           0.0842492      0.140369
+Rochdale             0.0730046     0.0967129
+Rushden_&_D'mnds      0.141296     0.0538656
+Hartlepool            0.216914      0.111015
+Scunthorpe            0.185896      0.041423
+Shrewsbury          0.00955118    -0.0127239
+Kidderminster       -0.0695605     0.0921984
+Hull                -0.0901202      0.169755
+Southend             -0.072896     0.0413968
+Macclesfield         -0.170692     0.0329464
+York                 -0.112704     -0.112696
+Darlington          0.00460863     -0.105813
+Exeter               -0.199578     -0.175609
+Carlisle             -0.187317    -0.0406355
+Leyton_Orient       -0.0169543     -0.105749
+Torquay              -0.127931     -0.128456
+Swansea              -0.041373     -0.160122
+Oxford_Utd            0.016442    -0.0785465
+Lincoln_City        -0.0988572     -0.107495
+Bristol_Rovers        -0.11217      0.104035
+Halifax               -0.22124     -0.289739

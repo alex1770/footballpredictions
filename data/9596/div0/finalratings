@@ -1,23 +1,23 @@
-HOMEADV            0.368289
-AWAYDISADV       -0.0165285
+HOMEADV            0.387607
+AWAYDISADV       -0.0367925
 BEGINRATINGS
-Manchester_U       0.404135      0.292095
-Newcastle          0.305194       0.24391
-Liverpool          0.360972      0.324401
-Aston_Villa       0.0640828      0.314522
-Arsenal          0.00139388      0.407456
-Everton            0.281876     0.0722672
-Blackburn          0.236953    0.00933579
-Tottenham         0.0279483      0.234226
-Nottingham        0.0450125      -0.11808
-West_Ham          -0.108377    -0.0727366
-Chelsea            -0.04927     0.0915318
-Middlesbrough     -0.316803    -0.0249571
-Leeds             -0.175551      -0.16158
-Wimbledon           0.15814      -0.38404
-Sheffield_W       0.0116162     -0.238208
-Coventry          -0.123415     -0.215156
-Southampton        -0.34374    -0.0632009
-Manchester_C      -0.367313     -0.171567
-Queen's_PR        -0.226973     -0.159448
-Bolton            -0.185883     -0.380771
+Man_Utd            0.368627      0.343039
+Newcastle          0.280089       0.18524
+Liverpool          0.271832      0.239433
+Aston_Villa     -0.00348563      0.148018
+Arsenal          -0.0206967      0.306506
+Everton           0.0857245      0.030881
+Blackburn          0.246608      0.131162
+Tottenham         0.0663352     0.0723883
+Nott'm_Forest     0.0727157    -0.0563282
+West_Ham          -0.138444    -0.0246621
+Chelsea          -0.0654914     0.0392114
+Middlesbrough     -0.318119    -0.0809372
+Leeds_United     -0.0539394     0.0192976
+AFC_Wimbledon     0.0578013     -0.281925
+Sheff_Wed         0.0253656     -0.164074
+Coventry          -0.161179     -0.142659
+Southampton       -0.144983     -0.114178
+Man_City          -0.239401     -0.138852
+QPR              -0.0635987     -0.143747
+Bolton            -0.249884     -0.353099

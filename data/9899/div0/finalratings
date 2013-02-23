@@ -1,23 +1,23 @@
-HOMEADV            0.312673
-AWAYDISADV      -0.00366847
+HOMEADV            0.344515
+AWAYDISADV       -0.0353621
 BEGINRATINGS
-Manchester_U        0.52644      0.185152
-Arsenal            0.199207      0.987701
-Chelsea            0.178744         0.421
-Leeds              0.267404       0.29007
-West_Ham         -0.0109473     -0.137435
-Aston_Villa       0.0848002  -0.000897734
-Liverpool          0.376842    -0.0833039
-Derby             -0.159842     0.0331928
-Middlesbrough     0.0328524     -0.158402
-Leicester         -0.158753     0.0111666
-Tottenham        0.00730529    -0.0801011
-Sheffield_W       -0.138359      0.101242
-Newcastle         0.0328524     -0.158402
-Everton           -0.108761    -0.0125712
-Coventry          -0.178668    -0.0911606
-Wimbledon         -0.140042     -0.304148
-Southampton       -0.217127     -0.316612
-Charlton          -0.123032     -0.187126
-Blackburn         -0.203611      -0.10953
-Nottingham        -0.267306     -0.389835
+Man_Utd            0.464421      0.298147
+Arsenal            0.207471      0.587429
+Chelsea            0.201936      0.218705
+Leeds_United       0.131268      0.203402
+West_Ham         -0.0203888     -0.104291
+Aston_Villa       0.0246609     0.0718798
+Liverpool           0.32659     0.0571563
+Derby             -0.105293    -0.0180968
+Middlesbrough    -0.0327036     -0.129837
+Leicester         -0.111654     0.0135267
+Tottenham        -0.0404654    -0.0643019
+Sheff_Wed        -0.0557651    -0.0464138
+Newcastle      -0.000719512    -0.0138359
+Everton           -0.114444    -0.0448786
+Coventry          -0.168282    -0.0366112
+AFC_Wimbledon     -0.167779     -0.171408
+Southampton       -0.127215     -0.229824
+Charlton          -0.173455     -0.218959
+Blackburn        -0.0693061    -0.0444769
+Nott'm_Forest     -0.199589     -0.299284

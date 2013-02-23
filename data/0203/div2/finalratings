@@ -1,27 +1,27 @@
-HOMEADV           0.311194
-AWAYDISADV      -0.0779105
+HOMEADV           0.337221
+AWAYDISADV      -0.0996514
 BEGINRATINGS
-Wigan             0.130587      0.821974
-Crewe             0.252869      0.345576
-Bristol_C         0.297558      0.160704
-Queens_PR         0.159752      0.232736
-Oldham            0.140013        0.4028
-Cardiff           0.143664      0.279005
-Tranmere          0.124053   -0.00188198
-Plymouth         0.0737611       0.09231
-Luton             0.142827     -0.086888
-Swindon          0.0161389    -0.0969988
-Peterborough     -0.136425     0.0632849
-Colchester       -0.115519     0.0261333
-Blackpool       -0.0354126     -0.110565
-Stockport         0.118404     -0.207052
-Notts_County     0.0710351     -0.204816
-Brentford        -0.216764      0.029777
-Port_Vale       -0.0674229      -0.19888
-Wycombe          0.0183568     -0.143615
-Barnsley         -0.129112     -0.106886
-Chesterfield     -0.293422     -0.232815
-Cheltenham      -0.0876299     -0.169095
-Huddersfield     -0.399964    -0.0500471
-Mansfield         0.154105     -0.535028
-Northampton      -0.361453     -0.309731
+Wigan            0.0938049      0.496882
+Crewe             0.200673      0.274494
+Bristol_City      0.224997      0.150626
+QPR                0.10594      0.226543
+Oldham             0.12423      0.195236
+Cardiff           0.147684       0.17919
+Tranmere          0.097399     0.0256274
+Plymouth         -0.013265     0.0857582
+Luton             0.135947    -0.0951963
+Swindon         -0.0931241    -0.0262811
+Peterborough    -0.0788071     0.0338211
+Colchester      -0.0645581    -0.0439135
+Blackpool       -0.0126898     -0.119093
+Stockport         0.106112     -0.157522
+Notts_County      0.028835     -0.155308
+Brentford       -0.0821025     0.0841497
+Port_Vale        -0.100261    -0.0845974
+Wycombe         -0.0420179    -0.0670324
+Barnsley        0.00806244    -0.0485261
+Chesterfield     -0.223816     -0.148243
+Cheltenham       -0.142051     -0.148025
+Huddersfield       -0.1737      0.093081
+Mansfield        0.0571097     -0.485718
+Northampton      -0.277777     -0.246355

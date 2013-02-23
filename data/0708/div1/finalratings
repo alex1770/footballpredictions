@@ -1,27 +1,27 @@
-HOMEADV             0.345839
-AWAYDISADV        -0.0763417
+HOMEADV             0.345847
+AWAYDISADV        -0.0763514
 BEGINRATINGS
-West_Brom           0.366574     0.0569304
-Stoke              0.0999519       0.10722
-Hull               0.0212807     0.0685377
-Bristol_City       -0.112844      0.033584
-Crystal_Palace     0.0309707      0.228438
-Watford            0.0637551     0.0529582
-Wolverhampton     -0.0430525      0.139662
-Ipswich             0.117025    -0.0117653
-Sheff_Utd          0.0137664      0.146467
-Plymouth          0.00645921     0.0767096
-Charlton             0.12225     0.0506574
-Cardiff           0.00690684     0.0493447
-Burnley           -0.0347792    -0.0440246
-QPR              -0.00153986     -0.133223
-Preston           -0.0433455     0.0855401
-Sheff_Wed         -0.0353057   -0.00639783
-Norwich           -0.0802272    -0.0746449
-Barnsley           -0.114184     -0.187643
-Blackpool         -0.0277529      -0.14072
-Southampton         0.060536    -0.0969726
-Coventry          -0.0891779     -0.097617
-Leicester          -0.223547      0.126379
-Scunthorpe         -0.181396      -0.16634
-Colchester         0.0612768     -0.260977
+West_Brom           0.366382     0.0575368
+Stoke                0.10031      0.107524
+Hull               0.0208223     0.0687796
+Bristol_City        -0.11343     0.0334695
+Crystal_Palace     0.0312537      0.227326
+Watford            0.0647168      0.053241
+Wolverhampton     -0.0431874      0.139494
+Ipswich             0.116832    -0.0108792
+Sheff_Utd          0.0131934      0.146335
+Plymouth          0.00567372     0.0765357
+Charlton            0.121937     0.0513999
+Cardiff           0.00687691     0.0483153
+Burnley           -0.0355424    -0.0428464
+QPR              -0.00198917     -0.133374
+Preston           -0.0435755     0.0862773
+Sheff_Wed          -0.035589   -0.00644953
+Norwich           -0.0805957    -0.0749595
+Barnsley           -0.113143     -0.187375
+Blackpool         -0.0276666     -0.140801
+Southampton        0.0608531    -0.0976902
+Coventry          -0.0877557     -0.097266
+Leicester          -0.223179      0.125671
+Scunthorpe         -0.181243     -0.166529
+Colchester         0.0616185     -0.261718

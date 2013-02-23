@@ -1,27 +1,27 @@
-HOMEADV                 0.316219
-AWAYDISADV            -0.0586635
+HOMEADV                 0.316182
+AWAYDISADV            -0.0586261
 BEGINRATINGS
-Walsall                 0.160248      0.358164
-Hartlepool              0.154827      0.306313
-Swindon                0.0750057      0.314145
-MK_Dons                 0.241772      0.040096
-Lincoln_City            0.163532     0.0248854
-Bristol_Rovers         -0.086609      0.105956
-Shrewsbury             0.0658313      0.110243
-Stockport               0.106511    -0.0790606
-Rochdale                0.152425     0.0167116
-Peterborough            0.138152     0.0223483
-Darlington            -0.0577404     0.0336616
-Wycombe                0.0138708      0.113577
-Notts_County          -0.0744006    0.00127751
-Barnet                  -0.10644     -0.157741
-Grimsby                0.0286316     -0.102869
-Hereford               -0.248497      0.038334
-Mansfield              0.0392346     -0.116723
-Chester                -0.260442     0.0704016
-Wrexham                -0.100376    -0.0548907
-Accrington_Stanley      0.120812     -0.356235
-Bury                   -0.189211    -0.0446725
-Macclesfield         -0.00107257      -0.25233
-Boston                -0.0910991     -0.238964
-Torquay                -0.229113    -0.0940118
+Walsall                 0.159398      0.358317
+Hartlepool              0.154786      0.306381
+Swindon                0.0727247       0.31614
+MK_Dons                 0.241733     0.0402785
+Lincoln_City            0.166647     0.0136378
+Bristol_Rovers        -0.0855111      0.107267
+Shrewsbury             0.0654147      0.113906
+Stockport                0.10639    -0.0785545
+Rochdale                0.152412     0.0202202
+Peterborough            0.139675     0.0212091
+Darlington            -0.0569037     0.0330079
+Wycombe                0.0131015      0.115734
+Notts_County          -0.0749695    0.00242866
+Barnet                 -0.106619      -0.15704
+Grimsby                0.0290715     -0.101627
+Hereford               -0.248361     0.0366772
+Mansfield              0.0381366      -0.11531
+Chester                -0.258637     0.0637498
+Wrexham                -0.100531    -0.0556336
+Accrington_Stanley      0.121023     -0.356193
+Bury                   -0.187967    -0.0429614
+Macclesfield         -0.00256753     -0.250797
+Boston                -0.0899079     -0.238866
+Torquay                  -0.2314    -0.0933488

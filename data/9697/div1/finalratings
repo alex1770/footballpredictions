@@ -1,27 +1,27 @@
-HOMEADV            0.425816
-AWAYDISADV       -0.0580907
+HOMEADV             0.430917
+AWAYDISADV        -0.0659734
 BEGINRATINGS
-Bolton             0.500824      0.107364
-Barnsley           0.227157     0.0875188
-Wolverhampton      0.112874      0.168858
-Ipswich            0.112167      0.188695
-Sheffield_U        0.211746      0.144436
-Crystal_P          0.248196      0.222499
-Portsmouth       -0.0279172       0.13668
-Port_Vale        -0.0436302      0.100285
-Queen's_PR         0.058519    0.00887738
-Birmingham        -0.157888      0.240812
-Tranmere          0.0238773      0.079414
-Stoke             -0.171035     0.0694346
-Norwich           0.0484366     -0.115831
-Manchester_C     -0.0236845     0.0292589
-Charlton          -0.145247    -0.0781029
-West_Bromwich      0.127856     -0.176707
-Oxford            0.0642196     -0.116545
-Reading          -0.0351387    -0.0974221
-Huddersfield      -0.228939    0.00362042
-Swindon           -0.141705     -0.151258
-Bradford          -0.242272     -0.161726
-Grimsby         -0.00799577     -0.288312
-Oldham            -0.164698    -0.0773961
-Southend          -0.345722     -0.324454
+Bolton               0.41347     0.0930428
+Barnsley            0.142569     0.0227884
+Wolverhampton      0.0746801     0.0831109
+Ipswich             0.150907     0.0530817
+Sheff_Utd           0.149615      0.122797
+Crystal_Palace       0.18298      0.247643
+Portsmouth        -0.0353927     0.0268954
+Port_Vale         -0.0429188    0.00920566
+QPR                 0.128643     0.0900586
+Birmingham         -0.091568      0.110522
+Tranmere           0.0402765     0.0395283
+Stoke              -0.128074     0.0867143
+Norwich            0.0481206    -0.0126717
+Man_City           0.0222281      0.107057
+Charlton           -0.109038    -0.0102648
+West_Brom          0.0584797     -0.152784
+Oxford_Utd        0.00362209    -0.0953754
+Reading            -0.064053    -0.0580336
+Huddersfield       -0.154927    -0.0224989
+Swindon            -0.130231    -0.0989662
+Bradford           -0.233917     -0.231263
+Grimsby           -0.0393117     -0.215646
+Oldham             -0.116477    -0.0116573
+Southend           -0.238412     -0.254126

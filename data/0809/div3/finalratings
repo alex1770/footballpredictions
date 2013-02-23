@@ -1,27 +1,27 @@
-HOMEADV                 0.320889
-AWAYDISADV            -0.0665378
+HOMEADV                 0.320864
+AWAYDISADV            -0.0665126
 BEGINRATINGS
-Brentford              0.0580894      0.199057
-Exeter                 0.0356215   -0.00651741
-Wycombe                -0.060367      0.394554
-Bury                   0.0135993       0.14283
-Gillingham             0.0628921     0.0429662
-Rochdale                0.205538    0.00237159
-Shrewsbury             0.0279253      0.140186
-Dag_&_Red               0.142807    -0.0440617
-Bradford                0.118276     0.0527203
-Chesterfield            0.130779     0.0564218
-Morecambe             -0.0844595     -0.022149
-Darlington             0.0477431       0.24856
-Lincoln_City          -0.0124014   -0.00991593
-Rotherham              0.0687159      0.146626
-Aldershot             -0.0306307     -0.324226
-Accrington_Stanley     -0.186689     -0.146049
-Barnet                -0.0438439     -0.197034
-Port_Vale             -0.0806577    -0.0884701
-Notts_County           -0.215099    -0.0814649
-Macclesfield           -0.186567     -0.236581
-Bournemouth             0.121832      0.113525
-Grimsby                -0.078803     -0.152888
-Chester                -0.244193     -0.240075
-Luton                  0.0914104    -0.0232459
+Brentford              0.0584813      0.199151
+Exeter                 0.0355716   -0.00663573
+Wycombe               -0.0605761      0.395115
+Bury                   0.0137451      0.143151
+Gillingham             0.0630837      0.042848
+Rochdale                0.205462    0.00301877
+Shrewsbury             0.0277718      0.140882
+Dag_&_Red               0.142638    -0.0440088
+Bradford                0.118466     0.0527167
+Chesterfield            0.130895     0.0566381
+Morecambe             -0.0846468    -0.0225817
+Darlington             0.0478272      0.248447
+Lincoln_City          -0.0118573    -0.0116325
+Rotherham              0.0684239      0.146559
+Aldershot             -0.0306608     -0.324227
+Accrington_Stanley     -0.186713     -0.146034
+Barnet                -0.0439427     -0.196917
+Port_Vale             -0.0809465    -0.0881921
+Notts_County           -0.215307     -0.081246
+Macclesfield            -0.18695     -0.236351
+Bournemouth             0.122032      0.113453
+Grimsby               -0.0787949     -0.152695
+Chester                -0.243818        -0.241
+Luton                  0.0913549    -0.0233466

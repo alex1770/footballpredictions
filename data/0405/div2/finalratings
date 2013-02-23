@@ -1,27 +1,27 @@
-HOMEADV           0.432701
-AWAYDISADV       -0.188665
+HOMEADV           0.433279
+AWAYDISADV       -0.189288
 BEGINRATINGS
-Luton             0.260418      0.122412
-Hull              0.151015     0.0862779
-Tranmere          0.105094      0.110906
-Brentford        -0.129436     0.0220772
-Sheff_Wed         0.103027     0.0535526
-Hartlepool        0.172287    -0.0440164
-Bristol_City      0.129775       0.20941
-Bournemouth      0.0773798     0.0338518
-Huddersfield     0.0540864    -0.0517938
-Doncaster       -0.0196409     0.0155019
-Bradford        0.00937543     0.0693517
-Swindon          0.0895679    -0.0412757
-Barnsley          0.014097   0.000186372
-Walsall          0.0602526    0.00631541
-Colchester      -0.0852968      0.174726
-Blackpool        -0.102018      0.023856
-Chesterfield     -0.176637    -0.0394944
-Port_Vale       -0.0976972     0.0166513
-Oldham            0.013726    -0.0141312
-MK_Dons          -0.115069    -0.0406422
-Torquay          -0.122428     -0.213537
-Wrexham         -0.0426689     -0.156681
-Peterborough     -0.171244     -0.054527
-Stockport       -0.0999345      -0.34276
+Luton             0.257454      0.119567
+Hull              0.145212     0.0917973
+Tranmere         0.0987592      0.114087
+Brentford        -0.108113     0.0276898
+Sheff_Wed        0.0995709     0.0536911
+Hartlepool        0.170523    -0.0453252
+Bristol_City      0.117746      0.205605
+Bournemouth      0.0863721     0.0336777
+Huddersfield     0.0710137    -0.0376312
+Doncaster       -0.0250869    0.00811174
+Bradford         0.0213447     0.0694732
+Swindon          0.0718092    -0.0311589
+Barnsley           0.03319      0.006537
+Walsall          0.0521419     0.0051875
+Colchester      -0.0784428        0.1603
+Blackpool        -0.100733     0.0209492
+Chesterfield     -0.166268    -0.0299296
+Port_Vale        -0.106371     0.0325049
+Oldham            0.010705    -0.0496673
+MK_Dons          -0.116629    -0.0410344
+Torquay          -0.141136     -0.208745
+Wrexham         -0.0485743     -0.161861
+Peterborough     -0.163442    -0.0609822
+Stockport        -0.104981     -0.338131

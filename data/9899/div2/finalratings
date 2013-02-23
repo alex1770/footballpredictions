@@ -1,27 +1,27 @@
-HOMEADV           0.287375
-AWAYDISADV        -0.02071
+HOMEADV             0.305556
+AWAYDISADV        -0.0357966
 BEGINRATINGS
-Fulham            0.335329      0.528376
-Walsall           0.120174      0.155635
-Manchester_C      0.200563      0.505221
-Gillingham        0.292537      0.212459
-Preston           0.336507     0.0820171
-Wigan              0.29564      0.125268
-Bournemouth       0.115574      0.292433
-Stoke            0.0668059     -0.134843
-Chesterfield     -0.197055      0.234647
-Millwall        -0.0628338    -0.0637032
-Reading         -0.0219362     -0.130969
-Luton           -0.0815178    -0.0797715
-Bristol_R         0.158437    -0.0214559
-Blackpool        -0.233978     0.0311116
-Burnley         -0.0141717     -0.278618
-Notts_County     -0.061294    -0.0971012
-Wrexham          -0.250895     -0.106478
-Colchester      -0.0543326     -0.235002
-Wycombe         -0.0636028    -0.0465781
-Oldham           -0.137633     -0.172947
-York             0.0277687     -0.371986
-Northampton      -0.254715    -0.0222696
-Lincoln           -0.26524     -0.282941
-Macclesfield      -0.25013     -0.122503
+Fulham              0.223191      0.313974
+Walsall            0.0191468      0.110929
+Man_City            0.226414      0.439674
+Gillingham          0.163494       0.14877
+Preston             0.211993      0.037328
+Wigan               0.228379    -0.0156778
+Bournemouth        0.0488451      0.172932
+Stoke              0.0740659    -0.0300912
+Chesterfield       -0.189887      0.220552
+Millwall          -0.0923204    -0.0207937
+Reading           0.00860132    -0.0570793
+Luton              0.0147176    -0.0607604
+Bristol_Rovers      0.146817    -0.0433024
+Blackpool         -0.0845005    -0.0197351
+Burnley            0.0253623     -0.226759
+Notts_County      -0.0548487     -0.054697
+Wrexham            -0.116145     -0.048524
+Colchester        -0.0892349     -0.243717
+Wycombe           -0.0569341    -0.0261972
+Oldham            -0.0205594    -0.0635828
+York             -0.00846089     -0.277761
+Northampton        -0.199812     0.0684804
+Lincoln_City       -0.256261     -0.280959
+Macclesfield       -0.253755     -0.109314

@@ -1,27 +1,27 @@
-HOMEADV               0.417051
-AWAYDISADV          -0.0581217
+HOMEADV                0.42308
+AWAYDISADV          -0.0642211
 BEGINRATINGS
-Plymouth              0.247899      0.247255
-QPR                   0.234187       0.26652
-Bristol_City         0.0849672      0.331406
-Brighton             0.0551121      0.298548
-Swindon               0.155201    -0.0144138
-Hartlepool            0.137929     -0.064931
-Port_Vale            0.0990607     -0.100797
-Tranmere             0.0342184     0.0478769
-Bournemouth          -0.147492      0.079831
-Luton                 0.139682    -0.0879891
-Colchester           -0.136392     0.0635546
-Barnsley             -0.118968    -0.0110762
-Wrexham              -0.101235      -0.04353
-Blackpool           -0.0360667    -0.0825316
-Oldham                0.104056      0.176563
-Sheff_Wed           -0.0755498    0.00638094
-Brentford            -0.177603    -0.0637407
-Peterborough        -0.0813868     0.0569947
-Stockport            0.0671344      -0.16757
-Chesterfield         -0.243087     -0.177957
-Grimsby             -0.0340308     -0.217537
-Rushden_&_D'mnds     -0.025878     -0.172507
-Notts_County        -0.0702986     -0.233657
-Wycombe             -0.0939932     -0.185279
+Plymouth              0.216792       0.24253
+QPR                   0.214377       0.26153
+Bristol_City         0.0563758      0.324405
+Brighton             0.0459513      0.294383
+Swindon                0.11308     0.0134115
+Hartlepool            0.138336     -0.066176
+Port_Vale            0.0842273    -0.0582527
+Tranmere             0.0224144     0.0575879
+Bournemouth           -0.11737     0.0824486
+Luton                 0.136045     -0.092592
+Colchester           -0.114747     0.0323931
+Barnsley            -0.0627265    0.00911163
+Wrexham              -0.111048    -0.0565666
+Blackpool            -0.027706    -0.0875209
+Oldham               0.0990877     0.0846061
+Sheff_Wed           -0.0795556    0.00889842
+Brentford            -0.120303    -0.0456703
+Peterborough        -0.0581242     0.0423849
+Stockport            0.0607282      -0.15072
+Chesterfield         -0.212876      -0.14947
+Grimsby             -0.0372969     -0.201459
+Rushden_&_D'mnds    -0.0356737     -0.190202
+Notts_County        -0.0895263     -0.217104
+Wycombe              -0.121479     -0.158389

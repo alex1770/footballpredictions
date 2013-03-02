@@ -185,19 +185,18 @@ unsigned int secs(char *s){
   return ((y-1970)*365+(y-1969)/4+mm[m]+(m>=2&&(y&3)==0)+atoi(s+8)-1)*24*60*60;
 }
 
-int update,ln,maxit,steps,year,useres,rel,sprind,puthtml,eval,prl;
+int update,ln,maxit,steps,year,useres,rel,sprind,dohtml,eval,prl;
 char datadir[1000],divname[1000],cutofftime[100];
 struct tm now;// Program start time in GMT
 double acc,rej;
 
-void getnames(int year,int div,char *dir,char *divname){
+void getname(int year,int div,char *divname){
   char *(dn0[5])={"Premiership","Division 1","Division 2","Division 3","Conference"};
   char *(dn1[5])={"Premiership","Championship","League 1","League 2","Conference"};
   char *(dn2[5])={"Premier League","Championship","League 1","League 2","Conference"};
   if(year<2004)strcpy(divname,dn0[div]); else
     if(year<2007)strcpy(divname,dn1[div]); else
       strcpy(divname,dn2[div]);
-  sprintf(dir,"data/%02d%02d/div%d",year%100,(year+1)%100,div);
 }
 
 void initargs(int ac,char **av){
@@ -209,7 +208,7 @@ void initargs(int ac,char **av){
   
   t0=time(NULL);seed=8716283*t0+81123871*getpid()+7128973;
   update=0;ln=-1;maxit=20000;steps=10;date=0;useres=99999;rel=0;
-  sprind=0;puthtml=0;eval=0;prl=1;
+  sprind=0;dohtml=0;eval=0;prl=1;
   for(i=1;i<ac;i++)if((strlen(av[i])>=4&&strncmp(av[i]+strlen(av[i])-4,"help",4)==0)
 		      ||strncmp(av[i],"?",1)==0){
     printf("Help message\n");exit(0);
@@ -228,7 +227,7 @@ void initargs(int ac,char **av){
       if(!strncmp(l,"seed=",rr)){seed=nn;continue;}
       if(!strncmp(l,"sprind=",rr)){sprind=nn;continue;}
       if(!strncmp(l,"prl=",rr)){prl=nn;continue;}//print level
-      if(!strncmp(l,"puthtml=",rr)){puthtml=nn;continue;}
+      if(!strncmp(l,"dohtml=",rr)){dohtml=nn;continue;}
       if(!strncmp(l,"useres=",rr)){useres=nn;continue;}
       if(!strncmp(l,"date=",rr)){date=strdup(l0);continue;}
       // ^ Either (i) omitted, (ii) a specific YYYY-MM-DD date,
@@ -862,7 +861,8 @@ int main(int ac,char **av){
     aa->mdt[cl]=cutofftime;
     acc=rej=0;
     maxtl=10;// maxtl>=10 to line up "AWAYDISADV"
-    getnames(year,cl,datadir,divname);
+    getname(year,cl,divname);
+    sprintf(datadir,"data/%02d%02d/div%d",year%100,(year+1)%100,cl);
     sprintf(l,"mkdir -p %s",datadir);assert(system(l)==0);
     last=-1;
     if(update){// fetch results
@@ -1009,63 +1009,6 @@ int main(int ac,char **av){
 
   }//cl
 
-  if(ln==-1){
-    int n,g0,g1;
-    char l1[MAXP*11+1000],scr[10000],tbuf[1000],team0[1000],team1[1000];
-    struct tm tt0;
-    FILE *fph;
-    sprintf(l,"predictions/pred%s.html",now0);
-    fph=fopen(l,"w");assert(fph);
-    fprintf(fph,"<html><head><title>Football league predictions</title></head><body>\n");
-    fprintf(fph,"<h2><p>Prediction of final league standings, promotion and relegation</p></h2>\n");
-    fprintf(fph,"<h3><p>Updated %s</p></h3>\n\n",now1);
-    for(cl=0;cl<5;cl++){
-      getnames(year,cl,datadir,divname);
-      sprintf(l,"%s/table",datadir);fp=fopen(l,"r");assert(fp);
-      while(fgets(l1,MAXP*11+1000,fp)){
-        if(strncmp(l1,"BEGINTABLE",10)==0)break;
-        if(strncmp(l1,"UPDATED",7)==0);
-        if(strncmp(l1,"LASTPLAYED",10)==0)sscanf(l1+10,"%s %s %s %d %d",tbuf,team0,team1,&g0,&g1);
-      }
-      fprintf(fph,"<b>%s</b>&nbsp;&nbsp;&nbsp; (",divname);
-      if(isdigit(tbuf[0])){// If there have been any matches played, show the last one
-        strptime(tbuf,"%Y-%m-%d",&tt0);strftime(tbuf,1000,"%A %e %B %Y",&tt0);
-	sprintf(l1,"Latest match accounted for: %s, %s %d %d %s;",tbuf,team0,g0,g1,team1);
-	doamp(l1);fprintf(fph,"%s",l1);
-      }
-      fprintf(fph," <a href=\"http://news.bbc.co.uk/sport1/hi/football/eng_");
-      if(cl==0)fprintf(fph,"prem/");
-      if(cl>=1&&cl<=3)fprintf(fph,"div_%d/",cl);
-      if(cl==4)fprintf(fph,"conf/conference_");
-      fprintf(fph,"table/default.stm\">Check up-to-date</a>)\n");
-      fprintf(fph,"\n<pre>\n");
-      n=0;
-      while(fgets(l1,MAXP*11+1000,fp)){
-	l1[strlen(l1)-1]=0;doamp(l1);
-	fprintf(fph,"%s\n",l1);
-	n++;
-	if(n==2)fprintf(fph,"\n");
-      }
-      fclose(fp);
-      fprintf(fph,"\n\n</pre>\n\n");
-    }
-    fprintf(fph,"</html>\n");
-    fclose(fph);
-    sprintf(l1,"rm -f predictions/latest.html; ln -s pred%s.html predictions/latest.html",now0);assert(system(l1)==0);
-    if(puthtml){
-      fph=fopen("predictions/temp","w");
-      fprintf(fph,"<li><a href=\"pred%s.html\">%s</a>\n",now0,now1);
-      fclose(fph);
-      sprintf(scr,
-	      "cd predictions\n"
-	      "cat temp index1.html > temp1\n"
-	      "mv temp1 index1.html\n"
-	      "cat index0.html index1.html > index.html\n"
-	      "scp index.html aps14@onza.mythic-beasts.com:public_html/footballpreds >> uploadoutput 2>&1\n"
-	      "scp pred%s.html aps14@onza.mythic-beasts.com:public_html/footballpreds >> uploadoutput 2>&1\n"
-	      ,now0);
-      assert(system(scr)==0);
-    }
-  }
+  if(dohtml){sprintf(l,"/usr/bin/python dohtml.py %d",year);assert(system(l)==0);}
   return 0;
 }

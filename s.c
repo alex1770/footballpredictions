@@ -252,11 +252,12 @@ void initargs(int ac,char **av){
   srandom(seed);srand48(seed);
 }
 
-#define MAXNT 100 // Maximum number of teams
+#define MAXNT 100 // Maximum number of teams in any particular league
 #define MAXTL 100 // 1+Maximum length of team description string
 #define MAXNM 10000 // Maximum number of matches (rounds)
 #define MAXS 100 // 1+Maximum number of goals scored
-int nr,nt,np,res[MAXNM][5],maxtl,stat[MAXP][MAXNT],rels[1<<MAXREL];
+int nr,nt,np,res[MAXNM][5],maxtl,rels[1<<MAXREL];
+long long int stat[MAXP][MAXNT];
 double odds[MAXNM][3];// NCU
 char tm[MAXNT][MAXTL];
 int last;
@@ -319,17 +320,6 @@ int s2n(char *s,int add){// 'add' = whether to add in new names
   nt++;return i;
 }
 
-void doamp(char *l){
-  char *l1;
-  l1=l;
-  while(1){
-    l1=strchr(l1,'&');if(!l1)return;
-    memmove(l1+5,l1+1,strlen(l1+1)+1);
-    memcpy(l1+1,"amp;",4);
-    l1++;
-  }
-}
-
 #ifdef EXPMODEL
 double fn(double x){return exp(x);}
 double fn1(double x){return exp(x);}// fn'(x)
@@ -353,20 +343,31 @@ int it,pg[MAXNT],sc[MAXNT],gd[MAXNT],gs[MAXNT];
 
 double prior(double *lpa,double *L1){
   int t;
-  double L;
-  L=0;
-  for(t=0;t<nt*2+2;t++){
-    L+=-ppaiv[t]/2*pow(lpa[t]-ppa[t],2);
-    // ^ ignore constant term -.5*log(ppaiv[t]/(2*PI)) to make it easier to use ppaiv[t]=0
-    if(L1)L1[t]=-ppaiv[t]*(lpa[t]-ppa[t]);
+  double x,A,B,C,w1,w2,L,s2,det;
+  // Ignore constant terms .5*log(ppaiv[t]/(2*PI)) etc to make it easier to use ppaiv[t]=0
+  // This will make information printing ("bits") a little out
+  for(t=0,s2=0;t<2*nt+2;t++)s2+=ppaiv[t]*pow(lpa[t]-ppa[t],2);
+  x=ppaiv[2*nt]*(lpa[2*nt]-ppa[2*nt])-ppaiv[2*nt+1]*(lpa[2*nt+1]-ppa[2*nt+1]);
+  for(t=0,w1=-x;t<nt;t++)w1+=ppaiv[t]*(lpa[t]-ppa[t]);
+  for(t=nt,w2=x;t<2*nt;t++)w2+=ppaiv[t]*(lpa[t]-ppa[t]);
+  B=ppaiv[2*nt]+ppaiv[2*nt+1];
+  for(t=0,A=B;t<nt;t++)A+=ppaiv[t];
+  for(t=nt,C=B;t<2*nt;t++)C+=ppaiv[t];
+  det=A*C-B*B;
+  L=-.5*(s2-(C*w1*w1+2*B*w1*w2+A*w2*w2)/det);
+  if(L1){
+    for(t=0;t<2*nt+2;t++)L1[t]=-ppaiv[t]*(lpa[t]-ppa[t]);
+    for(t=0;t<nt;t++)L1[t]+=(C*ppaiv[t]*w1+B*ppaiv[t]*w2)/det;
+    for(t=nt;t<2*nt;t++)L1[t]+=(A*ppaiv[t]*w2+B*ppaiv[t]*w1)/det;
+    L1[2*nt]+=(-C*w1+B*(w1-w2)+A*w2)*ppaiv[2*nt]/det;
+    L1[2*nt+1]+=(C*w1+B*(w2-w1)-A*w2)*ppaiv[2*nt+1]/det;
   }
   return L;
 }
 
 double getL(double *L1){
   int a,b,c,d,i,r;
-  double x,y,eps,L,la,la1,mu,mu1;
-  eps=1;
+  double L,la,la1,mu,mu1,d1,d2;
   L=prior(pa,L1);
   for(r=0;r<nr;r++){
     a=res[r][0];b=res[r][1];c=res[r][2];d=res[r][3];
@@ -386,9 +387,9 @@ double getL(double *L1){
     L1[2*nt]+=(-1+c/la)*la1;
     L1[2*nt+1]-=(-1+d/mu)*mu1;
   }
-  for(i=0,x=y=0;i<nt;i++){x+=al[i];y+=be[i];}
-  for(i=0;i<nt;i++)L1[i]-=eps*x;    // Imposes 'gauge' condition that sum(al)=sum(be)=0
-  for(i=0;i<nt;i++)L1[nt+i]-=eps*y; //
+  d1=d2=0;
+  for(i=0;i<nt;i++){d1+=L1[i];d2+=L1[nt+i];}
+  for(i=0;i<nt;i++){L1[i]-=d1/nt;L1[nt+i]-=d2/nt;}
   return L;
 }
 
@@ -435,7 +436,7 @@ void opt(void){// Find MLE
   int i,end;
   double x,del,L,L1[np];
   for(i=0;i<np;i++)pa[i]=0;
-  del=1e-3;// p+=delta*L' is crude and may fail to converge
+  del=1e-3;
   it=0;end=0;
   while(1){
     L=getL(L1);
@@ -447,7 +448,7 @@ void opt(void){// Find MLE
     }
     if(end)break;
     if(x<1e-9||it==50000)end=1;
-    for(i=0;i<np;i++)pa[i]+=del*L1[i];
+    for(i=0;i<np;i++)pa[i]+=del*L1[i];// pa+=delta*L' = crude gradient descent
     it++;
   }
 }
@@ -547,7 +548,7 @@ void getnewparams(void){
   int i,j;
   double x,ml,nl,sd,pa1[2*MAXNT+2];
   if(steps==0)return;
-  sd=0.04;
+  sd=0.02;
   ml=getL0(pa);
   for(i=0;i<steps;i++){
     for(j=0;j<2*nt+2;j++)pa1[j]=pa[j]+sd*norm();
@@ -782,7 +783,7 @@ void doeval(){
 
 }
 
-void getprior(int cl0){
+void getpriorparams(int cl0){
   int i,t,nf,cl,pln[MAXNT];
   double x,y;
   char l[1000],*l1;
@@ -894,7 +895,7 @@ int main(int ac,char **av){
     fclose(fp);
     assert(no==0||no==nr);
     //printf("no=%d\n",no);
-    getprior(cl);
+    getpriorparams(cl);
     qsort(res,nr,5*sizeof(int),cmpres);
     checkres();
     nr0=nr;

@@ -189,6 +189,7 @@ int update,ln,maxit,steps,year,useres,rel,sprind,dohtml,eval,prl;
 char datadir[1000],divname[1000],cutofftime[100];
 struct tm now;// Program start time in GMT
 double acc,rej;
+double trialsd=0.04;
 
 void getname(int year,int div,char *divname){
   char *(dn0[5])={"Premiership","Division 1","Division 2","Division 3","Conference"};
@@ -546,17 +547,16 @@ char *descp(int p){// not re-entrant (only use once at a time)
 
 void getnewparams(void){
   int i,j;
-  double x,ml,nl,sd,pa1[2*MAXNT+2];
+  double x,ml,nl,pa1[2*MAXNT+2];
   if(steps==0)return;
-  sd=0.02;
   ml=getL0(pa);
   for(i=0;i<steps;i++){
-    for(j=0;j<2*nt+2;j++)pa1[j]=pa[j]+sd*norm();
+    for(j=0;j<2*nt+2;j++)pa1[j]=pa[j]+trialsd*norm();
     for(j=0,x=0;j<nt;j++)x+=pa1[j];x/=nt;for(j=0;j<nt;j++)pa1[j]-=x;
     for(j=0,x=0;j<nt;j++)x+=pa1[nt+j];x/=nt;for(j=0;j<nt;j++)pa1[nt+j]-=x;
     nl=getL0(pa1);
     //for(j=0,x=0;j<2*nt+2;j++)x+=(pa1[j]-pa[j])*(pa1[j]-pa[j]);
-    //-x/(2*sd*sd)-(2*nt+2)*log(sd*sqrt(2*PI))
+    //-x/(2*trialsd*trialsd)-(2*nt+2)*log(trialsd*sqrt(2*PI))
     if(drnd()<exp(nl-ml)){
       memcpy(pa,pa1,(2*nt+2)*sizeof(double));
       ml=nl;
@@ -632,7 +632,7 @@ void sim(int cl){
           fprintf(fpo,"LASTPLAYED   %s %s %s %d %d\n",tbuf,tm[res[last][0]],tm[res[last][1]],res[last][2],res[last][3]);
         }else fprintf(fpo,"LASTPLAYED   none played so far\n");
 	fprintf(fpo,"ITERATIONS   %d\n",it);
-	if(k==0)fprintf(fpo,"acc %.1f%%     rej %.1f%%\n",100*acc/(acc+rej),100*rej/(acc+rej));
+	if(k==0)fprintf(fpo,"acc %.1f%%    acc%%*sd^2 %g\n",100*acc/(acc+rej),100*acc/(acc+rej)*trialsd*trialsd);
 	//for(i=0;i<nt;i++)pt[i]=stat[0][i]+stat[2][i]/1000;
 	//for(i=0;i<nt;i++)pt[i]=sc[i]*1e5+gd[i];
 	qsort(ord,nt,sizeof(int),cmps);

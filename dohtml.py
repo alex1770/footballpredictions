@@ -1,11 +1,13 @@
 #!/usr/bin/python
 import sys,datetime,cgi,os
+from math import floor
+from subprocess import Popen,PIPE
 
 now=datetime.datetime.now()
 if len(sys.argv)>1: year=int(sys.argv[1])
 else: year=now.year-(now.month<7)
 
-tables=[]
+tables=[];ratings=[]
 updated=""
 for div in range(5):
   datadir="data/%02d%02d/div%d"%(year%100,(year+1)%100,div)
@@ -16,6 +18,10 @@ for div in range(5):
     if y[0]=='UPDATED':
       if y[1]>updated: updated=y[1]
       break
+  f=open(datadir+"/ratings","r");temp=f.read().split('\n')[:-1];f.close()
+  for i in range(len(temp)):
+    if temp[i]=='BEGINRATINGS': break
+  ratings.append(temp[i+1:])
 assert updated[-5:]=="+0000"
 updated=datetime.datetime.strptime(updated[:-5],'%Y-%m-%dT%H:%M:%S')
 
@@ -58,7 +64,27 @@ for div in range(5):
   for (n,x) in enumerate(table[i:]):
     if n==2: print >>f,""
     print >>f,cgi.escape(x)
+  rname="ratings%s-%d.png"%(up0,div)
+  print >>f,'<img src="%s">\n'%rname
   print >>f,"\n</pre>\n"
+  amin=dmin=100;amax=dmax=-100
+  for x in ratings[div]:
+    y=x.split();a=float(y[1]);d=float(y[2])
+    amin=min(a,amin);amax=max(a,amax)
+    dmin=min(d,dmin);dmax=max(d,dmax)
+  tic=0.1
+  amin-=tic/2;dmin-=tic/2;amax+=tic/2;dmax+=tic/2
+  s="gnuplot -e '"
+  s+="set terminal png large size %d,%d;"%(((amax-amin)/tic+2)*100,((dmax-dmin)/tic+2)*100)
+  s+='set output "predictions/%s";'%rname
+  s+="set key off;"
+  s+='set xlabel "Attacking capability";set ylabel "Defensive capability";'
+  s+="set xrange [%f:%f];set yrange [%f:%f];"%(amin,amax,dmin,dmax)
+  s+="set xtics %f;set ytics %f;"%(tic,tic)
+  s+='plot "-" using ($2):($3):1 with labels\''
+  p=Popen(s,shell=True,stdin=PIPE,close_fds=True)
+  for x in ratings[div]: y=x.split();print >>p.stdin,'"'+y[0]+'"',y[1],y[2]
+  p.stdin.close()
 
 print >>f,"</html>"
 f.close()

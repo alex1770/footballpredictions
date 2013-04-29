@@ -66,7 +66,8 @@ typedef struct {
   // Note that r,e are only likely to be used to overcome
   // deficiencies in the current year's results-scrape-site and probably
   // will not be needed in (cleaned) past years' results.
-  // Initial value of mdt[] is not used any more, since we now trust the results more.
+  // mdt mainly useful to prevent play-off results being counted as league results
+  // (if a results parser didn't manage to exclude play-off results)
 } adjalldat;
 
 adjalldat adjall[]={
@@ -150,7 +151,7 @@ adjalldat adjall[]={
    (adjsdat[]){{0}},
    0,
    0,
-   {"2013-05-19","2013-05-04","2013-04-27","2013-04-27","2013-04-28"}},
+   {"2013-05-19","2013-05-04","2013-04-27","2013-04-27","2013-04-21"}},
 
   {0,// Special terminating entry that creates no adjustments
    (adjsdat[]){{0}},
@@ -844,7 +845,7 @@ int cmpr(const void*x,const void*y){
 int main(int ac,char **av){
   int a,b,c,d,i,j,k,n,r,t,cl,m0,m1,s0,s1,ts,no,nr0,ss[MAXS][MAXS],rs[MAXS],cs[MAXS],ord[MAXNT];
   double x,y,ex,ob,la,mu,chi,der;
-  char l[1000],*l2,*l3,l4[100],now0[1000],now1[1000];
+  char l[1000],*l2,*l3,l4[100],now0[1000],now1[1000],lmdt[100];
   time_t t0;
   FILE *fp,*fpi,*fpo;
   initargs(ac,av);
@@ -859,7 +860,8 @@ int main(int ac,char **av){
   aa=&adjall[i];if(aa->y==0)printf("Warning - no adjustments found for year %d\n",year);
   for(cl=0;cl<5;cl++){
     if(ln>=0&&cl!=ln)continue;
-    aa->mdt[cl]=cutofftime;
+    sprintf(lmdt,"%sT23:59:59",aa->mdt[cl]);aa->mdt[cl]=lmdt;
+    if(strcmp(cutofftime,aa->mdt[cl])<0)aa->mdt[cl]=cutofftime;
     acc=rej=0;
     maxtl=10;// maxtl>=10 to line up "AWAYDISADV"
     getname(year,cl,divname);

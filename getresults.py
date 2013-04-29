@@ -101,11 +101,14 @@ def getfromscorespro(year,ln):
   url='http://www.scorespro.com/soccer/england/'+suffix
   u=urllib2.urlopen(url)
   soup=bs4.BeautifulSoup(u,"html5lib")
-  l=[];dt=None;ok=0
+  l=[];dt=None;ok=0;playoff=None
   for x in soup.find_all(True):
     if x.name=='div' and 'class' in x.attrs and x['class']=='ncet':
+      fc=1
       for y in x.children:
         z=y.text.strip()
+        if fc: playoff='play off' in z.lower() or 'play-off' in z.lower()
+        fc=0
         try:
           t=time.strptime(z,'%a %d %b %Y')
           dt=time.strftime('%Y-%m-%d',t)
@@ -117,7 +120,7 @@ def getfromscorespro(year,ln):
       if y=='status':
         for z in x.children:
           if z.text=='FT': ok=1;hteam=ateam=hgoals=agoals=None
-      if not ok: continue
+      if playoff or not ok: continue
       if y[:4]=='home': hteam=cap(x.text.strip())
       elif y[:4]=='away':
         ateam=cap(x.text.strip())
@@ -133,7 +136,7 @@ def getfrombbc(year,ln):
   url='http://www.bbc.co.uk/sport/football/results?filter=competition-'+suffix
   u=urllib2.urlopen(url)
   soup=bs4.BeautifulSoup(u,"html5lib")
-  l=[];dt=None
+  l=[];dt=None;playoff=None
   for x in soup.find_all(True):
     if 'class' not in x.attrs: continue
     cl=x['class']
@@ -144,6 +147,10 @@ def getfrombbc(year,ln):
         dt=time.strftime('%Y-%m-%d',t)
       except ValueError:
         continue
+    if cl=='competition-title':
+      z=x.text.lower()
+      playoff='play-off' in z or 'play off' in z
+    if playoff: continue
     if x.name=='td' and cl=='time' and x.text.strip()=='Full time':
       if dt and hteam and ateam and hgoals!=None and agoals!=None:
         l.append((dt,std(hteam),std(ateam),hgoals,agoals))
@@ -221,7 +228,7 @@ def check(pp,gtr):
 
 # Third parameter is whether the site in question provides past years data
 # Arrange in increasing reliability (order not currently used)
-parsers=[("soccernet",getfromsoccernet,0),# Quite error prone in 2012 (from a small sample)
+parsers=[("soccernet",getfromsoccernet,0),# Quite error prone in 2012; can't distinguish play-offs from league games
          ("BBC",getfrombbc,0),# Occasional errors in years < 2012
          ("footballdata",getfromfootballdata,1),# Occasional errors in years < 2012
          ("scorespro",getfromscorespro,0)]# No known errors, though not tried much

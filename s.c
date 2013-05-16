@@ -3,7 +3,6 @@
 
 // Todo: tidy up local vs global pa[]
 // and in general, tidy up globals
-
 // Make adjustments work for any year
 // (have a better way of storing all stuff for past years, including parsers)
 
@@ -29,24 +28,27 @@ char *col(int n,char *p){p=nonsp(p);while(n>0){p=nonsp(getsp(p));n--;}return p;}
 #define PI (3.1415926535897932384)
 
 #define NUML 5 // Number of leagues
-#define MAXP 11 // 1+Max no. of properties
+#define MAXP 14 // 1+Max no. of properties
 #define MAXREL 10 // Maximum number of teams, of which the probability of relegation for all
 // possible subsets is calculated.
 int prop[NUML][MAXP]={
-  {300,350,400,1,2,3,4,6,-203,-1,0},
-  {300,350,400,1,2,6,102,-203,-1,0},
-  {300,350,400,1,2,6,102,-204,-1,0},
-  {300,350,400,1,3,7,103,-202,-1,0},
-  {300,350,400,1,5,101,-203,-1,0}
+  {300,350,400,500,550,600,1,2,3,4,6,-203,-1,0},
+  {300,350,400,500,550,600,1,2,6,102,-203,-1,0},
+  {300,350,400,500,550,600,1,2,6,102,-204,-1,0},
+  {300,350,400,500,550,600,1,3,7,103,-202,-1,0},
+  {300,350,400,500,550,600,1,5,101,-203,-1,0}
 };
 // n means top n
 // -n means bottom n
 // 100+n means top n + playoff(n+1,...,n+4) for promotion
 // -200-n means bottom n for relegation
 // 0 means termination
-// 300 means expected points   \ These are guaranteed to be in first
-// 350 means sd(points)        | three positions, for convenience.
-// 400 means expected GD       /
+// 300 means luck points       \ These are guaranteed to be in first
+// 350 means sd(luck points)   | six positions, for convenience.
+// 400 means luck GD           |
+// 500 means expected points   |
+// 550 means sd(points)        |
+// 600 means expected GD       /
 // These points will turn into a spread index if the spread-index flag (sprind) is set
 #define NUMSPR 6
 int sprind1[NUMSPR]={60,40,30,20,10,5};
@@ -535,9 +537,12 @@ int playoff(int a,int b,int c,int d){
 
 char *descp(int p){// not re-entrant (only use once at a time)
   static char l[100];
-  if(p==300)return sprind?"Index":"Points";
-  if(p==350)return sprind?"sd(ind)":"sd(pts)";
-  if(p==400)return "GD";
+  if(p==300)return "Points";  //
+  if(p==350)return "%(pts)";  // Luck
+  if(p==400)return "GD";      // 
+  if(p==500)return sprind?"Index":"Points";    //
+  if(p==550)return sprind?"sd(ind)":"sd(pts)"; // Expected
+  if(p==600)return "GD";                       //
   if(p>0&&p<100){sprintf(l,"Top%d",p);return l;}
   if(p<0&&p>-100){sprintf(l,"Bot%d",-p);return l;}
   if(p>100&&p<200){sprintf(l,"%d+[%d-%d]",p-100,p-99,p-96);return l;}
@@ -606,7 +611,7 @@ void checkres(void){
   }
 }
 void sim(int cl){
-  int a,c,h,i,j,k,n,p,r,t,fl,pl[nt][nt],ord[nt],sc1[nt],gd1[nt],gs1[nt];
+  int a,c,h,i,j,k,n,p,r,t,fl,pl[nt][nt],ord[nt],sc0[nt],sc1[nt],gd0[nt],gd1[nt],gs1[nt];
   char l[100];
   double x,y;
   FILE *fpo;
@@ -634,13 +639,13 @@ void sim(int cl){
         }else fprintf(fpo,"LASTPLAYED   none played so far\n");
 	fprintf(fpo,"ITERATIONS   %d\n",it);
 	if(k==0)fprintf(fpo,"acc %.1f%%    acc%%*sd^2 %g\n",100*acc/(acc+rej),100*acc/(acc+rej)*trialsd*trialsd);
-	//for(i=0;i<nt;i++)pt[i]=stat[0][i]+stat[2][i]/1000;
+	//for(i=0;i<nt;i++)pt[i]=stat[3][i]+stat[5][i]/1000.;
 	//for(i=0;i<nt;i++)pt[i]=sc[i]*1e5+gd[i];
 	qsort(ord,nt,sizeof(int),cmps);
 	fprintf(fpo,"BEGINTABLE\n");
-	fprintf(fpo,"%-*s  -- Current --     ------- Expected -------     ",maxtl,"");
+	fprintf(fpo,"%-*s  -- Current --     --------- Luck ---------   ------- Expected -------     ",maxtl,"");
 	for(i=0;i<MAXP&&prop[cl][i];i++);
-	j=9*(i-2)-33;
+	j=9*(i-2)-60;
 	for(t=0;t<j/2;t++)fprintf(fpo,"-");
 	fprintf(fpo," Percentage chance ");
 	for(t=0;t<(j+1)/2;t++)fprintf(fpo,"-");
@@ -657,7 +662,7 @@ void sim(int cl){
 	      if(p<-200)c='R';
 	    }
 	    x=stat[j][t];
-	    if(j==1){y=stat[0][t];x=sqrt((it*x-y*y)/(it*(it-1.)));} else x/=it;
+	    if(j==4){y=stat[3][t];x=sqrt((it*x-y*y)/(it*(it-1.)));} else x/=it;
 	    fprintf(fpo,"%7.2f%c ",x*(p<300?100:1),c);
 	  }
 	  fprintf(fpo,"\n");
@@ -685,29 +690,38 @@ void sim(int cl){
     }// if print
     getnewparams();
     //if(it==13230)prparams(pa);
-    for(i=0;i<nt;i++){sc1[i]=sc[i];gd1[i]=gd[i];gs1[i]=gs[i];}
-    for(i=0;i<nt;i++)for(j=0;j<nt;j++)if(i!=j&&pl[i][j]==0){
+    for(i=0;i<nt;i++){sc1[i]=sc[i];sc0[i]=sc[i];gd1[i]=gd[i];gd0[i]=gd[i];gs1[i]=gs[i];}
+    for(i=0;i<nt;i++)for(j=0;j<nt;j++)if(i!=j){
       getsc(&h,&a,i,j);
-      //if(abs(h)>1000000000||abs(a)>1000000000)printf("it %d  %d.%s vs %d.%s -> %d %d\n",it,i,tm[i],j,tm[j],h,a);
-      sc1[i]+=(h>a?3:(h==a?1:0));
-      sc1[j]+=(a>h?3:(h==a?1:0));
-      gd1[i]+=h-a;gd1[j]+=a-h;
-      gs1[i]+=h;gs1[j]+=a;
+      if(pl[i][j]){
+        sc0[i]-=(h>a?3:(h==a?1:0));
+        sc0[j]-=(a>h?3:(h==a?1:0));
+        gd0[i]-=h-a;gd0[j]-=a-h;
+      }else{
+        //if(abs(h)>1000000000||abs(a)>1000000000)printf("it %d  %d.%s vs %d.%s -> %d %d\n",it,i,tm[i],j,tm[j],h,a);
+        sc1[i]+=(h>a?3:(h==a?1:0));
+        sc1[j]+=(a>h?3:(h==a?1:0));
+        gd1[i]+=h-a;gd1[j]+=a-h;
+        gs1[i]+=h;gs1[j]+=a;
+      }
     }
     for(i=0;i<nt;i++)pt[i]=sc1[i]*1e8+gd1[i]*1e4+gs1[i]+.1*drnd();
-    qsort(ord,nt,sizeof(int),cmp);
+    qsort(ord,nt,sizeof(int),cmp);// now ord[] maps final position to team number
     if(sprind)for(i=0;i<NUMSPR;i++){
-      stat[0][ord[i]]+=sprind1[i];
-      stat[1][ord[i]]+=sprind1[i]*sprind1[i];
+      stat[3][ord[i]]+=sprind1[i];
+      stat[4][ord[i]]+=sprind1[i]*sprind1[i];
     }
     for(i=0;i<nt;i++){
+      stat[0][i]+=sc0[i];
+      stat[1][i]+=100*((sc0[i]>0)+.5*(sc0[i]==0));
+      stat[2][i]+=gd0[i];
       if(!sprind){
-	stat[0][i]+=sc1[i];
-	stat[1][i]+=sc1[i]*sc1[i];
+        stat[3][i]+=sc1[i];
+        stat[4][i]+=sc1[i]*sc1[i];
       }
-      stat[2][i]+=gd1[i];
+      stat[5][i]+=gd1[i];
     }
-    for(i=3;i<MAXP&&prop[cl][i];i++){
+    for(i=6;i<MAXP&&prop[cl][i];i++){
       p=prop[cl][i];
       if(p>0&&p<100){for(j=0;j<MIN(p,nt);j++)stat[i][ord[j]]++;continue;}
       if(p<0&&p>-100){for(j=MAX(nt+p,0);j<nt;j++)stat[i][ord[j]]++;continue;}

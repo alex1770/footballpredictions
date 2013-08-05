@@ -230,13 +230,14 @@ def check(pp,gtr):
 # Arrange in increasing reliability (order not currently used)
 parsers=[("soccernet",getfromsoccernet,0),# Quite error prone in 2012; can't distinguish play-offs from league games
          ("BBC",getfrombbc,0),# Occasional errors in years < 2012
-         ("footballdata",getfromfootballdata,1),# Occasional errors in years < 2012
+         ("footballdata",getfromfootballdata,1),# Occasional errors in years < 2012; one error in 2012
          ("scorespro",getfromscorespro,0)]# No known errors, though not tried much
 pp={}
 for (n,g,p) in parsers:
   if year==now or p:
     try:
       pp[n]=g(year,ln)
+      err("Info: parser %s returned %d results"%(n,len(pp[n])))
     except Exception as x:
       err("Error: parser %s failed with exception %s: %s"%(n,type(x).__name__,str(x)))
 gtr=getgroundtruth(pp)

@@ -155,6 +155,15 @@ adjalldat adjall[]={
    0,
    {"2013-05-19","2013-05-04","2013-04-27","2013-04-27","2013-04-21"}},
 
+  {2013,
+   (adjsdat[]){
+    {2,"Coventry",-10,"2013-08-02"},
+    {4,"Aldershot",-10,"2013-06-08"},
+    {0}},
+   0,
+   0,
+   {"2014-05-12","2014-05-04","2014-05-04","2014-05-04","2014-04-27"}},
+
   {0,// Special terminating entry that creates no adjustments
    (adjsdat[]){{0}},
    0,
@@ -892,8 +901,13 @@ int main(int ac,char **av){
       }
       fclose(fpo);
     }
-    sprintf(l,"%s/results",datadir);fp=fopen(l,"r");assert(fp);
     nt=0;nr=0;no=0;
+    sprintf(l,"%s/teams",datadir);fp=fopen(l,"r");
+    if(fp){
+      while(fgets(l,1000,fp)){l[strlen(l)-1]=0;s2n(l,1);}
+      fclose(fp);
+    }
+    sprintf(l,"%s/results",datadir);fp=fopen(l,"r");assert(fp);
     while(fgets(l,1000,fp)){
       assert(nr<MAXNM);
       l2=l;l3=getsp(l2);*l3=0;

@@ -352,7 +352,7 @@ double fn2(double x){return 0;}// fn''(x)
 double poff[NUML]={ 1.6, 1.2, .9, .6, 0.2 };// strength offsets for each division
 double ppa[2*MAXNT+2],ppaiv[2*MAXNT+2];// iv = inverse variance
 double pa[2*MAXNT+2],*al,*be,*hh;
-int it,pg[MAXNT],sc[MAXNT],gd[MAXNT],gs[MAXNT];
+int it,pg[MAXNT],sc[MAXNT],scu[MAXNT],gd[MAXNT],gdu[MAXNT],gs[MAXNT];
 
 double prior(double *lpa,double *L1){
   int t;
@@ -699,14 +699,14 @@ void sim(int cl){
     }// if print
     getnewparams();
     //if(it==13230)prparams(pa);
-    for(i=0;i<nt;i++){sc1[i]=sc[i];sc0[i]=sc[i];gd1[i]=gd[i];gd0[i]=gd[i];gs1[i]=gs[i];}
+    for(i=0;i<nt;i++){sc1[i]=sc[i];sc0[i]=scu[i];gd1[i]=gd[i];gd0[i]=gdu[i];gs1[i]=gs[i];}
     for(i=0;i<nt;i++)for(j=0;j<nt;j++)if(i!=j){
       getsc(&h,&a,i,j);
-      if(pl[i][j]){
+      if(pl[i][j]){// Game has been played: work out contribution to luck
         sc0[i]-=(h>a?3:(h==a?1:0));
         sc0[j]-=(a>h?3:(h==a?1:0));
         gd0[i]-=h-a;gd0[j]-=a-h;
-      }else{
+      }else{// Game hasn't been played: work out contribution to prediction
         //if(abs(h)>1000000000||abs(a)>1000000000)printf("it %d  %d.%s vs %d.%s -> %d %d\n",it,i,tm[i],j,tm[j],h,a);
         sc1[i]+=(h>a?3:(h==a?1:0));
         sc1[j]+=(a>h?3:(h==a?1:0));
@@ -970,6 +970,7 @@ int main(int ac,char **av){
       gs[a]+=c;gs[b]+=d;
       pg[a]++;pg[b]++;
     }
+    for(i=0;i<nt;i++){scu[i]=sc[i];gdu[i]=gd[i];}// Unadjusted copy
     for(i=0;aa->s[i].t;i++)if(aa->s[i].d==cl)for(j=0;j<nt;j++)if(strcmp(aa->s[i].t,tm[j])==0)sc[j]+=aa->s[i].a;
     for(i=0;i<MAXS;i++)for(j=0;j<MAXS;j++)ss[i][j]=0;
     for(i=0,m0=m1=0;i<nr;i++){

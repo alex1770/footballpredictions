@@ -58,20 +58,21 @@ def getfromfootballdata(year,ln):
         l.append((yr+'-'+mon+'-'+day,std(r[2]),std(r[3]),int(r[4]),int(r[5])))
   return l
 
+# This parser currently kaput since they changed everything for 2014-15
 def getfromsoccernet(year,ln):
-  suffix=['eng.1/barclays-premier-league',
-          'eng.2/english-league-championship',
-          'eng.3/english-league-one',
-          'eng.4/english-league-two',
-          'eng.5/english-conference'][ln]
-  url='http://soccernet.espn.go.com/results/_/league/'+suffix
+  suffix=['barclays-premier-league/23/scores',
+          'english-league-championship/24/scores',
+          'english-league-one/25/scores',
+          'english-league-two/26/scores',
+          'english-conference/27/scores'][ln]
+  url='http://www.espnfc.com/'+suffix
   # The string after eng.x/ appears to be irrelevant
   # It's possible the site could throw up a popup which messes stuff up
   u=urllib2.urlopen(url)
   soup=bs4.BeautifulSoup(u,"html5lib")
   l=[];dt=None;count=10
   for x in soup.find_all(True):
-    if x.name=='tr' and x['class']=='stathead':
+    if x.name=='tr' and 'stathead' in x['class']:
       y=x.td
       if y:
         y=y.text# Expecting a date like "Wednesday, January 2, 2013"
@@ -80,7 +81,7 @@ def getfromsoccernet(year,ln):
         except ValueError:
           continue
         dt=time.strftime('%Y-%m-%d',t)
-    if x.name=='tr' and (x['class'][:6]=='oddrow' or x['class'][:7]=='evenrow'):
+    if x.name=='tr' and (x['class'][0][:6]=='oddrow' or x['class'][0][:7]=='evenrow'):
       for y in x.find_all('td'):
         z=y.text
         if z=='FT': count=0;hteam=ateam=hgoals=agoals=None
@@ -103,7 +104,7 @@ def getfromscorespro(year,ln):
   soup=bs4.BeautifulSoup(u,"html5lib")
   l=[];dt=None;ok=0;playoff=None
   for x in soup.find_all(True):
-    if x.name=='div' and 'class' in x.attrs and x['class']=='ncet':
+    if x.name=='div' and 'class' in x.attrs and 'ncet' in x['class']:
       fc=1
       for y in x.children:
         z=y.text.strip()
@@ -116,7 +117,7 @@ def getfromscorespro(year,ln):
           continue
     elif x.name=='table': ok=0
     elif x.name=='td' and 'class' in x.attrs:
-      y=x['class']
+      y=x['class'][0]
       if y=='status':
         for z in x.children:
           if z.text=='FT': ok=1;hteam=ateam=hgoals=agoals=None
@@ -139,7 +140,7 @@ def getfrombbc(year,ln):
   l=[];dt=None;playoff=None
   for x in soup.find_all(True):
     if 'class' not in x.attrs: continue
-    cl=x['class']
+    cl=x['class'][0]
     if cl=='table-header':
       z=x.text.strip()
       try:
@@ -219,6 +220,9 @@ def check(pp,gtr):
     for x in pp[n]: e[x[:3]]=x
     for x in d:
       if x not in e and x[0]>mind:
+      # The x[0]>mind condition doesn't count omissions that occurred outside the
+      # date range of returned results, because some results are "rolling" and
+      # only intend to give the last month, say.
         if x[0]<maxd: err("Error: %s"%n+" omission "+str(d[x]))
         else: err("Warning: %s"%n+" slow update "+str(d[x]))
     for x in e:
@@ -228,10 +232,11 @@ def check(pp,gtr):
 
 # Third parameter is whether the site in question provides past years data
 # Arrange in increasing reliability (order not currently used)
-parsers=[("soccernet",getfromsoccernet,0),# Quite error prone in 2012; can't distinguish play-offs from league games
-         ("BBC",getfrombbc,0),# Occasional errors in years < 2012
-         ("footballdata",getfromfootballdata,1),# Occasional errors in years < 2012; one error in 2012
-         ("scorespro",getfromscorespro,0)]# No known errors, though not tried much
+parsers=[
+  #("soccernet",getfromsoccernet,0),# Quite error prone in 2012; can't distinguish play-offs from league games; broken in 2014-15 - gone all fancy schmancy
+  ("BBC",getfrombbc,0),# Occasional errors in years < 2012
+  ("footballdata",getfromfootballdata,1),# Occasional errors in years < 2012; one error in 2012
+  ("scorespro",getfromscorespro,0)]# No known errors, though not tried much
 pp={}
 for (n,g,p) in parsers:
   if year==now or p:

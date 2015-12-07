@@ -28,7 +28,8 @@ updated=datetime.datetime.strptime(updated[:-5],'%Y-%m-%dT%H:%M:%S')
 def getname(year,div):
   if year<2004: return ["Premiership","Division 1","Division 2","Division 3","Conference"][div]
   if year<2007: return ["Premiership","Championship","League 1","League 2","Conference"][div]
-  return ["Premier League","Championship","League 1","League 2","Conference"][div]
+  if year<2015: return ["Premier League","Championship","League 1","League 2","Conference"][div]
+  return ["Premier League","Championship","League 1","League 2","National League"][div]
 
 def bbctablename(div):
   s="http://news.bbc.co.uk/sport1/hi/football/eng_"

@@ -97,7 +97,7 @@ def getfromsoccernet(year,ln):
   return l
 
 def getfromscorespro(year,ln):
-  suffix=['premier-league','championship','league-one','league-two','football-conference'][ln]
+  suffix=['premier-league','championship','league-one','league-two','national-league'][ln]
   suffix+='/%d-%d/results/'%(year,year+1)
   url='http://www.scorespro.com/soccer/england/'+suffix
   u=urllib2.urlopen(url)

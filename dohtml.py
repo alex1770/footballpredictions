@@ -32,11 +32,9 @@ def getname(year,div):
   return ["Premier League","Championship","League 1","League 2","National League"][div]
 
 def bbctablename(div):
-  s="http://news.bbc.co.uk/sport1/hi/football/eng_"
-  if div==0: s+="prem/"
-  if div>=1 and div<=3: s+="div_%d/"%div
-  if div==4: s+="conf/conference_"
-  s+="table/default.stm"
+  s="http://www.bbc.co.uk/sport/football/"
+  s+=['premier-league','championship','league-one','league-two','national-league'][div]
+  s+="/table"
   return s
 
 up0=updated.strftime("%Y%m%d-%H%M%S")

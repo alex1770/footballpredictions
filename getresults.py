@@ -21,7 +21,8 @@ else: year=now
 f=open('equivnames','r')
 eq={}
 for x in f:
-  y=x[:-1].split(' ')
+  if x[:1]=='#': continue
+  y=x.strip().split(' ')
   for z in y: eq[z]=y[0]
 f.close()
 
@@ -98,18 +99,19 @@ def getfromsoccernet(year,ln):
 
 def getfromscorespro(year,ln):
   suffix=['premier-league','championship','league-one','league-two','national-league'][ln]
+  name=suffix.replace('-',' ')
   suffix+='/%d-%d/results/'%(year,year+1)
   url='http://www.scorespro.com/soccer/england/'+suffix
   u=urllib2.urlopen(url)
   soup=bs4.BeautifulSoup(u,"html5lib")
-  l=[];dt=None;ok=0;playoff=None
+  l=[];dt=None;ok=0;correctleague=0
   for x in soup.find_all(True):
     if x.name=='div' and 'class' in x.attrs and 'ncet' in x['class']:
       fc=1
       for y in x.children:
         z=y.text.strip()
-        if fc: playoff='play off' in z.lower() or 'play-off' in z.lower()
-        fc=0
+        if fc:
+          correctleague=(z[:len(name)+2].lower()==name+' -');fc=0
         try:
           t=time.strptime(z,'%a %d %b %Y')
           dt=time.strftime('%Y-%m-%d',t)
@@ -121,7 +123,7 @@ def getfromscorespro(year,ln):
       if y=='status':
         for z in x.children:
           if z.text=='FT': ok=1;hteam=ateam=hgoals=agoals=None
-      if playoff or not ok: continue
+      if not (ok and correctleague): continue
       if y[:4]=='home': hteam=cap(x.text.strip())
       elif y[:4]=='away':
         ateam=cap(x.text.strip())
@@ -234,9 +236,9 @@ def check(pp,gtr):
 # Arrange in increasing reliability (order not currently used)
 parsers=[
   #("soccernet",getfromsoccernet,0),# Quite error prone in 2012; can't distinguish play-offs from league games; broken in 2014-15 - gone all fancy schmancy
-  ("BBC",getfrombbc,0),# Occasional errors in years < 2012
+  #("BBC",getfrombbc,0),# Occasional errors in years < 2012; broken since 2017?
   ("footballdata",getfromfootballdata,1),# Occasional errors in years < 2012; one error in 2012
-  ("scorespro",getfromscorespro,0)]# No known errors, though not tried much
+  ("scorespro",getfromscorespro,0)]# One problem in 2018-19 due to misnaming Mansfield Town
 pp={}
 for (n,g,p) in parsers:
   if year==now or p:

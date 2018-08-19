@@ -1,6 +1,7 @@
-Accrington_Stanley Accrington Acc.Stanley Accrington_S
+Accrington_Stanley Accrington Acc.Stanley Accrington_S Accrington_ST
 AFC_Fylde Fylde
-AFC_Wimbledon
+AFC_Telford Telford Telford_United AFC_Telford_United AFC_Telford_Utd
+AFC_Wimbledon Wimbledon
 Aldershot Aldershot_Town
 Alfreton_Town Alfreton
 Altrincham Altrincham_Town
@@ -64,8 +65,10 @@ Gravesend Gravesend_&_Northfleet Gravesend_and_Northfleet Gravesend_&_N
 Grays_Athletic Grays
 Grimsby Grimsby_Town
 Guiseley Guiseley_AFC
-Halifax Halifax_Town
+Halifax Halifax_Town FC_Halifax_Town
+Harrogate_Town Harrogate
 Hartlepool Harlepool Harltepool Hartlepool_Utd Hartlepool_United
+Havant_&_Wville Havant_&_Waterlooville
 Hayes_&_Yeading Hayes_and_Yeading Hayes_&_Yeading_United
 Hereford Hereford_United Hereford_Utd
 Histon
@@ -85,9 +88,14 @@ Liverpool Liverpool_FC
 Luton Luton_Town
 Macclesfield Macclesfield_Town
 Maidenhead Maidenhead_Utd
+Maidstone_United Maidstone Maidstone_UTD
 Man_City Manchester_C Manchester_City
+# AFC_Mansfield are a different (non-league) club from Mansfield Town, but
+# scorespro is wrongly using the name AFC_Mansfield, so we workaround it by
+# pretending they are the same. It doesn't cause a problem (in 2018-19) because
+# AFC_Mansfield are not in the top 5 divisions.
+Mansfield Mansfield_Town AFC_Mansfield
 Man_Utd Manchester Manchester_U Manchester_United Manchester_Utd Man_United
-Mansfield Mansfield_Town
 Margate
 Middlesbrough Middlesbr Middlesboro
 Millwall Millwall_FC
@@ -96,6 +104,7 @@ Morecambe Morecombe Morecambe_FC
 Newcastle Newcastle_United Newcastle_Utd
 Newport_County Newport
 Northampton Northampton_Town
+North_Ferriby North_Ferriby_United
 Northwich Northwich_Victoria Northwich_V
 Norwich Norwich_City
 Nott'm_Forest Nottingham Nottingham_Forest Nottm_Forest
@@ -113,12 +122,14 @@ Reading Reading_FC
 Rochdale
 Rotherham Rotherham_United Rotherham_Utd
 Rushden_&_D'mnds Rushden Rushden_&_D Rushden_&_D'monds Rushden&Dmonds Rushden_and_Diamonds Rush_&_Diam Rushden_&_Diamonds
+Salford_City Salford
 Salisbury Salisbury_City
 Scarborough
 Scunthorpe Scunthorpe_United Scunthorpe_Utd
 Sheff_Utd Sheffield_U Sheffield Sheffield_United Sheffield_Utd
 Sheff_Wed Sheffield_W Sheffield_Wed Sheffield_Wednesday Sheffield_Wed. Sheffield_Weds
 Shrewsbury Shrewsbury_Town
+Solihull_Moors Solihull
 Southampton
 Southend Southend_United Southend_Utd
 Southport
@@ -128,10 +139,10 @@ Stevenage Stevenage_Borough Stevenage_FC
 Stockport Stockport_County
 Stoke Stoke_City
 Sunderland Sunderland_AFC
+Sutton_United Sutton Sutton_UTD
 Swansea Swansea_City
 Swindon Swindon_Town
 Tamworth
-AFC_Telford Telford Telford_United AFC_Telford_United AFC_Telford_Utd
 Torquay Torquay_United Torquay_Utd
 Tottenham Tottenham_Hotspur
 Tranmere Tranmere_Rovers
@@ -142,14 +153,9 @@ West_Brom West_Bromwich West_Bromwich_Albion
 West_Ham West_Ham_United
 Weymouth
 Wigan Wigan_Athletic
-AFC_Wimbledon Wimbledon
 Woking
 Wolverhampton Wolves Wolverhampton_Wanderers
 Wrexham
 Wycombe Wycombe_Wanderers
 Yeovil Yeovil_Town
 York York_City
-Solihull_Moors Solihull
-Maidstone_United Maidstone
-Sutton_United Sutton
-North_Ferriby North_Ferriby_United

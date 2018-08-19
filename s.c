@@ -190,7 +190,14 @@ adjalldat adjall[]={
     {0}},
    0,
    0,
-   {"2018-05-22","2018-05-08","2018-05-01","2018-05-07","2018-04-30"}},// Fix these
+   {"2018-05-22","2018-05-08","2018-05-08","2018-05-07","2018-04-30"}},
+
+  {2018,
+   (adjsdat[]){
+    {0}},
+   0,
+   0,
+   {"2019-05-19","2019-05-12","2019-05-11","2019-05-11","2019-05-04"}},// Adding a week
 
   {0,// Special terminating entry that creates no adjustments
    (adjsdat[]){{0}},
@@ -315,6 +322,7 @@ void loadequivnames(){
   fp=fopen("equivnames","r");
   t=0;
   while(fgets(l,10000,fp)){
+    if(l[0]=='#')continue;
     assert(t<MAXNAMES);
     s=strlen(l);assert(s>0);l[s-1]=' ';
     n=0;l1=l;

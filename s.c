@@ -644,7 +644,7 @@ void checkres(void){
     t0=res[r][0];t1=res[r][1];
     i=ind[t0][t1];
     if(i>=0){
-      if(res[r][2]==res[i][2]&&res[r][3]==res[i][3]&&res[r][4]==res[i][4]){
+      if(res[r][2]==res[i][2]&&res[r][3]==res[i][3]/*&&res[r][4]==res[i][4]*/){
 	fprintf(stderr,"Warning: %s vs %s listed twice (same result)\n",tm[t0],tm[t1]);
 	memmove(res[r],res[r+1],(nr-1-r)*5*sizeof(int));
 	r--;nr--;

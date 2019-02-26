@@ -65,10 +65,10 @@ Gravesend Gravesend_&_Northfleet Gravesend_and_Northfleet Gravesend_&_N
 Grays_Athletic Grays
 Grimsby Grimsby_Town
 Guiseley Guiseley_AFC
-Halifax Halifax_Town FC_Halifax_Town
+Halifax Halifax_Town FC_Halifax_Town FC_Halifax
 Harrogate_Town Harrogate
 Hartlepool Harlepool Harltepool Hartlepool_Utd Hartlepool_United
-Havant_&_Wville Havant_&_Waterlooville
+Havant_&_Wville Havant_&_Waterlooville Havant_&_W
 Hayes_&_Yeading Hayes_and_Yeading Hayes_&_Yeading_United
 Hereford Hereford_United Hereford_Utd
 Histon
@@ -88,7 +88,7 @@ Liverpool Liverpool_FC
 Luton Luton_Town
 Macclesfield Macclesfield_Town
 Maidenhead Maidenhead_Utd
-Maidstone_United Maidstone Maidstone_UTD
+Maidstone_United Maidstone Maidstone_UTD Maidstone_Utd
 Man_City Manchester_C Manchester_City
 # AFC_Mansfield are a different (non-league) club from Mansfield Town, but
 # scorespro is wrongly using the name AFC_Mansfield, so we workaround it by
@@ -102,7 +102,7 @@ Millwall Millwall_FC
 MK_Dons Milton_Keynes_Dons Milton Milton_Keynes
 Morecambe Morecombe Morecambe_FC
 Newcastle Newcastle_United Newcastle_Utd
-Newport_County Newport
+Newport_County Newport Newport_Co
 Northampton Northampton_Town
 North_Ferriby North_Ferriby_United
 Northwich Northwich_Victoria Northwich_V
@@ -139,7 +139,7 @@ Stevenage Stevenage_Borough Stevenage_FC
 Stockport Stockport_County
 Stoke Stoke_City
 Sunderland Sunderland_AFC
-Sutton_United Sutton Sutton_UTD
+Sutton_United Sutton Sutton_UTD Sutton_Utd
 Swansea Swansea_City
 Swindon Swindon_Town
 Tamworth

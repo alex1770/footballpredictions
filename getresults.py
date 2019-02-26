@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
-import urllib2,csv,sys,datetime,time,re,bs4
+import urllib2,csv,sys,datetime,time,re,bs4,string
+from subprocess import PIPE,Popen
 
 def err(s):
   print >>sys.stderr,datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),s
@@ -30,6 +31,15 @@ def cap(x):# 'AFC telford utd' -> 'AFC Telford Utd'
   l=[]
   for y in x.split(): l.append(y[0].upper()+y[1:])
   return ' '.join(l)
+
+def getnums(x):
+  x=[(y if y.isdigit() else ' ') for y in x]
+  x=''.join(x)
+  return map(int,x.split())
+
+def text(x):
+  ok=string.lowercase+string.uppercase+"'-& "
+  return ''.join(y for y in x if y in ok)
 
 ordn=re.compile(r'(?<=\d)(st|nd|rd|th)\b')
 def deord(x): return ordn.sub('',x)# Remove ordinal suffixes
@@ -104,35 +114,51 @@ def getfromscorespro(year,ln):
   url='http://www.scorespro.com/soccer/england/'+suffix
   u=urllib2.urlopen(url)
   soup=bs4.BeautifulSoup(u,"html5lib")
-  l=[];dt=None;ok=0;correctleague=0
-  for x in soup.find_all(True):
-    if x.name=='div' and 'class' in x.attrs and 'ncet' in x['class']:
-      fc=1
-      for y in x.children:
-        z=y.text.strip()
-        if fc:
-          correctleague=(z[:len(name)+2].lower()==name+' -');fc=0
-        try:
-          t=time.strptime(z,'%a %d %b %Y')
-          dt=time.strftime('%Y-%m-%d',t)
-        except ValueError:
-          continue
-    elif x.name=='table': ok=0
-    elif x.name=='td' and 'class' in x.attrs:
-      y=x['class'][0]
-      if y=='status':
-        for z in x.children:
-          if z.text=='FT': ok=1;hteam=ateam=hgoals=agoals=None
-      if not (ok and correctleague): continue
-      if y[:4]=='home': hteam=cap(x.text.strip())
-      elif y[:4]=='away':
-        ateam=cap(x.text.strip())
-        if dt and hteam and ateam and hgoals!=None and agoals!=None:
-          l.append((dt,std(hteam),std(ateam),hgoals,agoals))
-      elif y=='score':
-        z=x.text;f=z.find('-')
-        if f>=0: hgoals=int(z[:f]);agoals=int(z[f+1:])
+  l=[]
+  for x in soup.find_all('tr'):
+    m=[None]*5
+    for y in x.find_all('td'):
+      if 'class' in y.attrs:
+        c=y['class']
+        if 'kick_t' in c:
+          for z in y.find_all('span',attrs={'class':'kick_t_dt'}):
+            (dd,mm,yy)=map(int,z.text.split('.'))
+            m[0]="%4d-%02d-%02d"%(yy+1900+100*(yy<60),mm,dd)
+        if 'home' in c: m[1]=std(text(y.text))
+        if 'away' in c: m[2]=std(text(y.text))
+        if 'score' in c:
+          sc=getnums(y.text)
+          if len(sc)>=2: m[3]=sc[0];m[4]=sc[1]
+    if all(z!=None for z in m): l.append(tuple(m))
   return l
+
+def getfromflashscores(year,ln):
+  suffix=['premier-league','championship','league-one','league-two','national-league'][ln]
+  name=suffix.replace('-',' ')
+  suffix+='/results/'
+  url='http://www.flashscores.co.uk/football/england/'+suffix
+  p=Popen('google-chrome --headless --dump-dom '+url,shell=True,close_fds=True,stdout=PIPE)
+  u=p.stdout.read()
+  p.stdout.close()
+  if p.wait()!=0: raise Exception("Error with google-chrome subprocess")
+  soup=bs4.BeautifulSoup(u,"html5lib")
+  l=[]
+  for x in soup.find_all('tr'):
+    m=[None]*5
+    for y in x.find_all('td'):
+      if 'class' in y.attrs:
+        c=y['class']
+        if 'time' in c:
+          tt=getnums(y.text)
+          if len(tt)>=2: dd=tt[0];mm=tt[1];m[0]="%4d-%02d-%02d"%(year+(mm<7),mm,dd)
+        if 'team-home' in c: m[1]=std(text(y.text))# Filter out &nbsp;s used for red cards
+        if 'team-away' in c: m[2]=std(text(y.text))#
+        if 'score' in c:
+          sc=getnums(y.text)
+          if len(sc)>=2: m[3]=sc[0];m[4]=sc[1]
+    if all(z!=None for z in m): l.append(tuple(m))
+  return l
+
 
 def getfrombbc(year,ln):
   suffix=['118996114','118996115','118996116','118996117','118996118'][ln]
@@ -237,8 +263,9 @@ def check(pp,gtr):
 parsers=[
   #("soccernet",getfromsoccernet,0),# Quite error prone in 2012; can't distinguish play-offs from league games; broken in 2014-15 - gone all fancy schmancy
   #("BBC",getfrombbc,0),# Occasional errors in years < 2012; broken since 2017?
-  ("footballdata",getfromfootballdata,1),# Occasional errors in years < 2012; one error in 2012
-  ("scorespro",getfromscorespro,0)]# One problem in 2018-19 due to misnaming Mansfield Town
+  ("footballdata",getfromfootballdata,1),# Occasional errors in years < 2012; one error in 2012, one minor (date) error in 2018
+  ("scorespro",getfromscorespro,0),# One problem in 2018-19 due to misnaming Mansfield Town
+  ("flashscores",getfromflashscores,0)]# Introduced 2019-02-25
 pp={}
 for (n,g,p) in parsers:
   if year==now or p:

@@ -197,7 +197,8 @@ adjalldat adjall[]={
     {0}},
    0,
    0,
-   {"2019-05-19","2019-05-12","2019-05-11","2019-05-11","2019-05-04"}},// Adding a week
+   {"2019-05-19","2019-05-06","2019-05-06","2019-05-06","2019-04-30"}},// Adding a bit
+  // (Don't add too much otherwise it will get confused with playoff games.)
 
   {0,// Special terminating entry that creates no adjustments
    (adjsdat[]){{0}},

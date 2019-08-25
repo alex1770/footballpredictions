@@ -200,6 +200,16 @@ adjalldat adjall[]={
    {"2019-05-19","2019-05-06","2019-05-06","2019-05-06","2019-04-30"}},// Adding a bit
   // (Don't add too much otherwise it will get confused with playoff games.)
 
+  {2019,
+   (adjsdat[]){
+    {2,"Bolton",-12,"2019-07-01"},
+    {2,"Bury",-12,"2019-07-01"},
+    {0}},
+   0,
+   0,
+   {"2020-05-19","2020-05-06","2020-05-06","2020-05-06","2020-04-30"}},// Pro tem - TBC
+  // (Don't add too much otherwise it will get confused with playoff games.)
+
   {0,// Special terminating entry that creates no adjustments
    (adjsdat[]){{0}},
    0,

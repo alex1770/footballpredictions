@@ -65,8 +65,8 @@ def getfromfootballdata(year,ln):
       yr=['19','20'][dt[-2:]<'50']+dt[-2:]
       mon=dt[3:5]
       day=dt[:2]
-      if r[4]!='' and r[5]!='':# Future fixtures can appear as entries with empty scorelines
-        l.append((yr+'-'+mon+'-'+day,std(r[2]),std(r[3]),int(r[4]),int(r[5])))
+      if r[5]!='' and r[6]!='':# Future fixtures can appear as entries with empty scorelines
+        l.append((yr+'-'+mon+'-'+day,std(r[3]),std(r[4]),int(r[5]),int(r[6])))
   return l
 
 # This parser currently kaput since they changed everything for 2014-15
@@ -137,26 +137,27 @@ def getfromflashscores(year,ln):
   name=suffix.replace('-',' ')
   suffix+='/results/'
   url='http://www.flashscores.co.uk/football/england/'+suffix
-  p=Popen('google-chrome --headless --dump-dom '+url,shell=True,close_fds=True,stdout=PIPE)
+  #print "URL",url
+  p=Popen('google-chrome --headless --disable-gpu --disable-features=NetworkService --dump-dom '+url,shell=True,close_fds=True,stdout=PIPE)
   u=p.stdout.read()
   p.stdout.close()
   if p.wait()!=0: raise Exception("Error with google-chrome subprocess")
   soup=bs4.BeautifulSoup(u,"html5lib")
   l=[]
-  for x in soup.find_all('tr'):
-    m=[None]*5
-    for y in x.find_all('td'):
-      if 'class' in y.attrs:
-        c=y['class']
-        if 'time' in c:
-          tt=getnums(y.text)
-          if len(tt)>=2: dd=tt[0];mm=tt[1];m[0]="%4d-%02d-%02d"%(year+(mm<7),mm,dd)
-        if 'team-home' in c: m[1]=std(text(y.text))# Filter out &nbsp;s used for red cards
-        if 'team-away' in c: m[2]=std(text(y.text))#
-        if 'score' in c:
-          sc=getnums(y.text)
-          if len(sc)>=2: m[3]=sc[0];m[4]=sc[1]
-    if all(z!=None for z in m): l.append(tuple(m))
+  for x in soup.find_all('div'):
+    if 'class' in x.attrs:
+      y=x['class']
+      if 'event__check' in y: m=[None]*5
+      if 'event__time' in y:
+        tt=getnums(x.text)
+        if len(tt)>=2: dd=tt[0];mm=tt[1];m[0]="%4d-%02d-%02d"%(year+(mm<7),mm,dd)
+      if 'event__participant--home' in y: m[1]=std(text(x.text))# Filter out &nbsp;s used for red cards
+      if 'event__participant--away' in y: m[2]=std(text(x.text))#
+      if 'event__scores' in y:
+        sc=getnums(x.text)
+        if len(sc)>=2: m[3]=sc[0];m[4]=sc[1]
+      if 'event__part' in y:
+        if all(z!=None for z in m): l.append(tuple(m))
   return l
 
 
